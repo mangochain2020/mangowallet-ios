@@ -1,0 +1,6 @@
+framework module eosio {
+  umbrella header "eosio.h"
+
+  export *
+  module * { export * }
+}

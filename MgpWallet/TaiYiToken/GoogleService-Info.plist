@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>284719200038-74kki5e0hblo5c7na18vmffnbqepuu0k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.284719200038-74kki5e0hblo5c7na18vmffnbqepuu0k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDQO9U0GfAV5f-0IF5WN-UUIRy3lVRyLZs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>284719200038</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lohas.mgpMangowallet</string>
+	<key>PROJECT_ID</key>
+	<string>mangowallet-c8943</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mangowallet-c8943.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:284719200038:ios:98e5560704e82a3a9cf3e7</string>
+	<key>DATABASE_URL</key>
+	<string>https://mangowallet-c8943.firebaseio.com</string>
+</dict>
+</plist>

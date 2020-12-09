@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>showImage</key>
+		<true/>
+		<key>bgColor</key>
+		<false/>
+		<key>stateTitle</key>
+		<string>待支付</string>
+		<key>imageContent</key>
+		<string>wdgm_icon_daizhifu1</string>
+	</dict>
+	<dict>
+		<key>showImage</key>
+		<true/>
+		<key>bgColor</key>
+		<false/>
+		<key>stateTitle</key>
+		<string>待发货</string>
+		<key>imageContent</key>
+		<string>wdgm_icon_daishouhuo1</string>
+	</dict>
+	<dict>
+		<key>showImage</key>
+		<true/>
+		<key>bgColor</key>
+		<false/>
+		<key>stateTitle</key>
+		<string>待收货</string>
+		<key>imageContent</key>
+		<string>wdgm_icon_daipingjia1</string>
+	</dict>
+	<dict>
+		<key>showImage</key>
+		<true/>
+		<key>bgColor</key>
+		<false/>
+		<key>stateTitle</key>
+		<string>退款/售后</string>
+		<key>imageContent</key>
+		<string>wdgm_icon_tuikuan1</string>
+	</dict>
+	<dict>
+		<key>showImage</key>
+		<true/>
+		<key>bgColor</key>
+		<true/>
+		<key>stateTitle</key>
+		<string>全部订单</string>
+		<key>imageContent</key>
+		<string>quanbudindan1</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="KGk-i7-Jjw" customClass="DCCommodityTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名称" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eml-Rw-4x9">
+                        <rect key="frame" x="95" y="10" width="135" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品规格" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-ZZ-GvL">
+                        <rect key="frame" x="95" y="32" width="135" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品库存：x2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-Pm-UqO">
+                        <rect key="frame" x="95" y="51.5" width="135" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="零售价：￥99" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRU-Mo-X9e">
+                        <rect key="frame" x="95" y="71" width="135" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopImage01" translatesAutoresizingMaskIntoConstraints="NO" id="mwh-Ur-Iht">
+                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="W0f-qS-Tvi"/>
+                            <constraint firstAttribute="height" constant="80" id="pcb-ac-fYF"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-sP-VWC">
+                        <rect key="frame" x="230" y="10" width="80" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="mQa-Rx-ngw"/>
+                            <constraint firstAttribute="width" constant="80" id="wza-Mo-7V5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="下架">
+                            <color key="titleColor" systemColor="systemPinkColor"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                <color key="value" systemColor="systemPinkColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-s2-abV">
+                        <rect key="frame" x="240" y="54" width="80" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="38j-qg-pRj"/>
+                            <constraint firstAttribute="width" constant="80" id="VyX-cI-t9D"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="删除">
+                            <color key="titleColor" systemColor="systemRedColor"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QKo-Pm-UqO" firstAttribute="trailing" secondItem="hdf-ZZ-GvL" secondAttribute="trailing" id="0Rw-sL-XS4"/>
+                    <constraint firstAttribute="bottom" secondItem="Nnn-s2-abV" secondAttribute="bottom" constant="10" id="0rs-hm-ExO"/>
+                    <constraint firstItem="QKo-Pm-UqO" firstAttribute="top" secondItem="hdf-ZZ-GvL" secondAttribute="bottom" constant="5" id="1Rc-U7-cTz"/>
+                    <constraint firstItem="hdf-ZZ-GvL" firstAttribute="top" secondItem="Eml-Rw-4x9" secondAttribute="bottom" constant="5" id="84I-h5-bZK"/>
+                    <constraint firstItem="zwr-sP-VWC" firstAttribute="leading" secondItem="Eml-Rw-4x9" secondAttribute="trailing" id="86a-09-Beg"/>
+                    <constraint firstAttribute="trailing" secondItem="Nnn-s2-abV" secondAttribute="trailing" id="9uI-Ih-5AU"/>
+                    <constraint firstItem="aRU-Mo-X9e" firstAttribute="trailing" secondItem="QKo-Pm-UqO" secondAttribute="trailing" id="9yW-gD-Noy"/>
+                    <constraint firstItem="hdf-ZZ-GvL" firstAttribute="trailing" secondItem="Eml-Rw-4x9" secondAttribute="trailing" id="BCM-2z-0Lc"/>
+                    <constraint firstItem="Eml-Rw-4x9" firstAttribute="leading" secondItem="mwh-Ur-Iht" secondAttribute="trailing" constant="5" id="EYK-v5-BOx"/>
+                    <constraint firstAttribute="trailing" secondItem="zwr-sP-VWC" secondAttribute="trailing" constant="10" id="G0N-pP-8FN"/>
+                    <constraint firstItem="zwr-sP-VWC" firstAttribute="top" secondItem="Eml-Rw-4x9" secondAttribute="top" id="Gfh-Dq-sOY"/>
+                    <constraint firstItem="aRU-Mo-X9e" firstAttribute="top" secondItem="QKo-Pm-UqO" secondAttribute="bottom" constant="5" id="MUe-gw-Rpp"/>
+                    <constraint firstItem="aRU-Mo-X9e" firstAttribute="leading" secondItem="QKo-Pm-UqO" secondAttribute="leading" id="Mdh-My-pYk"/>
+                    <constraint firstItem="mwh-Ur-Iht" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="QJO-HW-mfk"/>
+                    <constraint firstItem="Eml-Rw-4x9" firstAttribute="top" secondItem="mwh-Ur-Iht" secondAttribute="top" id="Tfd-F7-ux7"/>
+                    <constraint firstItem="QKo-Pm-UqO" firstAttribute="leading" secondItem="hdf-ZZ-GvL" secondAttribute="leading" id="X82-mg-TVZ"/>
+                    <constraint firstItem="hdf-ZZ-GvL" firstAttribute="leading" secondItem="Eml-Rw-4x9" secondAttribute="leading" id="qyl-G1-CWg"/>
+                    <constraint firstItem="mwh-Ur-Iht" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sfD-0P-0dv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="button1" destination="zwr-sP-VWC" id="8U1-QB-HRp"/>
+                <outlet property="button2" destination="Nnn-s2-abV" id="190-uL-jMQ"/>
+                <outlet property="price" destination="aRU-Mo-X9e" id="X9z-ut-dyE"/>
+                <outlet property="shop_image" destination="mwh-Ur-Iht" id="Fbv-uq-tff"/>
+                <outlet property="storeName" destination="Eml-Rw-4x9" id="MPi-hU-xFA"/>
+                <outlet property="storeType" destination="hdf-ZZ-GvL" id="Xl8-jo-l2w"/>
+                <outlet property="totalNum" destination="QKo-Pm-UqO" id="Ehp-eA-j6s"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="42"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="shopImage01" width="700" height="700"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletListTableViewCell" rowHeight="70" id="KGk-i7-Jjw" customClass="WalletListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-r0-eYR">
+                        <rect key="frame" x="10" y="8" width="300" height="54"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwv-jg-bZJ">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xea166719e7dc3106043dfab28467f88e572ad683" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3x-LI-uss">
+                                <rect key="frame" x="0.0" y="34.5" width="300" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bglogo1" translatesAutoresizingMaskIntoConstraints="NO" id="d1F-sd-t5n">
+                        <rect key="frame" x="250" y="0.0" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="vyu-cm-1WR"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vha-gE-fdm">
+                        <rect key="frame" x="280" y="0.0" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Et0-kP-gQU"/>
+                            <constraint firstAttribute="height" constant="40" id="mma-8I-2iZ"/>
+                        </constraints>
+                        <state key="normal" image="detail"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="I5f-r0-eYR" secondAttribute="trailing" constant="10" id="1g0-L5-J1V"/>
+                    <constraint firstItem="I5f-r0-eYR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7QD-Nk-A3y"/>
+                    <constraint firstAttribute="trailing" secondItem="vha-gE-fdm" secondAttribute="trailing" id="ClS-vC-i6A"/>
+                    <constraint firstItem="d1F-sd-t5n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K9Y-ob-KHY"/>
+                    <constraint firstItem="I5f-r0-eYR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TFZ-qu-s85"/>
+                    <constraint firstAttribute="trailing" secondItem="d1F-sd-t5n" secondAttribute="trailing" id="cq3-AX-fdv"/>
+                    <constraint firstAttribute="bottom" secondItem="d1F-sd-t5n" secondAttribute="bottom" id="n2j-Ed-BJr"/>
+                    <constraint firstItem="vha-gE-fdm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xIA-jK-HRz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="coinImage" destination="d1F-sd-t5n" id="Wc1-Fs-Je7"/>
+                <outlet property="moreBtn" destination="vha-gE-fdm" id="BY4-hD-b4U"/>
+                <outlet property="walletAddress" destination="B3x-LI-uss" id="KYH-gS-AX3"/>
+                <outlet property="walletName" destination="dwv-jg-bZJ" id="eC5-9O-aQY"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bglogo1" width="136" height="120"/>
+        <image name="detail" width="20" height="20"/>
+    </resources>
+</document>

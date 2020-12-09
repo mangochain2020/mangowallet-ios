@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "btn_yuyue_yijingyuyuered.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "btn_yuyue_yijingyuyuered@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "btn_yuyue_yijingyuyuered@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

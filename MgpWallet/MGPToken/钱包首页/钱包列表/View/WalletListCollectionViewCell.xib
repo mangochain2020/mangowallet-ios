@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="WalletListCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ETH_coin" translatesAutoresizingMaskIntoConstraints="NO" id="gR7-PW-cvI">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="KMq-wH-qcg"/>
+                            <constraint firstAttribute="height" constant="40" id="KaX-g2-ioO"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Kl-7fk">
+                        <rect key="frame" x="49" y="5" width="1" height="40"/>
+                        <color key="backgroundColor" red="0.2409571707" green="0.54481530190000005" blue="0.90200477840000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="i2h-rG-qkm"/>
+                            <constraint firstAttribute="width" constant="1" id="lZf-vH-uMS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="GoC-Kl-7fk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="3ii-vx-bvR"/>
+                <constraint firstItem="gR7-PW-cvI" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5sj-xz-OSo"/>
+                <constraint firstItem="gR7-PW-cvI" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Uc9-ho-mkW"/>
+                <constraint firstAttribute="trailing" secondItem="GoC-Kl-7fk" secondAttribute="trailing" id="b95-kT-yH7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="coinImage" destination="gR7-PW-cvI" id="pyP-9f-OHD"/>
+                <outlet property="linkeView" destination="GoC-Kl-7fk" id="h1G-Lz-awD"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ETH_coin" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
+</document>

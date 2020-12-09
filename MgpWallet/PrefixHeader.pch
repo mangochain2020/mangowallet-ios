@@ -1,0 +1,199 @@
+//
+//  PrefixHeader.pch
+//  TaiYiToken
+//
+//  Created by Frued on 2018/8/13.
+//  Copyright © 2018年 Frued. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import<objc/runtime.h>
+
+
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+#import "AFNetworking.h"
+#import "YYKit.h"
+#import "MJRefresh.h"
+#import "MBProgressHUD.h"
+#import "DomainConfigConst.h"
+#import "DomainConfigManager.h"
+
+#import "JVFloatLabeledTextField.h"
+
+
+#import "NSObject+Parse.h"
+#import "UIScrollView+Refresh.h"
+#import "UIView+HUD.h"
+#import "NSString+URLString.h"
+#import "UIImage+BaseToImage.h"
+#import "NetAPI.h"
+#import "NetManager.h"
+#import "AMSaveFile.h"
+#import "SAMKeychain.h"
+#import "SAMKeyChainEasy.h"
+#import "UIColor+PGHex.h"
+#import "UIButton+Gradient.h"
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "SDWebImage/UIButton+WebCache.h"
+#import "SDWebImageManager.h"
+#import "SDImageCache.h"
+#import "Macros.h"
+#import "DCConsts.h"
+#import "DCSpeedy.h"
+#import "UIView+DCExtension.h"
+#import "DCNotificationCenterName.h"
+#import "DCObjManager.h"
+#import <MJExtension.h>
+#import "DCUserInfo.h"
+#import "MGPHttpRequest.h"
+#import "DCHomeRefreshGifHeader.h"
+#import "XFDialogBuilder.h"
+#import "STPickerSingle.h"
+#import "DCMGPWalletTool.h"
+
+
+#import "Constant.h"
+/// 第一个参数是当下的控制器适配iOS11 一下的，第二个参数表示scrollview或子类
+#define AdjustsScrollViewInsetNever(controller,view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
+#define SafeAreaTopHeight (ScreenHeight >= 812.0 ? 88 : 64)
+
+/// 底部宏
+#define SafeAreaBottomHeight (ScreenHeight >= 812.0 ? 34 : 0)
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define kRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define WS(weakSelf) __weak __typeof(&*self)weakSelf = self
+#define LRRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+
+#define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight 44.0
+#define TABBAR_HEIGHT ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+#define NAVIGATIONBAR_HEIGHT (STATUSBAR_HEIGHT + kNavBarHeight)
+#define kIs_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f)
+
+#define PRODUCT_BUNDLE_ID @"com.taiyi.pagani"
+#define NET_API_KEY @"f00229ea8eb349e68db729db6e757c67"
+
+#define PrivacyPolicyURL_CHS @"http://misnetwork.io/assets/lib/MisToken-Privacy.pdf"
+#define PrivacyPolicyURL_EN @"http://misnetwork.io/assets/lib/MisToken-Privacy-EN.pdf"
+//ETH 网络切换
+#define MODENET ChainIdHomestead
+//ChangeToTESTNET = 0正式网，= 1测试网 https://test-insight.bitpay.com/api/
+#define ChangeToTESTNET 0
+#define EtherscanApiKey @"SK67PZQDFS6V4U5KCNVI2C61DJH53ZSJWZ"
+#define BlockChainApiKey @"e21b7796-d2c0-423d-8ffc-e6d49a5dfb38"
+
+
+//行情币种图片url
+#define BASE_IMAGE_URL @"http://159.138.5.245:8080/chainmarket"
+
+
+//获取temp
+#define kPathTemp NSTemporaryDirectory()
+//获取沙盒 Document
+#define kPathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+//获取沙盒 Cache
+#define kPathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+#define BTNRISECOLOR [UIColor colorWithHexString:@"#E53A32"]
+#define BTNFALLCOLOR [UIColor colorWithHexString:@"#26B13D"]
+
+#define BX_ADDRESS_ENCODE_ADDRESS_A_V0 @"1HT7xU2Ngenf7D4yocz2SAcnNLW7rK8d4E"
+
+#define PassWordText @"passwordText"
+
+
+#define CurrentHuobiSymbols @"CurrentHuobiSymbols"
+
+#define DefaultHuobiExchangeSymbol @"EOS/USDT"
+
+/// FIRAnalytics事件和参数
+#define FIR_TypeKey @"Type"
+#define FIR_TypeValue @"IOS"
+
+#define FIR_PageSwitchEvent @"PageSwitch"
+#define FIR_PageSwitchVCName @"PageSwitchVCName"
+#define FIR_PageSwitchVCUser @"PageSwitchVCUser"
+
+
+
+/**
+ *  导入系统文件
+ */
+#import <Foundation/Foundation.h>
+#import <Social/Social.h>
+#import <JavaScriptCore/JavaScriptCore.h>
+/**
+ *  导入自定义文件
+ */
+#import "NSObject+Safe.h"
+#import "UIColor+SNFoundation.h"
+#import "UIColor+AppConfigColor.h"
+#import "NSDate+ExFoundation.h"
+#import "NSDictionary+ExFoundation.h"
+#import "UIImage+ExFoundation.h"
+#import "NSMutableAttributedString+ExFoundation.h"
+#import "RegularExpression.h"
+#import "NSString+Hash.h"
+#import "NSString+Extention.h"
+#import "NSObject+Extension.h"
+#import "MissionWallet.h"
+#import "NSString+CheckStringValue.h"
+#import "AESCrypt.h"
+#import "NSError+MisError.h"
+#import "LHWalletManager.h"
+
+/**
+ *  导入第三方库文件
+ */
+
+
+#import "SDWebImageManager.h"
+#import "UIButton+WebCache.h"
+#import "SGQRCode.h"
+#import "PYSearch.h"
+#import "MJExtension.h"
+#import <EosFramework/EosFramework.h>
+#import "FMDB.h"
+#import <Realm/Realm.h>
+#import <Firebase/Firebase.h>
+
+
+/*
+ 椭圆算法 由私钥生成公钥
+ */
+#import "secp256k1.h"
+#import "secp256k1_ecdh.h"
+#import "secp256k1_recovery.h"
+/*
+ CoreBitcoin
+ */
+
+#import <CoreBitcoin/CoreBitcoin.h>
+#import <CoreBitcoin/CoreBitcoin+Categories.h>
+/* ETH */
+#import <ethers/ethers.h>
+#import "ethers/Account.h"
+/*
+ 
+ */
+#import "AccountInfo.h"
+#import "HTTPRequestManager.h"
+#import "HTTPRequestUrl.h"
+#import "NSData+Hash.h"
+#import "CreateAll.h"
+#import "CustomizedTabBarController.h"
+
+#import "BTCChangeAddressModel.h"
+#import "BTCUTXOModel.h"
+#import "BTCBlockChainUTXOModel.h"
+
+
+#import "MisBaseViewController.h"
+#import "HuobiManager.h"
+#import "HuobiModels.h"
+#import "HuobiAuthVC.h"
+#endif /* PrefixHeader_pch */

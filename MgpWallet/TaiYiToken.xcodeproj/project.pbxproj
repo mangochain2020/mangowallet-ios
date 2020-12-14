@@ -422,7 +422,6 @@
 		043B560D22365E4300054016 /* HuobisymbolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B560C22365E4300054016 /* HuobisymbolCell.m */; };
 		043C77B524C7DD760063E501 /* ExchangeHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043C77B424C7DD760063E501 /* ExchangeHome.storyboard */; };
 		043C77B924C7DF1B0063E501 /* LHDAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77B824C7DF1B0063E501 /* LHDAppTableViewController.m */; };
-		043C77BD24C838130063E501 /* MGPHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77BC24C838130063E501 /* MGPHttpRequest.m */; };
 		043C77C124C8416A0063E501 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77C024C8416A0063E501 /* RSAEncryptor.m */; };
 		043E95F624CA80D50053AD96 /* LHNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E95F524CA80D50053AD96 /* LHNodeViewController.m */; };
 		043E95FA24CA92C70053AD96 /* CommunityIncentivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E95F924CA92C70053AD96 /* CommunityIncentivesViewController.m */; };
@@ -436,6 +435,7 @@
 		0454990D253D4080006CC2BC /* MyThemeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454990C253D4080006CC2BC /* MyThemeTableViewController.m */; };
 		04549917253D437B006CC2BC /* LHSendThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04549916253D437B006CC2BC /* LHSendThemeViewController.m */; };
 		04549924253D8FAF006CC2BC /* ThemeVoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04549923253D8FAF006CC2BC /* ThemeVoteDetailViewController.m */; };
+		04555DF125874E260092EB59 /* MGPHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04555DF025874E260092EB59 /* MGPHttpRequest.m */; };
 		0457755F24CFC0B0007DCD2B /* LHSendTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457755E24CFC0B0007DCD2B /* LHSendTransactionViewController.m */; };
 		045CA5832175B333005F2ACC /* BusinessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045CA5822175B333005F2ACC /* BusinessModel.m */; };
 		045CA5862175D820005F2ACC /* BuySaleRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045CA5852175D820005F2ACC /* BuySaleRecordCell.m */; };
@@ -1626,8 +1626,6 @@
 		043C77B424C7DD760063E501 /* ExchangeHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExchangeHome.storyboard; sourceTree = "<group>"; };
 		043C77B724C7DF1B0063E501 /* LHDAppTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHDAppTableViewController.h; sourceTree = "<group>"; };
 		043C77B824C7DF1B0063E501 /* LHDAppTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHDAppTableViewController.m; sourceTree = "<group>"; };
-		043C77BB24C838130063E501 /* MGPHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGPHttpRequest.h; sourceTree = "<group>"; };
-		043C77BC24C838130063E501 /* MGPHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGPHttpRequest.m; sourceTree = "<group>"; };
 		043C77BF24C8416A0063E501 /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
 		043C77C024C8416A0063E501 /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
 		043E95F424CA80D50053AD96 /* LHNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHNodeViewController.h; sourceTree = "<group>"; };
@@ -1653,6 +1651,8 @@
 		04549916253D437B006CC2BC /* LHSendThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHSendThemeViewController.m; sourceTree = "<group>"; };
 		04549922253D8FAF006CC2BC /* ThemeVoteDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeVoteDetailViewController.h; sourceTree = "<group>"; };
 		04549923253D8FAF006CC2BC /* ThemeVoteDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteDetailViewController.m; sourceTree = "<group>"; };
+		04555DEF25874E260092EB59 /* MGPHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPHttpRequest.h; sourceTree = "<group>"; };
+		04555DF025874E260092EB59 /* MGPHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPHttpRequest.m; sourceTree = "<group>"; };
 		0457755D24CFC0B0007DCD2B /* LHSendTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHSendTransactionViewController.h; sourceTree = "<group>"; };
 		0457755E24CFC0B0007DCD2B /* LHSendTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHSendTransactionViewController.m; sourceTree = "<group>"; };
 		045CA5812175B333005F2ACC /* BusinessModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessModel.h; sourceTree = "<group>"; };
@@ -6391,8 +6391,8 @@
 				04375BE621817C4B0006D530 /* HTTPRequestManager.m */,
 				043B55E92232053900054016 /* HuobiManager.h */,
 				043B55EA2232053900054016 /* HuobiManager.m */,
-				043C77BB24C838130063E501 /* MGPHttpRequest.h */,
-				043C77BC24C838130063E501 /* MGPHttpRequest.m */,
+				04555DEF25874E260092EB59 /* MGPHttpRequest.h */,
+				04555DF025874E260092EB59 /* MGPHttpRequest.m */,
 			);
 			path = NetManager;
 			sourceTree = "<group>";
@@ -7253,6 +7253,7 @@
 				0417A6BC22703E550053CA1A /* OmniUSDTBalanceModel.m in Sources */,
 				04049D9E24C69B76003D15F9 /* DCObjManager.m in Sources */,
 				843EC9DD21212271002D5C2A /* UIImage+BaseToImage.m in Sources */,
+				04555DF125874E260092EB59 /* MGPHttpRequest.m in Sources */,
 				04049DED24C69B76003D15F9 /* DCRecommendCell.m in Sources */,
 				046D540521FA9E9D0069B9B0 /* NSMutableArray+Safe.m in Sources */,
 				04049E1724C69B76003D15F9 /* DCStateItem.m in Sources */,
@@ -7439,7 +7440,6 @@
 				0415BDA82131BC850022DEB7 /* YYKlineView.m in Sources */,
 				0415BDAB2131BC850022DEB7 /* YYKlineMaskView.m in Sources */,
 				0401784221940DC400BA5D23 /* MarketProfitModel.m in Sources */,
-				043C77BD24C838130063E501 /* MGPHttpRequest.m in Sources */,
 				04049DDE24C69B76003D15F9 /* DCCommentCell.m in Sources */,
 				043B55F82235FD0C00054016 /* HuobiSymbolsModel.m in Sources */,
 				04BBD1F224DCFEFE00375025 /* DCCommodityTableViewController.m in Sources */,

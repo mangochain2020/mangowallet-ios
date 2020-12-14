@@ -1,1 +1,0 @@
-../../../CWLateralSlide/CWLateralSlide/CWLateralSlideAnimator.h

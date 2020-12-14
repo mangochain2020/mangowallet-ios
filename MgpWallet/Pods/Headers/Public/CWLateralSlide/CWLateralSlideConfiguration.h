@@ -1,1 +1,0 @@
-../../../CWLateralSlide/CWLateralSlide/CWLateralSlideConfiguration.h

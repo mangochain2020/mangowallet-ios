@@ -59,7 +59,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>是否允许此App使用你的相机？</string>
+	<string>是否允许此App使用你的相机进行扫描转账和导入</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>本地服务是的定位获取附近商家</string>
 	<key>NSLocationAlwaysUsageDescription</key>

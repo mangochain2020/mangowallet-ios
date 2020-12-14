@@ -8,9 +8,6 @@
 
 #import "MGPHttpRequest.h"
 #import "RSAEncryptor.h"
-//#define base_url @"https://api.mgpchain.com"
-//#define base_url @"https://api.coom.pub"
-//#define base_url @"http://172.16.11.239:8888"
 
 
 

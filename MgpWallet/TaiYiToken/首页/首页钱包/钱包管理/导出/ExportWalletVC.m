@@ -546,7 +546,7 @@
             }
             ExportEOSPriKeyVC *epmvc = [ExportEOSPriKeyVC new];
             epmvc.privateKey = self.wallet.privateKey;
-            epmvc.publicKey = self.wallet.publicKey;
+            epmvc.publicKey = [self.wallet.publicKey stringByReplacingOccurrencesOfString:@"EOS" withString:@"MGP"];//self.wallet.publicKey;
             [self.navigationController pushViewController:epmvc animated:YES];
         }else{
             [self.view showMsg:NSLocalizedString(@"密码错误", nil)];

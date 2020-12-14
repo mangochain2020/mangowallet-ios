@@ -1,0 +1,17 @@
+*~
+
+.DS_Store
+
+*.xcuserstate
+
+*.xcworkspace
+
+*.MGPHttpRequest.h
+*.MGPHttpRequest.m
+
+
+xcuserdata
+
+*.lock
+
+Pods

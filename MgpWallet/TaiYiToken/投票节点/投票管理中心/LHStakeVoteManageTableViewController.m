@@ -188,9 +188,9 @@
             [self.tableView reloadData];
             [self.tableView.mj_header endRefreshing];
             [self.tableView endFooterRefresh];
-              
+            NSDictionary *dict = self.listArray.firstObject;
 
-            _rewardsStr = [dic[@"unclaimed_rewards"] componentsSeparatedByString:@" "].firstObject;
+            _rewardsStr = [dict[@"unclaimed_rewards"] componentsSeparatedByString:@" "].firstObject;
             self.unclaimed_rewards.text = _rewardsStr.length <= 0 ? @"0" : _rewardsStr;
 
             

@@ -30,7 +30,7 @@ static MGPHttpRequest * defualt_shareMananger = nil;
 /**
  拼接字典数据
 
- @param parameters 参数1
+ @param parameters 参数
  @return 拼接后的字符串
  */
 -(NSString *)parameters:(NSDictionary *)parameters

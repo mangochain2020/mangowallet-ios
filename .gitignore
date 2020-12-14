@@ -6,9 +6,7 @@
 
 *.xcworkspace
 
-*.MGPHttpRequest.h
-*.MGPHttpRequest.m
-
+/Users/mac/Desktop/mangowalletIOS/MgpWallet/TaiYiToken/Common/NetManager/MGPHttpRequest*
 
 xcuserdata
 

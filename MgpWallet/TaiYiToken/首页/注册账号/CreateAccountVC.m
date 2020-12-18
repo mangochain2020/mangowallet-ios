@@ -86,7 +86,7 @@
     _accountTextField = [JVFloatLabeledTextField new];
     _accountTextField.borderStyle = UITextBorderStyleNone;
 //    _accountTextField.userInteractionEnabled = YES;
-    _accountTextField.attributedPlaceholder =[[NSAttributedString alloc]initWithString: NSLocalizedString(@"请输入用户名", nil)];
+    _accountTextField.attributedPlaceholder =[[NSAttributedString alloc]initWithString: NSLocalizedString(@"设置您的钱包账户名", nil)];
 //    _accountTextField.keepBaseline = YES;
     _accountTextField.layer.borderWidth = 0.5;
     _accountTextField.layer.borderColor = [UIColor colorWithRed:237/255.0 green:239/255.0 blue:241/255.0 alpha:1.0].CGColor;
@@ -108,7 +108,7 @@
     }];
     
     _accountHintLabel = [UILabel new];
-    _accountHintLabel.text = NSLocalizedString(@"MGP账户名称为a-z与1-5组合的12位字符", nil);
+    _accountHintLabel.text = NSLocalizedString(@"a-z与1-5的12位字符组合", nil);
     _accountHintLabel.font = [UIFont systemFontOfSize:13];
     _accountHintLabel.textColor = [UIColor lightGrayColor];
     [self.view addSubview:_accountHintLabel];
@@ -230,7 +230,7 @@
     NSString *account = VALIDATE_STRING(self.accountTextField.text);
     BOOL verifyaccount = [NSString checkEOSAccount:account];
     _accountHintLabel.textColor = verifyaccount ? [UIColor lightGrayColor] : [UIColor redColor];
-    _accountHintLabel.text = NSLocalizedString(@"MGP账户名称为a-z与1-5组合的12位字符", nil);
+    _accountHintLabel.text = NSLocalizedString(@"a-z与1-5的12位字符组合", nil);
 
     if (([_accountTextField.text isEqualToString:@""])||(_accountTextField.text == nil)) {
         [self.view showMsg:NSLocalizedString(@"请输入名称！", nil)];

@@ -49,16 +49,16 @@
         MissionWallet *walletEOS = [CreateAll GetMissionWalletByName:VALIDATE_STRING(localeosname)];
         [self.walletArray addObject:walletEOS];
 
-        /*
-        MissionWallet *walletBTC = [CreateAll GetMissionWalletByName:@"BTC"];
-        MissionWallet *walletETH = [CreateAll GetMissionWalletByName:@"ETH"];
+        
+        MissionWallet *walletBTC = [CreateAll GetMissionWalletByName:@"BTC(0)"];
+        MissionWallet *walletETH = [CreateAll GetMissionWalletByName:@"ETH(0)"];
         
         if (walletBTC) {
             [self.walletArray addObject:walletBTC];
         }
         if (walletETH) {
             [self.walletArray addObject:walletETH];
-        }*/
+        }
     }
     /*
     NSMutableArray *temp = [_walletArray mutableCopy];

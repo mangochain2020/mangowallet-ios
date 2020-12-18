@@ -53,6 +53,8 @@
     [self scrollView];
     [self registerAccountView];
     self.remindLabel.text = self.wallet.coinType == EOS ? NSLocalizedString(@"EOS账户名称为a-z与1-5组合的12位字符", nil) : NSLocalizedString(@"MGP账户名称为a-z与1-5组合的12位字符", nil);
+    self.accountTextField.text = self.wallet.address;
+    [self textFieldDidEndEditing:self.accountTextField];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

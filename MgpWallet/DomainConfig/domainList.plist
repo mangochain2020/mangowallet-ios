@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>defaultServer</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>localServers</key>
 	<array>
 		<dict>

@@ -28,15 +28,9 @@
 @implementation VerifyMnemonicVC
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-//    self.tabBarController.tabBar.hidden = YES;
-//    self.navigationController.navigationBar.hidden = YES;
-//    self.navigationController.hidesBottomBarWhenPushed = YES;
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
-//    self.tabBarController.tabBar.hidden = NO;
-//    self.navigationController.navigationBar.hidden = NO;
-//    self.navigationController.hidesBottomBarWhenPushed = NO;
 }
 - (void)popAction{
     [self.navigationController popViewControllerAnimated:YES];
@@ -48,21 +42,8 @@
     self.optionbuttonListSelect = [NSMutableDictionary new];
     //将助记词字符串分割为单词,因使用dic初始化optionView时通过枚举已经打乱了顺序 故无需专门打破顺序
     self.mnemonicArray = [[self.mnemonic componentsSeparatedByString:@" "] mutableCopy];
-/*
-    _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _backBtn.backgroundColor = [UIColor clearColor];
-    [_backBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [_backBtn setImage:[UIImage imageNamed:@"ico_right_arrow"] forState:UIControlStateNormal];
-    [_backBtn addTarget:self action:@selector(popAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_backBtn];
-    _backBtn.userInteractionEnabled = YES;
-    [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(SafeAreaTopHeight - 34);
-        make.height.equalTo(25);
-        make.left.equalTo(10);
-        make.width.equalTo(30);
-    }];
-    */
+
+    
     _nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _nextBtn.backgroundColor = [UIColor textBlueColor];
     [_nextBtn gradientButtonWithSize:CGSizeMake(ScreenWidth, 49) colorArray:@[RGB(150, 160, 240),RGB(170, 170, 240)] percentageArray:@[@(0.3),@(1)] gradientType:GradientFromLeftTopToRightBottom];
@@ -78,20 +59,6 @@
     }];
     
     self.title = NSLocalizedString(@"确认助记词", nil);
-    /*
-    _headlabel = [[UILabel alloc] init];
-    _headlabel.textColor = [UIColor blackColor];
-    _headlabel.font = [UIFont systemFontOfSize:16];
-    _headlabel.text = NSLocalizedString(@"确认助记词", nil);
-    _headlabel.textAlignment = NSTextAlignmentLeft;
-    _headlabel.numberOfLines = 1;
-    [self.view addSubview:_headlabel];
-    [_headlabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(50);
-        make.top.equalTo(SafeAreaTopHeight - 34);
-        make.right.equalTo(-16);
-        make.height.equalTo(25);
-    }];*/
 
     UILabel *remindlabel = [[UILabel alloc] init];
     remindlabel.textColor = [UIColor textGrayColor];
@@ -125,32 +92,70 @@
         }
     }
 
-    [self.view showMsg:NSLocalizedString(@"正在创建钱包...", nil)];
-    [self.view showHUD];
-    NSString *seed = [CreateAll CreateSeedByMnemonic:self.mnemonic Password:self.password];
+    if (self.baseWallet) {
+        self.baseWallet.isSkip = YES;
+        [CreateAll SaveWallet:self.baseWallet Name:self.baseWallet.walletName WalletType:self.baseWallet.walletType Password:nil];
+        [self.view showMsg:NSLocalizedString(@"成功", nil)];
+        [self.navigationController popToRootViewControllerAnimated:YES];
 
-    switch (self.coinType) {
-        case ETH:
-            [self CreateETHWalletSeed:seed PassWord:self.password PassHint:@""];
+    }else{
+        [self.view showMsg:NSLocalizedString(@"正在创建钱包...", nil)];
+        [self.view showHUD];
+        NSString *seed = [CreateAll CreateSeedByMnemonic:self.mnemonic Password:self.password];
 
-            break;
-        case BTC:
-        case BTC_TESTNET:
-            [self CreateBTCWalletSeed:seed PassWord:self.password PassHint:@""];
-
-            break;
-        case EOS:
-            [self CreateEOSWalletSeed:seed PassWord:self.password PassHint:@""];
-
-            break;
-        case MGP:
-            [self CreateMGPWalletSeed:seed PassWord:self.password PassHint:@""];
-
-            break;
-        default:
-            [self CreateWalletSeed:seed];
-            break;
+        NSString *addressName = [[NSUserDefaults standardUserDefaults]objectForKey:AccountName];
+        int walletType = self.coinType == NOTDEFAULT ? LOCAL_WALLET : IMPORT_WALLET;
+        int importType = IMPORT_BY_MNEMONIC;
+        
+        
+        [[CreateAccountTool shareManager]CreateWalletSeed:seed PassWord:self.password PassHint:@"" Mnemonic:self.mnemonic isSkip:YES WalletAddressName:addressName WalletType:walletType ImportType:importType CoinType:self.coinType completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+            
+            [self.view hideHUD];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:AccountName];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            if (error) {
+                [self.view showMsg:NSLocalizedString(@"创建出错！", nil)];
+            }else{
+                [self.view showMsg:NSLocalizedString(@"创建成功！", nil)];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    if (self.coinType == NOTDEFAULT) {
+                        UIWindow *window = ((AppDelegate*)([UIApplication sharedApplication].delegate)).window;
+                        CYLMainRootViewController *csVC = [[CYLMainRootViewController alloc] init];
+                        window.rootViewController = csVC;
+                    }else{
+                        [self.navigationController popToRootViewControllerAnimated:YES];
+                        
+                    }
+                });
+            }
+        }];
     }
+    
+    
+    
+//    switch (self.coinType) {
+//        case ETH:
+//            [self CreateETHWalletSeed:seed PassWord:self.password PassHint:@""];
+//
+//            break;
+//        case BTC:
+//        case BTC_TESTNET:
+//            [self CreateBTCWalletSeed:seed PassWord:self.password PassHint:@""];
+//
+//            break;
+//        case EOS:
+//            [self CreateEOSWalletSeed:seed PassWord:self.password PassHint:@""];
+//
+//            break;
+//        case MGP:
+//            [self CreateMGPWalletSeed:seed PassWord:self.password PassHint:@""];
+//
+//            break;
+//        default:
+//            [self CreateWalletSeed:seed];
+//            break;
+//    }
 //penalty debris runway common frequent cabin enforce wheel balance assume mass off---
 }
 
@@ -251,18 +256,8 @@
     
 }
 -(void)CreateWalletSeed:(NSString *)seed{
-    
-    //512位种子 长度为128字符 64Byte
-//    NSString *seed = [CreateAll CreateSeedByMnemonic:self.mnemonic Password:self.password];
-    
-    // MIS & EOS *****************
-    //临时存
-    [[NSUserDefaults standardUserDefaults] setObject:seed forKey:@"temp_seed"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.password forKey:@"temp_password"];
-    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"temp_hint"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    [self CreateMISWalletSeed:seed PassWord:self.password PassHint:@""];
-   
+    [self.view showHUD];
+
 
 }
 //***********************   mis  ************************//
@@ -535,12 +530,15 @@
     if (_selectedButtonView == nil) {
         
         UIView *shadowView = [UIView new];
-        shadowView.layer.shadowColor = [UIColor grayColor].CGColor;
-        shadowView.layer.shadowOffset = CGSizeMake(0, 0);
-        shadowView.layer.shadowOpacity = 1;
-        shadowView.layer.shadowRadius = 3.0;
-        shadowView.layer.cornerRadius = 3.0;
-        shadowView.clipsToBounds = NO;
+//        shadowView.layer.shadowColor = [UIColor grayColor].CGColor;
+//        shadowView.layer.shadowOffset = CGSizeMake(0, 0);
+//        shadowView.layer.shadowOpacity = 1;
+//        shadowView.layer.shadowRadius = 3.0;
+//        shadowView.layer.cornerRadius = 3.0;
+//        shadowView.clipsToBounds = NO;
+        
+        
+        
         [self.view addSubview:shadowView];
         [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(10);
@@ -550,8 +548,11 @@
         }];
         
         _selectedButtonView = [[CFFlowButtonView alloc] initWithButtonList:nil];
-        _selectedButtonView.backgroundColor = [UIColor whiteColor];
-
+        _selectedButtonView.layer.borderWidth = 0.5;
+        _selectedButtonView.layer.borderColor = [UIColor colorWithRed:237/255.0 green:239/255.0 blue:241/255.0 alpha:1.0].CGColor;
+        _selectedButtonView.backgroundColor = RGB(244, 246, 248);
+        _selectedButtonView.layer.cornerRadius = 5;
+        
         [shadowView addSubview:_selectedButtonView];
         [_selectedButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(0);

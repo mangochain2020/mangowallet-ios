@@ -44,7 +44,7 @@ static NSString *const tableCellID = @"tableCell";
     [self.collectionView registerNib:[UINib nibWithNibName:@"WalletListCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
 //    self.tableList = @[@"MORE_coin",@"MGP_coin",@"ETH_coin",@"BTC_coin",@"EOS_coin",@"USDT_coin",@"CKB_coin",@"BCH_coin",@"DASH_coin",@"LTC_coin"];
-    self.tableList = @[@"MORE_coin",@"MGP_coin",@"ETH_coin",@"EOS_coin"];
+    self.tableList = @[@"MORE_coin",@"MGP_coin",@"ETH_coin",@"EOS_coin",@"BTC_coin"];
     //
     [self loadData];
     
@@ -71,11 +71,9 @@ static NSString *const tableCellID = @"tableCell";
             
             for (NSString *s in localwalletarray) {
                 MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
-//                [temp1 addObject:wallet];
-                if (wallet.coinType == ETH) {
+                if (wallet.coinType == ETH || wallet.coinType == BTC) {
                     [temp1 addObject:wallet];
                 }
-
             }
             
 
@@ -92,6 +90,7 @@ static NSString *const tableCellID = @"tableCell";
             NSString *localeosMgpname = [[NSUserDefaults standardUserDefaults] objectForKey:@"LocalMGPWalletName"];
             MissionWallet *walletMGP = [CreateAll GetMissionWalletByName:VALIDATE_STRING(localeosMgpname)];
             [temp addObject:walletMGP];
+            
             for (NSString *s in importwalletarray) {
                 MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
                 if (wallet.coinType == MGP) {
@@ -99,12 +98,6 @@ static NSString *const tableCellID = @"tableCell";
                 }
             }
             
-//            for (NSString *s in localwalletarray) {
-//                MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
-//                if (wallet.coinType == MGP) {
-//                    [temp addObject:wallet];
-//                }
-//            }
             self.walletList = @[temp];
 
         }
@@ -112,18 +105,19 @@ static NSString *const tableCellID = @"tableCell";
         case 2:
         {
             NSMutableArray *temp = [NSMutableArray array];
-            for (NSString *s in importwalletarray) {
-                MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
-                if (wallet.coinType == ETH) {
-                    [temp addObject:wallet];
-                }
-            }
             for (NSString *s in localwalletarray) {
                 MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
                 if (wallet.coinType == ETH) {
                     [temp addObject:wallet];
                 }
             }
+            for (NSString *s in importwalletarray) {
+                MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
+                if (wallet.coinType == ETH) {
+                    [temp addObject:wallet];
+                }
+            }
+            
             self.walletList = @[temp];
 
         }
@@ -131,13 +125,13 @@ static NSString *const tableCellID = @"tableCell";
         case 4:
         {
             NSMutableArray *temp = [NSMutableArray array];
-            for (NSString *s in importwalletarray) {
+            for (NSString *s in localwalletarray) {
                 MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
                 if (wallet.coinType == BTC || wallet.coinType == BTC_TESTNET) {
                     [temp addObject:wallet];
                 }
             }
-            for (NSString *s in localwalletarray) {
+            for (NSString *s in importwalletarray) {
                 MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
                 if (wallet.coinType == BTC || wallet.coinType == BTC_TESTNET) {
                     [temp addObject:wallet];
@@ -159,12 +153,7 @@ static NSString *const tableCellID = @"tableCell";
                     [temp addObject:wallet];
                 }
             }
-//            for (NSString *s in localwalletarray) {
-//                MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
-//                if (wallet.coinType == EOS) {
-//                    [temp addObject:wallet];
-//                }
-//            }
+            
             self.walletList = @[temp];
 
         }

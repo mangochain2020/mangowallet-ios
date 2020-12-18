@@ -32,7 +32,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-//    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.navigationBar.hidden = YES; ------98a9678 aaaaad4
 //    self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
 //    self.navigationController.hidesBottomBarWhenPushed = YES;
 //    self.tabBarController.tabBar.hidden = YES;
@@ -159,6 +159,7 @@
     [_scanBtn addTarget:self action:@selector(scanBtnAction) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_scanBtn];
     
+    
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
@@ -213,10 +214,10 @@
     //512位种子 长度为128字符 64Byte
     NSString *seed = [CreateAll CreateSeedByMnemonic:self.mnemonic Password:password];
     //临时存,回到主页生成MIS钱包后删除
-    [[NSUserDefaults standardUserDefaults] setObject:seed forKey:@"temp_seed"];
-    [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"temp_password"];
-    [[NSUserDefaults standardUserDefaults] setObject:hint forKey:@"temp_hint"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+//    [[NSUserDefaults standardUserDefaults] setObject:seed forKey:@"temp_seed"];
+//    [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"temp_password"];
+//    [[NSUserDefaults standardUserDefaults] setObject:hint forKey:@"temp_hint"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
     
     
     //**********mis
@@ -240,7 +241,10 @@
 
      }*/
     [self CreateMISWalletSeed:seed PassWord:password PassHint:hint];
-
+     
+    
+    
+    
 
 }
 //type:0:import  1:create
@@ -256,6 +260,8 @@
     
     MissionWallet *walletBTC = [CreateAll CreateWalletByXprv:xprv index:0 CoinType:typex Password:password];
     MissionWallet *walletETH = [CreateAll CreateWalletByXprv:xprv index:0 CoinType:ETH Password:password];
+    walletBTC.isSkip = YES;
+    walletETH.isSkip = YES;
     
     if (!walletBTC || !walletETH) {
         [self.view hideHUD];
@@ -421,6 +427,8 @@
     MissionWallet *mgpwallet = [self CreateEOSWalletPri:mispri Pub:pubx PassWord:password PassHint:hint CoinType:MGP];
     self.mgpwallet = mgpwallet;
     self.eoswallet = [self CreateEOSWalletPri:mispri Pub:pubx PassWord:password PassHint:hint CoinType:EOS];
+    self.eoswallet.isSkip = YES;
+    self.mgpwallet.isSkip = YES;
     
     if (mgpwallet != nil) {
         if (mgpwallet != nil) { //self.ifverify == 2000 && self.pubkeyInChain

@@ -11,5 +11,6 @@
 @interface CreateMnemonicVC : UIViewController
 @property(nonatomic,copy)NSString *password;
 @property(assign, nonatomic)CoinType coinType;
+@property(nonatomic,strong)MissionWallet *baseWallet;
 
 @end

@@ -114,16 +114,18 @@
         
         
         NSString *accountname = self.accountArray[indexPath.row];
+         
         self.wallet.walletName = [NSString stringWithFormat:@"%@_%@",self.wallet.coinType == EOS ? @"EOS" : @"MGP",accountname];
         self.wallet.address = accountname;
         self.wallet.ifEOSAccountRegistered = YES;
-        
+        self.wallet.isSkip = YES;
+
         if (_wallet.walletType == LOCAL_WALLET) {
             [CreateAll RemoveWallet:_wallet];
             [[NSUserDefaults standardUserDefaults] setObject:self.wallet.walletName forKey:self.wallet.coinType == EOS ? @"LocalEOSWalletName" : @"LocalMGPWalletName"];
             [[NSUserDefaults standardUserDefaults] synchronize];
 //            [SAMKeychain setPassword:[AESCrypt encrypt:_mnemonic password:_pass] forService:PRODUCT_BUNDLE_ID account:[NSString stringWithFormat:@"mnemonic%@",_wallet.address]];
-            [CreateAll SaveWallet:self.wallet Name:self.wallet.walletName WalletType:LOCAL_WALLET Password:nil];
+            [CreateAll SaveWallet:self.wallet Name:self.wallet.walletName WalletType:LOCAL_WALLET Password:_pass];
            
             
         }else if(_wallet.importType == IMPORT_BY_MNEMONIC){

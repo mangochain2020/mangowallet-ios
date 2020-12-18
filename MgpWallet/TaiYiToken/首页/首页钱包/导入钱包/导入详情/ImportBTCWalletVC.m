@@ -123,7 +123,7 @@ typedef enum {
     }
     [self.view addSubview:_buttonView];
     [_buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(SafeAreaTopHeight);
+        make.top.equalTo(0);
         make.left.right.equalTo(0);
         make.height.equalTo(44);
     }];
@@ -136,10 +136,9 @@ typedef enum {
     _remindLabel.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:_remindLabel];
     [_remindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(125);
+        make.top.equalTo(_buttonView.mas_bottom).equalTo(10);
         make.left.equalTo(30);
         make.right.equalTo(-30);
-        make.height.equalTo(65);
     }];
     
     
@@ -152,7 +151,7 @@ typedef enum {
     _shadowView.clipsToBounds = NO;
     [self.view addSubview:_shadowView];
     [_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(210);
+        make.top.equalTo(_remindLabel.mas_bottom).equalTo(20);
         make.left.equalTo(15);
         make.right.equalTo(-15);
         make.height.equalTo(100);
@@ -194,7 +193,7 @@ typedef enum {
     [_ImportBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(16);
         make.right.equalTo(-16);
-        make.bottom.equalTo(-71);
+        make.top.equalTo(_setPasswordView.mas_bottom).equalTo(20);
         make.height.equalTo(44);
     }];
     

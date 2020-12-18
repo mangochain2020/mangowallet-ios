@@ -57,14 +57,14 @@
                                                         <constraint firstAttribute="width" constant="17" id="aeO-sr-IO6"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbu-e0-5Xo">
-                                                    <rect key="frame" x="324" y="10" width="60" height="31"/>
+                                                <button opaque="NO" contentMode="left" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbu-e0-5Xo">
+                                                    <rect key="frame" x="355" y="1" width="29" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="27i-iN-3DK"/>
-                                                        <constraint firstAttribute="width" constant="60" id="Xvc-Yi-S6l"/>
+                                                        <constraint firstAttribute="height" constant="40" id="AYZ-bq-n5N"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="detail"/>
+                                                    <state key="normal" title="        " backgroundImage="WechatIMG708"/>
                                                     <connections>
                                                         <action selector="exportClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IsV-Q3-vkn"/>
                                                     </connections>
@@ -101,12 +101,12 @@
                                                 <constraint firstItem="Y9a-kZ-FTc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JXN-jY-nd2" secondAttribute="trailing" id="ApX-bd-f7N"/>
                                                 <constraint firstItem="tjN-gE-3hN" firstAttribute="leading" secondItem="mFL-7H-gqx" secondAttribute="leading" id="CBo-fR-wXo"/>
                                                 <constraint firstItem="JXN-jY-nd2" firstAttribute="centerY" secondItem="PE8-8F-zKJ" secondAttribute="centerY" id="HDe-he-ZaX"/>
-                                                <constraint firstItem="Rbu-e0-5Xo" firstAttribute="top" secondItem="wsH-up-pi9" secondAttribute="top" constant="10" id="ILg-bD-LG4"/>
                                                 <constraint firstAttribute="bottom" secondItem="Y9a-kZ-FTc" secondAttribute="bottom" id="NAl-Mx-Yhn"/>
                                                 <constraint firstAttribute="trailing" secondItem="NSU-gk-ZsD" secondAttribute="trailing" id="SAL-eb-dvu"/>
                                                 <constraint firstItem="PE8-8F-zKJ" firstAttribute="top" secondItem="mFL-7H-gqx" secondAttribute="bottom" id="WVp-g3-nLT"/>
                                                 <constraint firstItem="mFL-7H-gqx" firstAttribute="leading" secondItem="wsH-up-pi9" secondAttribute="leading" constant="10" id="Wjr-GM-vCm"/>
                                                 <constraint firstItem="JXN-jY-nd2" firstAttribute="leading" secondItem="PE8-8F-zKJ" secondAttribute="trailing" id="Wur-qW-eQk"/>
+                                                <constraint firstItem="Rbu-e0-5Xo" firstAttribute="centerY" secondItem="mFL-7H-gqx" secondAttribute="centerY" id="aaP-Od-00a"/>
                                                 <constraint firstItem="Y9a-kZ-FTc" firstAttribute="top" secondItem="wsH-up-pi9" secondAttribute="top" id="bNd-zV-gSF"/>
                                                 <constraint firstItem="PE8-8F-zKJ" firstAttribute="leading" secondItem="mFL-7H-gqx" secondAttribute="leading" id="dzF-Vh-UzW"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rbu-e0-5Xo" secondAttribute="trailing" constant="10" id="fpY-3z-oyl"/>
@@ -309,6 +309,7 @@
                         <outlet property="tableView" destination="aAf-cW-OA8" id="qgj-hM-7qV"/>
                         <outlet property="topViewBg" destination="wsH-up-pi9" id="BcQ-Q5-2MH"/>
                         <outlet property="walletName" destination="mFL-7H-gqx" id="v59-7R-UaE"/>
+                        <outlet property="walletRight" destination="Rbu-e0-5Xo" id="Ij0-fC-Oeh"/>
                         <outlet property="wallet_address" destination="PE8-8F-zKJ" id="RIQ-24-Sog"/>
                         <segue destination="uer-qI-Vng" kind="push" identifier="coinDetailVC" id="rpw-1S-xhG"/>
                         <segue destination="dVe-63-Uxe" kind="push" identifier="createWalletVC" id="Ww4-kc-hyP"/>
@@ -444,13 +445,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FHj-3z-ZGm">
                                                     <rect key="frame" x="307.5" y="10" width="101.5" height="40.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 0.0000 EOS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-47-gan">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="+ 0.0000 EOS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-47-gan">
                                                             <rect key="frame" x="0.0" y="0.0" width="101.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.049647182230000003" green="0.59464699030000001" blue="0.67060655359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-t4-d9z">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-t4-d9z">
                                                             <rect key="frame" x="0.0" y="24.5" width="101.5" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1004,12 +1005,12 @@
     </scenes>
     <resources>
         <image name="ETH_coin" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="WechatIMG708" width="24" height="24"/>
         <image name="add0" width="16" height="16"/>
         <image name="address" width="16" height="16"/>
         <image name="bglogo1" width="136" height="120"/>
         <image name="bj_baobei" width="170" height="170"/>
         <image name="bolt" catalog="system" width="101" height="128"/>
-        <image name="detail" width="20" height="20"/>
         <image name="homeQrCode" width="17" height="17"/>
         <image name="icon_txsend" width="72" height="72"/>
         <image name="more_ad" width="16" height="16"/>

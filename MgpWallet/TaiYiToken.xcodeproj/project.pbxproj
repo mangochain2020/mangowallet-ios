@@ -507,6 +507,7 @@
 		04A4AF562241D3E80073BB20 /* HuobiPersonAssetsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AF552241D3E80073BB20 /* HuobiPersonAssetsHeaderView.m */; };
 		04A4AF592241E6F00073BB20 /* HuobiBalanceCollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AF582241E6F00073BB20 /* HuobiBalanceCollectModel.m */; };
 		04AA455E253E9646005A2F08 /* VoteRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AA455D253E9646005A2F08 /* VoteRecordTableViewController.m */; };
+		04AB69162589E6DA00CD4B51 /* CreateAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */; };
 		04ABE6FD219AA233008DF901 /* NodeSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ABE6FC219AA233008DF901 /* NodeSettingVC.m */; };
 		04B2B94E21A69A07000F35A3 /* MarketTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B94D21A69A07000F35A3 /* MarketTicketModel.m */; };
 		04B2B95121A69B01000F35A3 /* CoinBaseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B95021A69B01000F35A3 /* CoinBaseInfoModel.m */; };
@@ -1792,6 +1793,8 @@
 		04A4AF582241E6F00073BB20 /* HuobiBalanceCollectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HuobiBalanceCollectModel.m; sourceTree = "<group>"; };
 		04AA455C253E9646005A2F08 /* VoteRecordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoteRecordTableViewController.h; sourceTree = "<group>"; };
 		04AA455D253E9646005A2F08 /* VoteRecordTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoteRecordTableViewController.m; sourceTree = "<group>"; };
+		04AB69142589E6DA00CD4B51 /* CreateAccountTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAccountTool.h; sourceTree = "<group>"; };
+		04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAccountTool.m; sourceTree = "<group>"; };
 		04ABE6FB219AA233008DF901 /* NodeSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeSettingVC.h; sourceTree = "<group>"; };
 		04ABE6FC219AA233008DF901 /* NodeSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodeSettingVC.m; sourceTree = "<group>"; };
 		04B2B94C21A69A07000F35A3 /* MarketTicketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTicketModel.h; sourceTree = "<group>"; };
@@ -6076,6 +6079,8 @@
 				84C8E7DC212A99FD00627445 /* CreateMnemonicVC.m */,
 				84748843212AAAD70077AC0F /* VerifyMnemonicVC.h */,
 				84748844212AAAD70077AC0F /* VerifyMnemonicVC.m */,
+				04AB69142589E6DA00CD4B51 /* CreateAccountTool.h */,
+				04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */,
 			);
 			path = "注册账号";
 			sourceTree = "<group>";
@@ -7289,6 +7294,7 @@
 				04BBD18024D7E3E500375025 /* HXAlbumListViewController.m in Sources */,
 				043456CF25109F9600FD8654 /* YXPopADView.m in Sources */,
 				047B88F42521D9150054C24E /* EthereumLocalTx.m in Sources */,
+				04AB69162589E6DA00CD4B51 /* CreateAccountTool.m in Sources */,
 				047B88E42521D9020054C24E /* LHWalletManager.m in Sources */,
 				04FD2C0F2239E37E00BC2EE5 /* HuobiBtn.m in Sources */,
 				04F3849C2251B7E6006A8C71 /* InfoBaseModel.m in Sources */,
@@ -8211,7 +8217,7 @@
 				CODE_SIGN_ENTITLEMENTS = TaiYiToken/TaiYiToken.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6HXU79JPSP;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -8232,7 +8238,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lohas.mgpMangowallet;
 				PRODUCT_NAME = mangowallet;
@@ -8252,7 +8258,7 @@
 				CODE_SIGN_ENTITLEMENTS = TaiYiToken/TaiYiToken.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6HXU79JPSP;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -8273,7 +8279,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lohas.mgpMangowallet;
 				PRODUCT_NAME = mangowallet;

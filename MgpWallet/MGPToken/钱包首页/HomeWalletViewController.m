@@ -18,6 +18,7 @@
 #import "LHCreateViewController.h"
 #import "ReceiptQRCodeVC.h"
 #import "LHStakeVoteMainTableViewController.h"
+#import "CreateMnemonicVC.h"
 
 //扫码二维码
 #import "WBQRCodeVC.h"
@@ -40,6 +41,7 @@
 @property(weak, nonatomic) IBOutlet UIImageView *coinImage;
 @property(weak, nonatomic) IBOutlet UILabel *wallet_address;
 @property(weak, nonatomic) IBOutlet UILabel *money;
+@property (weak, nonatomic) IBOutlet UIButton *walletRight;
 @property(weak, nonatomic) IBOutlet UILabel *walletName;
 @property(weak, nonatomic) IBOutlet UIButton *ResourcesBtn;
 @property(weak, nonatomic) IBOutlet UIButton *VoteBtn;
@@ -64,7 +66,7 @@
     [self.AssetsBtn setTitle:NSLocalizedString(@"资产", nil) forState:UIControlStateNormal];
     [self.ResourcesBtn setTitle:NSLocalizedString(@"资源管理", nil) forState:UIControlStateNormal];
     [self.VoteBtn setTitle:NSLocalizedString(@"节点投票", nil) forState:UIControlStateNormal];
-
+    
     
     _centerViewBg.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
     _centerViewBg.layer.borderWidth = 0.5;
@@ -84,27 +86,60 @@
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
-    [self refreshData];
+//    [self refreshData];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refreshData) name:CHANGECURRETWALLET object:nil];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    
+    [self refreshData];
+
 }
 
+
+
 - (void)refreshData{
+
     if (!self.curretWallet) {
-        NSArray *localwalletarray = [CreateAll GetWalletNameArray];
-        for (NSString *s in localwalletarray) {
-            MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
-            if (wallet.coinType == MGP) {
-                self.curretWallet = wallet;
-                [MGPHttpRequest shareManager].curretWallet = self.curretWallet;
+        NSString *missionWalletByName = ([[NSUserDefaults standardUserDefaults]objectForKey:MissionWalletByName]);
+        if (missionWalletByName.length >2) {
+            self.curretWallet = [CreateAll GetMissionWalletByName:VALIDATE_STRING(missionWalletByName)];
+            [MGPHttpRequest shareManager].curretWallet = self.curretWallet;
+            
+        }else{
+            NSArray *localwalletarray = [CreateAll GetWalletNameArray];
+            NSString *walletName = VALIDATE_STRING(localwalletarray.firstObject);
+            //是否包含
+            for (int i = 0; i < localwalletarray.count; i++) {
+                NSString *s = localwalletarray[i];
+                if ([s rangeOfString:@"MGP_"].location != NSNotFound) {
+                    walletName = VALIDATE_STRING(localwalletarray[i]);
+                }
             }
+            self.curretWallet = [CreateAll GetMissionWalletByName:walletName];
+            [MGPHttpRequest shareManager].curretWallet = self.curretWallet;
         }
+        
     }else{
         self.curretWallet = [MGPHttpRequest shareManager].curretWallet;
+        
     }
+    
+    [[NSUserDefaults standardUserDefaults]setObject:self.curretWallet.walletName forKey:MissionWalletByName];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    if ([MGPHttpRequest shareManager].curretWallet.isSkip) {
+        [self.walletRight setTitle:@"" forState:UIControlStateNormal];
+        [self.walletRight setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
+        [self.walletRight setBackgroundImage:[UIImage imageNamed:@"WechatIMG708"] forState:UIControlStateNormal];
+        
+    }else{
+        [self.walletRight setTitle:NSLocalizedString(@"⚠️您还未备份助记词", nil) forState:UIControlStateNormal];
+        [self.walletRight setTitleColor:[UIColor orangeColor]forState:UIControlStateNormal];
+        [self.walletRight setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+
+    }
+    
+
     
     self.AssetsBtn.enabled = self.curretWallet.coinType == MGP ? NO : YES;
     self.AssetsRightImage.hidden = self.curretWallet.coinType == MGP ? YES : NO;
@@ -382,6 +417,7 @@
                     }];
                     
                 });
+                /*
                 //组任务3
                 dispatch_group_enter(group);//
                 dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -389,7 +425,7 @@
                         dispatch_group_leave(group);
                     }];
                     
-                });
+                });*/
                 
                 //3个网络请求都完成统一处理
                 dispatch_group_notify(group, queue, ^{
@@ -459,14 +495,28 @@
 }
 //导出钱包
 - (IBAction)exportClick:(id)sender {
-    ExportWalletVC *evc = [ExportWalletVC new];
-    evc.wallet = self.curretWallet;
-    evc.updateUserInfoBlock = ^()
-    {
-        self.curretWallet = nil;
-        [self refreshData];
-    };
-    [self.navigationController pushViewController:evc animated:YES];
+    
+    
+    if ([MGPHttpRequest shareManager].curretWallet.isSkip) {
+        ExportWalletVC *evc = [ExportWalletVC new];
+        evc.wallet = self.curretWallet;
+        evc.updateUserInfoBlock = ^()
+        {
+            self.curretWallet = nil;
+            [self refreshData];
+        };
+        [self.navigationController pushViewController:evc animated:YES];
+        
+
+    }else{
+        CreateMnemonicVC *cmvc = [CreateMnemonicVC new];
+        cmvc.baseWallet = self.curretWallet;
+        [self.navigationController pushViewController:cmvc animated:YES];
+    }
+    
+    
+    
+    
 }
 //点击复制地址
 - (IBAction)addressBtnAction:(id)sender {

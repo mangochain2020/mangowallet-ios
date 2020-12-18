@@ -490,6 +490,7 @@
     NSString *xprv = [CreateAll CreateExtendPrivateKeyWithSeed:seed];
     MissionWallet *wallet = [CreateAll CreateWalletByXprv:xprv index:0 CoinType:coinType Password:password];
     wallet.passwordHint = passwordHint;
+    wallet.isSkip = YES;
     wallet.walletName = [CreateAll GenerateNewWalletNameWithWalletAddress:wallet.address CoinType:coinType];
     if ([wallet.walletName isEqualToString:@"exist"]) {
         NSError *error =[NSError ErrorWithTitle:@"钱包已存在!" Code:102000];
@@ -566,7 +567,7 @@
     wallet.AccountExtendedPublicKey = @"";
     wallet.BIP32ExtendedPrivateKey = @"";
     wallet.BIP32ExtendedPublicKey = @"";
-    
+    wallet.isSkip = YES;
     
     if (coinType == BTC) {
         NSString *firstchar = [privateKey substringToIndex:1];
@@ -624,6 +625,7 @@
     [Account decryptSecretStorageJSON:keystore password:password callback:^(Account *decryptedAccount, NSError *error) {
         NSString *privateKey = [NSString hexWithData:decryptedAccount.privateKey];
         MissionWallet *wallet = [CreateAll ImportWalletByPrivateKey:privateKey CoinType:coinType Password:(NSString *)password PasswordHint:passwordHint];
+        wallet.isSkip = YES;
         if (wallet == nil) {
             
             callback(nil,error);

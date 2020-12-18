@@ -109,11 +109,12 @@ typedef enum {
 //        make.width.equalTo(16);
 //        make.height.equalTo(16);
 //    }];
+    
+    
 }
 -(void)selectImportWay:(UIButton *)btn{
     self.importType = btn.tag == 0? MNEMONIC_IMPORT : PRIVATEKEY_IMPORT;
     [_buttonView setBtnSelected:btn];
-//    [self.ImportContentTextView setText:@"5KV3E9zxAQ73EzWth3iPCgPD8NCFxpjv2LhYZwVdh57kjTuoZWE"];
     self.remindLabel.text =  btn.tag == 0?MNEMONIC_REMIND_TEXT : PRIVATEKEY_REMIND_TEXT;
     
 }
@@ -138,10 +139,9 @@ typedef enum {
     _remindLabel.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:_remindLabel];
     [_remindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(125-SafeAreaTopHeight);
+        make.top.equalTo(self.buttonView.mas_bottom).equalTo(10);
         make.left.equalTo(30);
         make.right.equalTo(-30);
-        make.height.equalTo(65);
     }];
     
     
@@ -154,7 +154,7 @@ typedef enum {
     _shadowView.clipsToBounds = NO;
     [self.view addSubview:_shadowView];
     [_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(210-SafeAreaTopHeight);
+        make.top.equalTo(self.remindLabel.mas_bottom).equalTo(20);
         make.left.equalTo(15);
         make.right.equalTo(-15);
         make.height.equalTo(100);

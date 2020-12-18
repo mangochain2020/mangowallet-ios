@@ -129,6 +129,8 @@
     UIAlertAction *alertB = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         NSString *result = [CreateAll RemoveImportedWallet:self.wallet];
         [self.view showMsg:result];
+        [self.navigationController popViewControllerAnimated:YES];
+
         if (self.updateUserInfoBlock) {
             self.updateUserInfoBlock();
             [self.navigationController popViewControllerAnimated:YES];
@@ -559,6 +561,7 @@
     [self.view showHUD];
     
     NSString *addr;
+
     if (self.wallet.walletType == LOCAL_WALLET) {
         MissionWallet *ethwallet = [CreateAll GetMissionWalletByName:@"ETH"];
         addr = ethwallet.address;

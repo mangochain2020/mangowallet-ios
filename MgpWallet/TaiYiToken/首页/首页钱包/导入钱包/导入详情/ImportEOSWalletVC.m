@@ -137,10 +137,9 @@ typedef enum {
     _remindLabel.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:_remindLabel];
     [_remindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(125-SafeAreaTopHeight);
+        make.top.equalTo(self.buttonView.mas_bottom).equalTo(10);
         make.left.equalTo(30);
         make.right.equalTo(-30);
-        make.height.equalTo(65);
     }];
     
     
@@ -153,7 +152,7 @@ typedef enum {
     _shadowView.clipsToBounds = NO;
     [self.view addSubview:_shadowView];
     [_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(210-SafeAreaTopHeight);
+        make.top.equalTo(self.remindLabel.mas_bottom).equalTo(20);
         make.left.equalTo(15);
         make.right.equalTo(-15);
         make.height.equalTo(100);

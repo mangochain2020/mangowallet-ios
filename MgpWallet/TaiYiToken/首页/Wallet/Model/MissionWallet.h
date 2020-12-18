@@ -39,6 +39,8 @@
 @property(nonatomic)IMPORT_WALLET_TYPE importType;
 //密码提示
 @property(nonatomic,copy)NSString *passwordHint;
+//是否备份
+@property(nonatomic,assign)BOOL isSkip;
 //btc找零地址
 @property(nonatomic,strong)NSMutableArray <BTCChangeAddressModel *> *changeAddressArray;
 //btc找零地址

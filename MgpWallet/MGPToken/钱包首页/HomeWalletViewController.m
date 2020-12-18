@@ -127,7 +127,7 @@
     [[NSUserDefaults standardUserDefaults]setObject:self.curretWallet.walletName forKey:MissionWalletByName];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
-    if ([MGPHttpRequest shareManager].curretWallet.isSkip) {
+    if (self.curretWallet.isSkip) {
         [self.walletRight setTitle:@"" forState:UIControlStateNormal];
         [self.walletRight setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
         [self.walletRight setBackgroundImage:[UIImage imageNamed:@"WechatIMG708"] forState:UIControlStateNormal];

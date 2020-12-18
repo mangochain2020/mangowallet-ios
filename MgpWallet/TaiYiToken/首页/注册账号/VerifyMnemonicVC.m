@@ -78,7 +78,25 @@
     
 }
 -(void)nextAction{
+/*
+    NSLog(@"%ld----walletType-1",self.baseWallet.walletType);
+    NSLog(@"%ld----importType-0",self.baseWallet.importType);
 
+    if (self.baseWallet.walletType == LOCAL_WALLET && self.baseWallet.importType == LOCAL_CREATED_WALLET) {
+        
+        NSArray *localwalletarray = [CreateAll GetWalletNameArray];
+        for (NSString *s in localwalletarray) {
+            MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
+            NSLog(@"%@",wallet.walletName);
+
+        }
+
+    }else{
+        NSLog(@"%@",self.baseWallet.walletName);
+ food tell shop flat cactus decline draft whip hill police stand spawn---
+ }
+    */
+    
     if (self.selectedButtonView.buttonList == nil||self.selectedButtonView.buttonList.count < 12) {
         [self.view showMsg:NSLocalizedString(@"请按顺序选择所有单词！", nil)];
         return;
@@ -93,9 +111,21 @@
     }
 
     if (self.baseWallet) {
-        self.baseWallet.isSkip = YES;
-        [CreateAll SaveWallet:self.baseWallet Name:self.baseWallet.walletName WalletType:self.baseWallet.walletType Password:nil];
-        [self.view showMsg:NSLocalizedString(@"成功", nil)];
+        if (self.baseWallet.walletType == LOCAL_WALLET && self.baseWallet.importType == LOCAL_CREATED_WALLET) {
+            
+            NSArray *localwalletarray = [CreateAll GetWalletNameArray];
+            for (NSString *s in localwalletarray) {
+                MissionWallet *wallet = [CreateAll GetMissionWalletByName:s];
+                wallet.isSkip = YES;
+                [CreateAll SaveWallet:wallet Name:wallet.walletName WalletType:wallet.walletType Password:nil];
+            }
+
+        }else{
+            self.baseWallet.isSkip = YES;
+            [CreateAll SaveWallet:self.baseWallet Name:self.baseWallet.walletName WalletType:self.baseWallet.walletType Password:nil];
+        }
+        [MGPHttpRequest shareManager].curretWallet = self.baseWallet;
+        [self.view showMsg:NSLocalizedString(@"备份完成", nil)];
         [self.navigationController popToRootViewControllerAnimated:YES];
 
     }else{
@@ -530,15 +560,6 @@
     if (_selectedButtonView == nil) {
         
         UIView *shadowView = [UIView new];
-//        shadowView.layer.shadowColor = [UIColor grayColor].CGColor;
-//        shadowView.layer.shadowOffset = CGSizeMake(0, 0);
-//        shadowView.layer.shadowOpacity = 1;
-//        shadowView.layer.shadowRadius = 3.0;
-//        shadowView.layer.cornerRadius = 3.0;
-//        shadowView.clipsToBounds = NO;
-        
-        
-        
         [self.view addSubview:shadowView];
         [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(10);

@@ -145,7 +145,7 @@
         [self.view showHUD];
         NSString *addressName = [[NSUserDefaults standardUserDefaults]objectForKey:AccountName];
         int walletType = self.coinType == NOTDEFAULT ? LOCAL_WALLET : IMPORT_WALLET;
-        int importType = IMPORT_BY_MNEMONIC;
+        int importType = self.coinType == NOTDEFAULT ? LOCAL_CREATED_WALLET : IMPORT_BY_MNEMONIC;
 
         NSString *seed = [CreateAll CreateSeedByMnemonic:self.mnemonic Password:self.password];
         

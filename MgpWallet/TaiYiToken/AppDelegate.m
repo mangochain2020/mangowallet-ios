@@ -59,7 +59,7 @@
         [[NTVLocalized sharedInstance] setLanguage:@"zh-Hans"];//zh-Hans
     }else{//没设置过语言 按系统的语言
         NSString *currentLanguage = [[[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0] copy];
-        if ([currentLanguage isEqualToString:@"en_US"]) {
+        if (![currentLanguage containsString:@"zh"]) {
             isEnglish = YES;
             [[NSUserDefaults standardUserDefaults] setObject:@"en_US" forKey:@"CurrentLanguageSelected"];
             currency = @"dollar";
@@ -114,6 +114,7 @@
 
         if ([responseObj[@"code"]intValue] == 0) {
             if ([APP_BUILD intValue] < [[responseObj[@"data"]objectForKey:@"versionNum"]intValue]) {
+                
                 [SELUpdateAlert showUpdateAlertWithVersion:[responseObj[@"data"]objectForKey:@"versionCode"] Description:[responseObj[@"data"]objectForKey:@"msg"] andDownUrl:[responseObj[@"data"]objectForKey:@"download"]];
             }
         }

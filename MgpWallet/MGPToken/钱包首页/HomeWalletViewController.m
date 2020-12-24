@@ -127,16 +127,23 @@
     [[NSUserDefaults standardUserDefaults]setObject:self.curretWallet.walletName forKey:MissionWalletByName];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
-    if (self.curretWallet.isSkip) {
-        [self.walletRight setTitle:@"" forState:UIControlStateNormal];
-        [self.walletRight setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
-        [self.walletRight setBackgroundImage:[UIImage imageNamed:@"WechatIMG708"] forState:UIControlStateNormal];
-        
+    
+    if (self.curretWallet.ifEOSAccountRegistered) {
+        if (self.curretWallet.isSkip) {
+            [self.walletRight setTitle:@"" forState:UIControlStateNormal];
+            [self.walletRight setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
+            [self.walletRight setBackgroundImage:[UIImage imageNamed:@"WechatIMG708"] forState:UIControlStateNormal];
+            
+        }else{
+            [self.walletRight setTitle:NSLocalizedString(@"⚠️您还未备份助记词", nil) forState:UIControlStateNormal];
+            [self.walletRight setTitleColor:[UIColor orangeColor]forState:UIControlStateNormal];
+            [self.walletRight setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+
+        }
     }else{
-        [self.walletRight setTitle:NSLocalizedString(@"⚠️您还未备份助记词", nil) forState:UIControlStateNormal];
+        [self.walletRight setTitle:NSLocalizedString(@"激活", nil) forState:UIControlStateNormal];
         [self.walletRight setTitleColor:[UIColor orangeColor]forState:UIControlStateNormal];
         [self.walletRight setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-
     }
     
 
@@ -497,23 +504,37 @@
 - (IBAction)exportClick:(id)sender {
     
     
-    if ([MGPHttpRequest shareManager].curretWallet.isSkip) {
-        ExportWalletVC *evc = [ExportWalletVC new];
-        evc.wallet = self.curretWallet;
-        evc.updateUserInfoBlock = ^()
-        {
-            self.curretWallet = nil;
-            [self refreshData];
-        };
-        [self.navigationController pushViewController:evc animated:YES];
-        
-
-    }else{
-        CreateMnemonicVC *cmvc = [CreateMnemonicVC new];
-        cmvc.baseWallet = self.curretWallet;
-        [self.navigationController pushViewController:cmvc animated:YES];
-    }
     
+    
+    if (self.curretWallet.ifEOSAccountRegistered) {
+        if ([MGPHttpRequest shareManager].curretWallet.isSkip) {
+            ExportWalletVC *evc = [ExportWalletVC new];
+            evc.wallet = self.curretWallet;
+            evc.updateUserInfoBlock = ^()
+            {
+                self.curretWallet = nil;
+                [self refreshData];
+            };
+            [self.navigationController pushViewController:evc animated:YES];
+            
+
+        }else{
+            CreateMnemonicVC *cmvc = [CreateMnemonicVC new];
+            cmvc.baseWallet = self.curretWallet;
+            [self.navigationController pushViewController:cmvc animated:YES];
+        }
+    }else{
+        //激活账户
+        [[MGPHttpRequest shareManager]post:@"/user/userRegister" paramters:@{@"publicKey":self.curretWallet.publicKey,@"account":self.curretWallet.address} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                
+            if (!error) {
+                
+            }
+            NSLog(@"%@-----1111",responseObj);
+            
+            
+        }];
+    }
     
     
     

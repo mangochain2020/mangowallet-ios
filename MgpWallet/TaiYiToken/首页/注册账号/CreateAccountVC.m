@@ -99,6 +99,7 @@
     _accountTextField.floatingLabelYPadding = 3;
     _accountTextField.clearButtonMode = UITextFieldViewModeAlways;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidEndEditing) name:UITextFieldTextDidEndEditingNotification object:_accountTextField];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange) name:UITextFieldTextDidChangeNotification object:_accountTextField];
     [self.view addSubview:_accountTextField];
     [_accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(10);
@@ -224,6 +225,12 @@
 //    _passwordTextField.text = @"12345678";
 //    _repasswordTextField.text = @"12345678";
 
+}
+
+- (void)textFieldTextDidChange{
+    if (_accountTextField.text.length >= 12) {
+        [self.view endEditing:YES];
+    }
 }
 - (void)textFieldTextDidEndEditing{
     self.isEffective = NO;

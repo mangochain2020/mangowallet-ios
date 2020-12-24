@@ -30,9 +30,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _accountTextField = [JVFloatLabeledTextField new];
     _accountTextField.borderStyle = UITextBorderStyleNone;
-    _accountTextField.attributedPlaceholder =[[NSAttributedString alloc]initWithString: NSLocalizedString(@"钱包名称", nil)];
     _accountTextField.keepBaseline = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidEndEditing) name:UITextFieldTextDidEndEditingNotification object:_accountTextField];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange) name:UITextFieldTextDidChangeNotification object:_accountTextField];
     _accountTextField.backgroundColor = [UIColor whiteColor];
     _accountTextField.textAlignment = NSTextAlignmentLeft;
     _accountTextField.textColor = [UIColor lightGrayColor];
@@ -77,6 +77,7 @@
         {
             self.title = NSLocalizedString(@"创建EOS钱包", nil);
             _accountHintLabel.text = NSLocalizedString(@"a-z与1-5的12位字符组合", nil);
+            _accountTextField.attributedPlaceholder =[[NSAttributedString alloc]initWithString: NSLocalizedString(@"设置您的EOS钱包地址", nil)];
             [self.view addSubview:_accountTextField];
             [_accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(10);
@@ -192,6 +193,11 @@
 //    _passwordTextField.text = @"12345678";
 //    _repasswordTextField.text = @"12345678";
 }
+- (void)textFieldTextDidChange{
+    if (_accountTextField.text.length >= 12) {
+        [self.view endEditing:YES];
+    }
+}
 -(void)createAccount{
 
     switch (self.coinType) {
@@ -257,7 +263,7 @@
         if (isSuccess) {
             self.accountHintLabel.textColor = [UIColor redColor];
             self.isEffective = YES;
-            self.accountHintLabel.text = NSLocalizedString(@"账户已存在", nil);
+            self.accountHintLabel.text = NSLocalizedString(@"钱包账户已存在！", nil);
 
         }
     } failure:^(NSError *error) {

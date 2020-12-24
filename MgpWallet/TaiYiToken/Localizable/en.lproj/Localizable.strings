@@ -247,7 +247,7 @@
 "助记词" = "Mnemonic";
 "私钥" = "Private Key";
 "开始导入" = "Import";
-"创建钱包" = "";
+"创建钱包" = "Create Wallet";
 "请输入正确的助记词！" = "Please enter the correct mnemonic!";
 "导入失败！钱包已存在！" = "Wallet already exists!";
 "导入失败！" = "Import failed!";
@@ -1232,3 +1232,23 @@
 "质押" = "Pledge";
 "超级节点" = "Super node";
 "候选节点" = "Candidate node";
+
+
+"a-z与1-5的12位字符组合" = "12 character combination of A-Z and 1-5";
+"设置您的MGP钱包地址" = "Set your MGP wallet address";
+"设置您的EOS钱包地址" = "Set your EOS wallet address";
+"设置您的密码" = "Set your password";
+"再次输入您的密码" = "Enter your password again";
+"跳过" = "Skip";
+"请输入正确的账户名称！" = "Please enter the correct account name!";
+"账户可用" = "Account available";
+"设置您的钱包账户名" = "Set your wallet account name";
+"导入" = "Import";
+
+
+
+
+
+
+
+

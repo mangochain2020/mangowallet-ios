@@ -9,6 +9,7 @@
 #import "MGPHttpRequest.h"
 #import "RSAEncryptor.h"
 
+#define publicKeyStr @""
 
 
 @implementation MGPHttpRequest
@@ -59,14 +60,14 @@ static MGPHttpRequest * defualt_shareMananger = nil;
  加密
  */
 - (NSString *)paranEncryptString:(NSString *)paran{
-    NSString *restult = [RSAEncryptor encryptString:paran publicKey:@"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1x7ZYbFgLbz77qVk6UjN1a2dHZRTnaIS7l5D8bg5tQb1eBSwWLBh7S1StvyGJkavRG43CdMdOsBCrC4XSs1Ombl9ZbryAj0+drzf1orrVSjJ+oNgXb9VDK+bCPkZ+5wyKPn6VeGjzGQoPgeUkQFMXSFu+opFr+9XW3DMjcRv//wIDAQAB"];
+    NSString *restult = [RSAEncryptor encryptString:paran publicKey:publicKeyStr];
     return restult;
 }
 /*
 解密
 */
 - (NSString *)paranDecryptString:(NSString *)paran{
-    NSString *restult = [RSAEncryptor decryptString:paran publicKey:@"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1x7ZYbFgLbz77qVk6UjN1a2dHZRTnaIS7l5D8bg5tQb1eBSwWLBh7S1StvyGJkavRG43CdMdOsBCrC4XSs1Ombl9ZbryAj0+drzf1orrVSjJ+oNgXb9VDK+bCPkZ+5wyKPn6VeGjzGQoPgeUkQFMXSFu+opFr+9XW3DMjcRv//wIDAQAB"];
+    NSString *restult = [RSAEncryptor decryptString:paran publicKey:publicKeyStr];
     return restult;
 }
 

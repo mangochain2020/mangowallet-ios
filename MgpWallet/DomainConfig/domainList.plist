@@ -8,7 +8,7 @@
 	<array>
 		<dict>
 			<key>kserveName</key>
-			<string>正式环境</string>
+			<string>Pro环境</string>
 			<key>kserveApi</key>
 			<string>https://api.mgpchain.com</string>
 			<key>nodeBtc</key>
@@ -24,7 +24,7 @@
 		</dict>
 		<dict>
 			<key>kserveName</key>
-			<string>测试环境</string>
+			<string>Debug环境</string>
 			<key>kserveApi</key>
 			<string>https://api.coom.pub</string>
 			<key>nodeBtc</key>
@@ -40,7 +40,7 @@
 		</dict>
 		<dict>
 			<key>kserveName</key>
-			<string>郭煜本地</string>
+			<string>GY本地</string>
 			<key>kserveApi</key>
 			<string>http://192.168.0.101:8888</string>
 			<key>nodeBtc</key>
@@ -56,7 +56,7 @@
 		</dict>
 		<dict>
 			<key>kserveName</key>
-			<string>啊应本地</string>
+			<string>HY本地</string>
 			<key>kserveApi</key>
 			<string>http://192.168.31.50:28888</string>
 			<key>nodeBtc</key>
@@ -72,7 +72,7 @@
 		</dict>
 		<dict>
 			<key>kserveName</key>
-			<string>法建本地</string>
+			<string>FJ本地</string>
 			<key>kserveApi</key>
 			<string>http://v.babih.com</string>
 			<key>nodeBtc</key>

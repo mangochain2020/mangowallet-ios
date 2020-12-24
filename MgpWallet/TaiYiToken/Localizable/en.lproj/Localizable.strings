@@ -1244,9 +1244,8 @@
 "账户可用" = "Account available";
 "设置您的钱包账户名" = "Set your wallet account name";
 "导入" = "Import";
-
-
-
+"⚠️您还未备份助记词" = "⚠️You have not backed up your mnemonics";
+"激活" = "activation";
 
 
 

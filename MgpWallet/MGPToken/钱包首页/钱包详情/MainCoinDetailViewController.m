@@ -35,6 +35,8 @@
 
 
 @property(nonatomic)int page;
+@property(nonatomic)int pos;
+@property(nonatomic)int offset;
 
 
 @end
@@ -218,9 +220,11 @@
             self.allRecordArray = [NSMutableArray new];
             MJWeakSelf
             [self.tableview addHeaderRefresh:^{
+                self.pos = -1;
+                self.offset = -50;
                 NSString *namex = weakSelf.wallet.address;
                 HTTPRequestManager *manager = self.wallet.coinType == MGP ? [HTTPRequestManager shareMgpManager] : [HTTPRequestManager shareEosManager];
-                [manager post:eos_get_actions paramters:@{@"account_name":namex ,@"pos":@0,@"offset":@1000} success:^(BOOL isSuccess, id responseObject) {
+                [manager post:eos_get_actions paramters:@{@"account_name":namex,@"pos":@(self.pos),@"offset":@(self.offset)} success:^(BOOL isSuccess, id responseObject) {
                     [weakSelf.tableview endHeaderRefresh];
                     [weakSelf.recordArray removeAllObjects];
                     [weakSelf.allRecordArray removeAllObjects];
@@ -229,8 +233,23 @@
                             if ([[responseObject objectForKey:@"actions"] isKindOfClass:[NSArray class]]) {
                                 for (NSDictionary *dic in [responseObject objectForKey:@"actions"]) {
                                     if ([dic isKindOfClass:[NSDictionary class]]) {
-                                        //[dic modelToJSONString];
+                                        //[responseObject modelToJSONString];
                                         MISTransactionRecordModel *model = [MISTransactionRecordModel parse:dic];
+                                        /*
+                                        if (weakSelf.recordArray.count > 0) {
+                                            for (MISTransactionRecordModel *subModel in [weakSelf.recordArray copy]) {
+                                                if ([subModel.action_trace.receipt.receiver isEqualToString:namex]) {
+                                                    [weakSelf.recordArray insertObject:model atIndex:0];
+                                                    [weakSelf.allRecordArray addObject:model];
+                                                    break;
+                                                }
+                                            }
+                                        }else{
+                                            [weakSelf.recordArray addObject:model];
+                                            [weakSelf.allRecordArray addObject:model];
+                                        }*/
+                                        
+                                        
                                         if (weakSelf.recordArray.count == 0) {
                                             [weakSelf.recordArray addObject:model];
                                             [weakSelf.allRecordArray addObject:model];
@@ -245,7 +264,9 @@
                                                     num++;
                                                 }
                                             }
-                                            BOOL NotEOSType = ![model.action_trace.act.data.quantity containsString:@"MGP"] && ![model.action_trace.act.data.stake_cpu_quantity containsString:@"MGP"] && ![model.action_trace.act.data.unstake_cpu_quantity containsString:@"MGP"];
+                                            NSString *string = self.wallet.coinType == EOS ? @"EOS" : @"MGP";
+                                            
+                                            BOOL NotEOSType = ![model.action_trace.act.data.quantity containsString:string] && ![model.action_trace.act.data.stake_cpu_quantity containsString:string] && ![model.action_trace.act.data.unstake_cpu_quantity containsString:string];
                                             if ([EOSRecordShowTypes containsString:model.action_trace.act.name]) {
                                                 if ([@"transfer,delegatebw,undelegatebw" containsString:model.action_trace.act.name]) {
                                                     if (NotEOSType == NO) {//其他币种的转账 抵押不加入
@@ -286,8 +307,9 @@
             }];
             [self.tableview addFooterRefresh:^{
                 NSString *namex = weakSelf.wallet.address;
+                self.offset = self.offset - 50;
                 HTTPRequestManager *manager = self.wallet.coinType == MGP ? [HTTPRequestManager shareMgpManager] : [HTTPRequestManager shareEosManager];
-                [manager post:eos_get_actions paramters:@{@"account_name":namex ,@"pos":@1,@"offset":@1000} success:^(BOOL isSuccess, id responseObject) {
+                [manager post:eos_get_actions paramters:@{@"account_name":namex,@"pos":@(self.pos),@"offset":@(self.offset)} success:^(BOOL isSuccess, id responseObject) {
                     [weakSelf.tableview endFooterRefresh];
                     if (isSuccess) {
                         if ([responseObject isKindOfClass:[NSDictionary class]]) {
@@ -311,7 +333,9 @@
                                                 }
                                             }
                                             if (num >= temp.count) {
-                                                BOOL NotEOSType = ![model.action_trace.act.data.quantity containsString:@"MGP"] && ![model.action_trace.act.data.stake_cpu_quantity containsString:@"MGP"] && ![model.action_trace.act.data.unstake_cpu_quantity containsString:@"MGP"];
+                                                NSString *string = self.wallet.coinType == EOS ? @"EOS" : @"MGP";
+
+                                                BOOL NotEOSType = ![model.action_trace.act.data.quantity containsString:string] && ![model.action_trace.act.data.stake_cpu_quantity containsString:string] && ![model.action_trace.act.data.unstake_cpu_quantity containsString:string];
                                                 if ([EOSRecordShowTypes containsString:model.action_trace.act.name]) {
                                                     if ([@"transfer,delegatebw,undelegatebw" containsString:model.action_trace.act.name]) {
                                                         if (NotEOSType == NO) {//其他币种的转账 抵押不加入

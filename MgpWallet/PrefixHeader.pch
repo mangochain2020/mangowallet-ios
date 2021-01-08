@@ -120,6 +120,7 @@
 #define FIR_PageSwitchEvent @"PageSwitch"
 #define FIR_PageSwitchVCName @"PageSwitchVCName"
 #define FIR_PageSwitchVCUser @"PageSwitchVCUser"
+#define wechatName @"Algor190112"
 
 
 

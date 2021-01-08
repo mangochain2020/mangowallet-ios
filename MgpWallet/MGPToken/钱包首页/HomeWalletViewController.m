@@ -134,8 +134,7 @@
                 if (self.curretWallet.isSkip) {
                     [self.walletRight setTitle:@"" forState:UIControlStateNormal];
                     [self.walletRight setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
-                    [self.walletRight setBackgroundImage:[UIImage imageNamed:@"WechatIMG708"] forState:UIControlStateNormal];
-                    
+                    [self.walletRight setBackgroundImage:[UIImage imageNamed:@"detail"] forState:UIControlStateNormal];
                 }else{
                     [self.walletRight setTitle:NSLocalizedString(@"⚠️您还未备份助记词", nil) forState:UIControlStateNormal];
                     [self.walletRight setTitleColor:[UIColor orangeColor]forState:UIControlStateNormal];
@@ -154,7 +153,7 @@
             if (self.curretWallet.isSkip) {
                 [self.walletRight setTitle:@"" forState:UIControlStateNormal];
                 [self.walletRight setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
-                [self.walletRight setBackgroundImage:[UIImage imageNamed:@"WechatIMG708"] forState:UIControlStateNormal];
+                [self.walletRight setBackgroundImage:[UIImage imageNamed:@"detail"] forState:UIControlStateNormal];
                 
             }else{
                 [self.walletRight setTitle:NSLocalizedString(@"⚠️您还未备份助记词", nil) forState:UIControlStateNormal];
@@ -830,7 +829,7 @@
         
     } superView:self.view showFaliureDescription:YES];
     
-//    [manager post:@"v1/chain/get_currency_stats" paramters:@{@"code":@"eosio",@"currency":@"MGP"} success:^(BOOL isSuccess, id responseObject) {
+//    [[HTTPRequestManager shareMgpManager] post:@"v1/chain/get_currency_stats" paramters:@{@"code":@"eosio",@"currency":@"MGP"} success:^(BOOL isSuccess, id responseObject) {
 //        NSLog(@"%@----------1",responseObject);
 //
 //

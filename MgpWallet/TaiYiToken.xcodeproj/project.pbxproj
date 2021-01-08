@@ -420,21 +420,43 @@
 		043B560622363CF800054016 /* SelectHuobiSymbolsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B560522363CF800054016 /* SelectHuobiSymbolsVC.m */; };
 		043B560922363E6700054016 /* ScrollBtnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B560822363E6700054016 /* ScrollBtnsView.m */; };
 		043B560D22365E4300054016 /* HuobisymbolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B560C22365E4300054016 /* HuobisymbolCell.m */; };
+		043C098D25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C098C25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m */; };
 		043C77B524C7DD760063E501 /* ExchangeHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043C77B424C7DD760063E501 /* ExchangeHome.storyboard */; };
 		043C77B924C7DF1B0063E501 /* LHDAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77B824C7DF1B0063E501 /* LHDAppTableViewController.m */; };
 		043C77C124C8416A0063E501 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77C024C8416A0063E501 /* RSAEncryptor.m */; };
 		043E95F624CA80D50053AD96 /* LHNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E95F524CA80D50053AD96 /* LHNodeViewController.m */; };
 		043E95FA24CA92C70053AD96 /* CommunityIncentivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E95F924CA92C70053AD96 /* CommunityIncentivesViewController.m */; };
 		043E95FD24CABF280053AD96 /* CommunityIncentivesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E95FC24CABF280053AD96 /* CommunityIncentivesTableViewCell.m */; };
+		0440386C259D77D900D75301 /* OverTheCounterOrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440386B259D77D900D75301 /* OverTheCounterOrderDetailModel.m */; };
 		0443145225626C4B00D843FF /* StakeVote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443145125626C4B00D843FF /* StakeVote.storyboard */; };
 		0443145825626D7D00D843FF /* LHStakeVoteMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443145725626D7D00D843FF /* LHStakeVoteMainTableViewController.m */; };
 		0443145F2562738500D843FF /* LHStakeVoteMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443145E2562738500D843FF /* LHStakeVoteMainTableViewCell.m */; };
+		0447A906259AC91B00F5FB54 /* OverTheCounterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A905259AC91B00F5FB54 /* OverTheCounterHomeViewController.m */; };
+		0447A90E259AC94400F5FB54 /* OverTheCounter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0447A90D259AC94400F5FB54 /* OverTheCounter.storyboard */; };
+		0447A942259AD50400F5FB54 /* OverTheCounterManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A941259AD50400F5FB54 /* OverTheCounterManageViewController.m */; };
+		0447A94E259ADA0600F5FB54 /* OverTheCounterSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A94D259ADA0600F5FB54 /* OverTheCounterSetTableViewController.m */; };
+		0447A957259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A956259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.m */; };
+		0447A9BB259B107600F5FB54 /* JXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9BA259B107600F5FB54 /* JXButton.m */; };
+		0447A9C1259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9C0259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.m */; };
+		0447A9C7259B1B5E00F5FB54 /* OverTheCounterBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9C6259B1B5E00F5FB54 /* OverTheCounterBuyViewController.m */; };
+		0447A9CF259B271100F5FB54 /* OverTheCounterOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9CE259B271000F5FB54 /* OverTheCounterOrderDetailViewController.m */; };
+		0447A9DA259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9D9259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.m */; };
+		0447A9E0259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9DF259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.m */; };
+		0447A9E6259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A9E5259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.m */; };
+		0447AA1B259B387400F5FB54 /* OverTheCounterSellHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447AA1A259B387400F5FB54 /* OverTheCounterSellHomeViewController.m */; };
 		044CB2D3251B274B00AE1840 /* OperationProcessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CB2D2251B274B00AE1840 /* OperationProcessTableViewController.m */; };
 		044CB2D6251B35BE00AE1840 /* LHPayOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CB2D5251B35BE00AE1840 /* LHPayOperationViewController.m */; };
-		04549906253D38D2006CC2BC /* ThemeVoteHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04549905253D38D2006CC2BC /* ThemeVoteHomeTableViewController.m */; };
-		0454990D253D4080006CC2BC /* MyThemeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454990C253D4080006CC2BC /* MyThemeTableViewController.m */; };
-		04549917253D437B006CC2BC /* LHSendThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04549916253D437B006CC2BC /* LHSendThemeViewController.m */; };
-		04549924253D8FAF006CC2BC /* ThemeVoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04549923253D8FAF006CC2BC /* ThemeVoteDetailViewController.m */; };
+		044CF0A025A2EE1D00870FB5 /* ERSegmentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF08F25A2EE1D00870FB5 /* ERSegmentCollectionViewCell.m */; };
+		044CF0A125A2EE1D00870FB5 /* ERSegmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CF09125A2EE1D00870FB5 /* ERSegmentCollectionViewCell.xib */; };
+		044CF0A225A2EE1D00870FB5 /* ERPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09325A2EE1D00870FB5 /* ERPageViewController.m */; };
+		044CF0A325A2EE1D00870FB5 /* ERSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09525A2EE1D00870FB5 /* ERSegmentController.m */; };
+		044CF0A425A2EE1D00870FB5 /* EditMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CF09925A2EE1D00870FB5 /* EditMenuCollectionViewCell.xib */; };
+		044CF0A525A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09C25A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.m */; };
+		044CF0A625A2EE1D00870FB5 /* ERSegmentMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09D25A2EE1D00870FB5 /* ERSegmentMenuController.m */; };
+		044CF0A725A2EE1D00870FB5 /* EditMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09E25A2EE1D00870FB5 /* EditMenuCollectionViewCell.m */; };
+		044CF0A825A2EE1D00870FB5 /* SectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09F25A2EE1D00870FB5 /* SectionHeader.m */; };
+		044CF0AE25A2F39300870FB5 /* OverTheCounterTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF0AD25A2F39300870FB5 /* OverTheCounterTitleView.m */; };
+		044CF0B325A2F3B300870FB5 /* OverTheCounterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CF0B225A2F3B300870FB5 /* OverTheCounterTitleView.xib */; };
 		04555DF125874E260092EB59 /* MGPHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04555DF025874E260092EB59 /* MGPHttpRequest.m */; };
 		0457755F24CFC0B0007DCD2B /* LHSendTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457755E24CFC0B0007DCD2B /* LHSendTransactionViewController.m */; };
 		045CA5832175B333005F2ACC /* BusinessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045CA5822175B333005F2ACC /* BusinessModel.m */; };
@@ -482,16 +504,17 @@
 		048E9BA221C8E771008B794F /* EOSDetailBtnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E9BA121C8E771008B794F /* EOSDetailBtnsView.m */; };
 		048E9BA521C9D928008B794F /* EOSProManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E9BA421C9D928008B794F /* EOSProManageVC.m */; };
 		048E9BA821C9D960008B794F /* EOSProView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E9BA721C9D960008B794F /* EOSProView.m */; };
-		0490EC952542BE65006FDC01 /* MyVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0490EC942542BE65006FDC01 /* MyVoteViewController.m */; };
 		0491A07B217727F200BBD118 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491A07A217727F200BBD118 /* RegisterVC.m */; };
 		0491A07E2177292B00BBD118 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491A07D2177292B00BBD118 /* LoginVC.m */; };
 		04930E4224E39716007E9376 /* LHMyExcitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04930E4124E39716007E9376 /* LHMyExcitationViewController.m */; };
 		04930E4524E39739007E9376 /* LHMyExcitationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04930E4424E39739007E9376 /* LHMyExcitationTableViewCell.m */; };
 		04930E4824E3C058007E9376 /* LHMiningIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04930E4724E3C058007E9376 /* LHMiningIndexViewController.m */; };
 		04930E4C24E3C53A007E9376 /* LHWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04930E4B24E3C53A007E9376 /* LHWalletViewController.m */; };
-		0497712325416EBD00A01E2B /* ThemeVoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497712225416EBD00A01E2B /* ThemeVoteTableViewCell.m */; };
 		0497B77621882C64004B59CD /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497B77521882C64004B59CD /* AboutUsVC.m */; };
 		0497B77C21893E42004B59CD /* TextLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497B77B21893E42004B59CD /* TextLabelCell.m */; };
+		049814B725A415C6003FAB9F /* HQStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 049814B125A415C6003FAB9F /* HQStepper.m */; };
+		049814B825A415C6003FAB9F /* UIColor+HQStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 049814B425A415C6003FAB9F /* UIColor+HQStepper.m */; };
+		049814B925A415C6003FAB9F /* HQStepperButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 049814B625A415C6003FAB9F /* HQStepperButton.m */; };
 		049CB4F624C9739000951BF2 /* LHRealdataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049CB4F524C9739000951BF2 /* LHRealdataViewController.m */; };
 		04A2FDCB250092AF00B16CC4 /* DCFiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A2FDC9250092AF00B16CC4 /* DCFiveTableViewCell.m */; };
 		04A2FDCC250092AF00B16CC4 /* DCFiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A2FDCA250092AF00B16CC4 /* DCFiveTableViewCell.xib */; };
@@ -506,7 +529,6 @@
 		04A4AF532241D1CE0073BB20 /* HuobiPersonAssetsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AF522241D1CE0073BB20 /* HuobiPersonAssetsVC.m */; };
 		04A4AF562241D3E80073BB20 /* HuobiPersonAssetsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AF552241D3E80073BB20 /* HuobiPersonAssetsHeaderView.m */; };
 		04A4AF592241E6F00073BB20 /* HuobiBalanceCollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AF582241E6F00073BB20 /* HuobiBalanceCollectModel.m */; };
-		04AA455E253E9646005A2F08 /* VoteRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AA455D253E9646005A2F08 /* VoteRecordTableViewController.m */; };
 		04AB69162589E6DA00CD4B51 /* CreateAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */; };
 		04ABE6FD219AA233008DF901 /* NodeSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ABE6FC219AA233008DF901 /* NodeSettingVC.m */; };
 		04B2B94E21A69A07000F35A3 /* MarketTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B94D21A69A07000F35A3 /* MarketTicketModel.m */; };
@@ -637,6 +659,13 @@
 		04DFBB5624FE251500818F38 /* MangoDefiPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DFBB5424FE251500818F38 /* MangoDefiPayViewController.xib */; };
 		04DFBB5A24FE296E00818F38 /* MangoDefiAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFBB5924FE296E00818F38 /* MangoDefiAddViewController.m */; };
 		04E0B82A21B0F80900ABC4F4 /* ExportEOSPriKeyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0B82921B0F80900ABC4F4 /* ExportEOSPriKeyVC.m */; };
+		04E31818259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31817259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.m */; };
+		04E31821259C3325008C64EC /* OverTheCounterOrderDetail2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31820259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.m */; };
+		04E31828259C5D1E008C64EC /* OverTheCounterContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31827259C5D1E008C64EC /* OverTheCounterContactViewController.m */; };
+		04E31832259C6310008C64EC /* OverTheCounterPaymentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31831259C6310008C64EC /* OverTheCounterPaymentTableViewController.m */; };
+		04E31839259C6386008C64EC /* OverTheCounterPaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31838259C6386008C64EC /* OverTheCounterPaymentTableViewCell.m */; };
+		04E31842259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31841259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.m */; };
+		04E31849259C6612008C64EC /* OverTheCounterAddPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E31848259C6612008C64EC /* OverTheCounterAddPaymentViewController.m */; };
 		04EB805E219AB3F40089C59F /* SearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EB805D219AB3F40089C59F /* SearchResultVC.m */; };
 		04EB8061219AB4120089C59F /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EB8060219AB4120089C59F /* SearchResultCell.m */; };
 		04EB8064219D6BE40089C59F /* SelectWalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EB8063219D6BE40089C59F /* SelectWalletView.m */; };
@@ -652,6 +681,7 @@
 		04F3848F2251B5EC006A8C71 /* InfoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F3848E2251B5EC006A8C71 /* InfoListModel.m */; };
 		04F384922251B6F7006A8C71 /* IndoDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F384912251B6F7006A8C71 /* IndoDetailModel.m */; };
 		04F3849C2251B7E6006A8C71 /* InfoBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F3849B2251B7E6006A8C71 /* InfoBaseModel.m */; };
+		04F5281125A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5281025A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.m */; };
 		04F59A1921781A80004A1387 /* sortedChnames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F59A1621781A80004A1387 /* sortedChnames.plist */; };
 		04F59A1A21781A80004A1387 /* sortedEnames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F59A1721781A80004A1387 /* sortedEnames.plist */; };
 		04F59A1B21781A80004A1387 /* XWCountryCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F59A1821781A80004A1387 /* XWCountryCodeController.m */; };
@@ -670,6 +700,7 @@
 		04F59A4F2179D8A6004A1387 /* SystemInitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F59A4E2179D8A6004A1387 /* SystemInitModel.m */; };
 		04F59A52217D53A5004A1387 /* NewHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F59A51217D53A5004A1387 /* NewHomePageVC.m */; };
 		04F59A55217D5F51004A1387 /* HeadInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F59A54217D5F51004A1387 /* HeadInfoView.m */; };
+		04F6153625A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6153525A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.m */; };
 		04F80A5321994ADA0095D44F /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F80A5221994ADA0095D44F /* HelpView.m */; };
 		04FD2C0C2239E17C00BC2EE5 /* HuobiExchangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FD2C0B2239E17C00BC2EE5 /* HuobiExchangeView.m */; };
 		04FD2C0F2239E37E00BC2EE5 /* HuobiBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FD2C0E2239E37E00BC2EE5 /* HuobiBtn.m */; };
@@ -1624,6 +1655,8 @@
 		043B560822363E6700054016 /* ScrollBtnsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollBtnsView.m; sourceTree = "<group>"; };
 		043B560B22365E4300054016 /* HuobisymbolCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HuobisymbolCell.h; sourceTree = "<group>"; };
 		043B560C22365E4300054016 /* HuobisymbolCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HuobisymbolCell.m; sourceTree = "<group>"; };
+		043C098B25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterContactEmailTableViewController.h; sourceTree = "<group>"; };
+		043C098C25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterContactEmailTableViewController.m; sourceTree = "<group>"; };
 		043C77B424C7DD760063E501 /* ExchangeHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExchangeHome.storyboard; sourceTree = "<group>"; };
 		043C77B724C7DF1B0063E501 /* LHDAppTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHDAppTableViewController.h; sourceTree = "<group>"; };
 		043C77B824C7DF1B0063E501 /* LHDAppTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHDAppTableViewController.m; sourceTree = "<group>"; };
@@ -1635,23 +1668,61 @@
 		043E95F924CA92C70053AD96 /* CommunityIncentivesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityIncentivesViewController.m; sourceTree = "<group>"; };
 		043E95FB24CABF280053AD96 /* CommunityIncentivesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityIncentivesTableViewCell.h; sourceTree = "<group>"; };
 		043E95FC24CABF280053AD96 /* CommunityIncentivesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityIncentivesTableViewCell.m; sourceTree = "<group>"; };
+		0440386A259D77D900D75301 /* OverTheCounterOrderDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterOrderDetailModel.h; sourceTree = "<group>"; };
+		0440386B259D77D900D75301 /* OverTheCounterOrderDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterOrderDetailModel.m; sourceTree = "<group>"; };
 		0443145125626C4B00D843FF /* StakeVote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StakeVote.storyboard; sourceTree = "<group>"; };
 		0443145625626D7D00D843FF /* LHStakeVoteMainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHStakeVoteMainTableViewController.h; sourceTree = "<group>"; };
 		0443145725626D7D00D843FF /* LHStakeVoteMainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHStakeVoteMainTableViewController.m; sourceTree = "<group>"; };
 		0443145D2562738500D843FF /* LHStakeVoteMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHStakeVoteMainTableViewCell.h; sourceTree = "<group>"; };
 		0443145E2562738500D843FF /* LHStakeVoteMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHStakeVoteMainTableViewCell.m; sourceTree = "<group>"; };
+		0447A904259AC91B00F5FB54 /* OverTheCounterHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterHomeViewController.h; sourceTree = "<group>"; };
+		0447A905259AC91B00F5FB54 /* OverTheCounterHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterHomeViewController.m; sourceTree = "<group>"; };
+		0447A90D259AC94400F5FB54 /* OverTheCounter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OverTheCounter.storyboard; sourceTree = "<group>"; };
+		0447A940259AD50400F5FB54 /* OverTheCounterManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterManageViewController.h; sourceTree = "<group>"; };
+		0447A941259AD50400F5FB54 /* OverTheCounterManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterManageViewController.m; sourceTree = "<group>"; };
+		0447A94C259ADA0600F5FB54 /* OverTheCounterSetTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterSetTableViewController.h; sourceTree = "<group>"; };
+		0447A94D259ADA0600F5FB54 /* OverTheCounterSetTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterSetTableViewController.m; sourceTree = "<group>"; };
+		0447A955259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterHomeTableViewCell.h; sourceTree = "<group>"; };
+		0447A956259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterHomeTableViewCell.m; sourceTree = "<group>"; };
+		0447A9B9259B107600F5FB54 /* JXButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXButton.h; sourceTree = "<group>"; };
+		0447A9BA259B107600F5FB54 /* JXButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXButton.m; sourceTree = "<group>"; };
+		0447A9BF259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterBuyManageViewController.h; sourceTree = "<group>"; };
+		0447A9C0259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterBuyManageViewController.m; sourceTree = "<group>"; };
+		0447A9C5259B1B5E00F5FB54 /* OverTheCounterBuyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterBuyViewController.h; sourceTree = "<group>"; };
+		0447A9C6259B1B5E00F5FB54 /* OverTheCounterBuyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterBuyViewController.m; sourceTree = "<group>"; };
+		0447A9CD259B271000F5FB54 /* OverTheCounterOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterOrderDetailViewController.h; sourceTree = "<group>"; };
+		0447A9CE259B271000F5FB54 /* OverTheCounterOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterOrderDetailViewController.m; sourceTree = "<group>"; };
+		0447A9D8259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterMyOrderViewController.h; sourceTree = "<group>"; };
+		0447A9D9259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterMyOrderViewController.m; sourceTree = "<group>"; };
+		0447A9DE259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterMyOrderTableViewController.h; sourceTree = "<group>"; };
+		0447A9DF259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterMyOrderTableViewController.m; sourceTree = "<group>"; };
+		0447A9E4259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterMyOrderTableViewCell.h; sourceTree = "<group>"; };
+		0447A9E5259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterMyOrderTableViewCell.m; sourceTree = "<group>"; };
+		0447AA19259B387400F5FB54 /* OverTheCounterSellHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterSellHomeViewController.h; sourceTree = "<group>"; };
+		0447AA1A259B387400F5FB54 /* OverTheCounterSellHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterSellHomeViewController.m; sourceTree = "<group>"; };
 		044CB2D1251B274B00AE1840 /* OperationProcessTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationProcessTableViewController.h; sourceTree = "<group>"; };
 		044CB2D2251B274B00AE1840 /* OperationProcessTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationProcessTableViewController.m; sourceTree = "<group>"; };
 		044CB2D4251B35BE00AE1840 /* LHPayOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHPayOperationViewController.h; sourceTree = "<group>"; };
 		044CB2D5251B35BE00AE1840 /* LHPayOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHPayOperationViewController.m; sourceTree = "<group>"; };
-		04549904253D38D2006CC2BC /* ThemeVoteHomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeVoteHomeTableViewController.h; sourceTree = "<group>"; };
-		04549905253D38D2006CC2BC /* ThemeVoteHomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteHomeTableViewController.m; sourceTree = "<group>"; };
-		0454990B253D4080006CC2BC /* MyThemeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyThemeTableViewController.h; sourceTree = "<group>"; };
-		0454990C253D4080006CC2BC /* MyThemeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyThemeTableViewController.m; sourceTree = "<group>"; };
-		04549915253D437B006CC2BC /* LHSendThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHSendThemeViewController.h; sourceTree = "<group>"; };
-		04549916253D437B006CC2BC /* LHSendThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHSendThemeViewController.m; sourceTree = "<group>"; };
-		04549922253D8FAF006CC2BC /* ThemeVoteDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeVoteDetailViewController.h; sourceTree = "<group>"; };
-		04549923253D8FAF006CC2BC /* ThemeVoteDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteDetailViewController.m; sourceTree = "<group>"; };
+		044CF08F25A2EE1D00870FB5 /* ERSegmentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSegmentCollectionViewCell.m; sourceTree = "<group>"; };
+		044CF09025A2EE1D00870FB5 /* ERPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPageViewController.h; sourceTree = "<group>"; };
+		044CF09125A2EE1D00870FB5 /* ERSegmentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERSegmentCollectionViewCell.xib; sourceTree = "<group>"; };
+		044CF09225A2EE1D00870FB5 /* ERSegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSegmentController.h; sourceTree = "<group>"; };
+		044CF09325A2EE1D00870FB5 /* ERPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPageViewController.m; sourceTree = "<group>"; };
+		044CF09425A2EE1D00870FB5 /* ERSegmentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSegmentCollectionViewCell.h; sourceTree = "<group>"; };
+		044CF09525A2EE1D00870FB5 /* ERSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSegmentController.m; sourceTree = "<group>"; };
+		044CF09725A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		044CF09825A2EE1D00870FB5 /* ERSegmentMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSegmentMenuController.h; sourceTree = "<group>"; };
+		044CF09925A2EE1D00870FB5 /* EditMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditMenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		044CF09A25A2EE1D00870FB5 /* SectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeader.h; sourceTree = "<group>"; };
+		044CF09B25A2EE1D00870FB5 /* EditMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		044CF09C25A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		044CF09D25A2EE1D00870FB5 /* ERSegmentMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSegmentMenuController.m; sourceTree = "<group>"; };
+		044CF09E25A2EE1D00870FB5 /* EditMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		044CF09F25A2EE1D00870FB5 /* SectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeader.m; sourceTree = "<group>"; };
+		044CF0AC25A2F39300870FB5 /* OverTheCounterTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterTitleView.h; sourceTree = "<group>"; };
+		044CF0AD25A2F39300870FB5 /* OverTheCounterTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterTitleView.m; sourceTree = "<group>"; };
+		044CF0B225A2F3B300870FB5 /* OverTheCounterTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverTheCounterTitleView.xib; sourceTree = "<group>"; };
 		04555DEF25874E260092EB59 /* MGPHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPHttpRequest.h; sourceTree = "<group>"; };
 		04555DF025874E260092EB59 /* MGPHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPHttpRequest.m; sourceTree = "<group>"; };
 		0457755D24CFC0B0007DCD2B /* LHSendTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHSendTransactionViewController.h; sourceTree = "<group>"; };
@@ -1744,8 +1815,6 @@
 		048E9BA421C9D928008B794F /* EOSProManageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOSProManageVC.m; sourceTree = "<group>"; };
 		048E9BA621C9D960008B794F /* EOSProView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSProView.h; sourceTree = "<group>"; };
 		048E9BA721C9D960008B794F /* EOSProView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOSProView.m; sourceTree = "<group>"; };
-		0490EC932542BE65006FDC01 /* MyVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVoteViewController.h; sourceTree = "<group>"; };
-		0490EC942542BE65006FDC01 /* MyVoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVoteViewController.m; sourceTree = "<group>"; };
 		0491A079217727F200BBD118 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		0491A07A217727F200BBD118 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		0491A07C2177292B00BBD118 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
@@ -1758,12 +1827,16 @@
 		04930E4724E3C058007E9376 /* LHMiningIndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHMiningIndexViewController.m; sourceTree = "<group>"; };
 		04930E4A24E3C53A007E9376 /* LHWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LHWalletViewController.h; path = "MGPToken/应用/我的激励/LHWalletViewController.h"; sourceTree = SOURCE_ROOT; };
 		04930E4B24E3C53A007E9376 /* LHWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LHWalletViewController.m; path = "MGPToken/应用/我的激励/LHWalletViewController.m"; sourceTree = SOURCE_ROOT; };
-		0497712125416EBD00A01E2B /* ThemeVoteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeVoteTableViewCell.h; sourceTree = "<group>"; };
-		0497712225416EBD00A01E2B /* ThemeVoteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteTableViewCell.m; sourceTree = "<group>"; };
 		0497B77421882C64004B59CD /* AboutUsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
 		0497B77521882C64004B59CD /* AboutUsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
 		0497B77A21893E42004B59CD /* TextLabelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextLabelCell.h; sourceTree = "<group>"; };
 		0497B77B21893E42004B59CD /* TextLabelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextLabelCell.m; sourceTree = "<group>"; };
+		049814B125A415C6003FAB9F /* HQStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQStepper.m; sourceTree = "<group>"; };
+		049814B225A415C6003FAB9F /* UIColor+HQStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HQStepper.h"; sourceTree = "<group>"; };
+		049814B325A415C6003FAB9F /* HQStepperButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQStepperButton.h; sourceTree = "<group>"; };
+		049814B425A415C6003FAB9F /* UIColor+HQStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HQStepper.m"; sourceTree = "<group>"; };
+		049814B525A415C6003FAB9F /* HQStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQStepper.h; sourceTree = "<group>"; };
+		049814B625A415C6003FAB9F /* HQStepperButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQStepperButton.m; sourceTree = "<group>"; };
 		049CB4F424C9739000951BF2 /* LHRealdataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHRealdataViewController.h; sourceTree = "<group>"; };
 		049CB4F524C9739000951BF2 /* LHRealdataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHRealdataViewController.m; sourceTree = "<group>"; };
 		04A2FDC8250092AF00B16CC4 /* DCFiveTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCFiveTableViewCell.h; sourceTree = "<group>"; };
@@ -1791,8 +1864,6 @@
 		04A4AF552241D3E80073BB20 /* HuobiPersonAssetsHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HuobiPersonAssetsHeaderView.m; sourceTree = "<group>"; };
 		04A4AF572241E6F00073BB20 /* HuobiBalanceCollectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HuobiBalanceCollectModel.h; sourceTree = "<group>"; };
 		04A4AF582241E6F00073BB20 /* HuobiBalanceCollectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HuobiBalanceCollectModel.m; sourceTree = "<group>"; };
-		04AA455C253E9646005A2F08 /* VoteRecordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoteRecordTableViewController.h; sourceTree = "<group>"; };
-		04AA455D253E9646005A2F08 /* VoteRecordTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoteRecordTableViewController.m; sourceTree = "<group>"; };
 		04AB69142589E6DA00CD4B51 /* CreateAccountTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAccountTool.h; sourceTree = "<group>"; };
 		04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAccountTool.m; sourceTree = "<group>"; };
 		04ABE6FB219AA233008DF901 /* NodeSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeSettingVC.h; sourceTree = "<group>"; };
@@ -2045,6 +2116,20 @@
 		04DFBB5924FE296E00818F38 /* MangoDefiAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MangoDefiAddViewController.m; sourceTree = "<group>"; };
 		04E0B82821B0F80900ABC4F4 /* ExportEOSPriKeyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExportEOSPriKeyVC.h; sourceTree = "<group>"; };
 		04E0B82921B0F80900ABC4F4 /* ExportEOSPriKeyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExportEOSPriKeyVC.m; sourceTree = "<group>"; };
+		04E31816259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterOrderDetail1TableViewCell.h; sourceTree = "<group>"; };
+		04E31817259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterOrderDetail1TableViewCell.m; sourceTree = "<group>"; };
+		04E3181F259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterOrderDetail2TableViewCell.h; sourceTree = "<group>"; };
+		04E31820259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterOrderDetail2TableViewCell.m; sourceTree = "<group>"; };
+		04E31826259C5D1E008C64EC /* OverTheCounterContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterContactViewController.h; sourceTree = "<group>"; };
+		04E31827259C5D1E008C64EC /* OverTheCounterContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterContactViewController.m; sourceTree = "<group>"; };
+		04E31830259C6310008C64EC /* OverTheCounterPaymentTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterPaymentTableViewController.h; sourceTree = "<group>"; };
+		04E31831259C6310008C64EC /* OverTheCounterPaymentTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterPaymentTableViewController.m; sourceTree = "<group>"; };
+		04E31837259C6386008C64EC /* OverTheCounterPaymentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterPaymentTableViewCell.h; sourceTree = "<group>"; };
+		04E31838259C6386008C64EC /* OverTheCounterPaymentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterPaymentTableViewCell.m; sourceTree = "<group>"; };
+		04E31840259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterPaymentTypeTableViewController.h; sourceTree = "<group>"; };
+		04E31841259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterPaymentTypeTableViewController.m; sourceTree = "<group>"; };
+		04E31847259C6612008C64EC /* OverTheCounterAddPaymentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterAddPaymentViewController.h; sourceTree = "<group>"; };
+		04E31848259C6612008C64EC /* OverTheCounterAddPaymentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterAddPaymentViewController.m; sourceTree = "<group>"; };
 		04EB805C219AB3F40089C59F /* SearchResultVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultVC.h; sourceTree = "<group>"; };
 		04EB805D219AB3F40089C59F /* SearchResultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultVC.m; sourceTree = "<group>"; };
 		04EB805F219AB4120089C59F /* SearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
@@ -2074,6 +2159,8 @@
 		04F384932251B754006A8C71 /* InfoModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoModels.h; sourceTree = "<group>"; };
 		04F3849A2251B7E6006A8C71 /* InfoBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoBaseModel.h; sourceTree = "<group>"; };
 		04F3849B2251B7E6006A8C71 /* InfoBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoBaseModel.m; sourceTree = "<group>"; };
+		04F5280F25A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterOrderDetailMangeViewController.h; sourceTree = "<group>"; };
+		04F5281025A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterOrderDetailMangeViewController.m; sourceTree = "<group>"; };
 		04F59A1521781A80004A1387 /* XWCountryCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCountryCodeController.h; sourceTree = "<group>"; };
 		04F59A1621781A80004A1387 /* sortedChnames.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sortedChnames.plist; sourceTree = "<group>"; };
 		04F59A1721781A80004A1387 /* sortedEnames.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sortedEnames.plist; sourceTree = "<group>"; };
@@ -2109,6 +2196,8 @@
 		04F59A51217D53A5004A1387 /* NewHomePageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHomePageVC.m; sourceTree = "<group>"; };
 		04F59A53217D5F51004A1387 /* HeadInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadInfoView.h; sourceTree = "<group>"; };
 		04F59A54217D5F51004A1387 /* HeadInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadInfoView.m; sourceTree = "<group>"; };
+		04F6153425A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterOrderDetail0TableViewCell.h; sourceTree = "<group>"; };
+		04F6153525A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterOrderDetail0TableViewCell.m; sourceTree = "<group>"; };
 		04F80A5121994ADA0095D44F /* HelpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
 		04F80A5221994ADA0095D44F /* HelpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpView.m; sourceTree = "<group>"; };
 		04FD2C0A2239E17C00BC2EE5 /* HuobiExchangeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HuobiExchangeView.h; sourceTree = "<group>"; };
@@ -4946,7 +5035,7 @@
 		043C77B624C7DEB00063E501 /* 应用 */ = {
 			isa = PBXGroup;
 			children = (
-				04549903253D370E006CC2BC /* 投票应用 */,
+				0447A903259AC79400F5FB54 /* OTC快捷买卖 */,
 				047AF03C253192F800ED51A1 /* 记录 */,
 				044CB2D0251B26F800AE1840 /* MGP+HMIO操作流程 */,
 				04930E4924E3C4D3007E9376 /* mgp收益明细 */,
@@ -5004,6 +5093,15 @@
 			path = "持币生息抵押";
 			sourceTree = "<group>";
 		};
+		04403869259D77A400D75301 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0440386A259D77D900D75301 /* OverTheCounterOrderDetailModel.h */,
+				0440386B259D77D900D75301 /* OverTheCounterOrderDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0443145025626C0200D843FF /* 投票节点 */ = {
 			isa = PBXGroup;
 			children = (
@@ -5030,6 +5128,102 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0447A903259AC79400F5FB54 /* OTC快捷买卖 */ = {
+			isa = PBXGroup;
+			children = (
+				0447A90D259AC94400F5FB54 /* OverTheCounter.storyboard */,
+				0447A940259AD50400F5FB54 /* OverTheCounterManageViewController.h */,
+				0447A941259AD50400F5FB54 /* OverTheCounterManageViewController.m */,
+				044CF0AC25A2F39300870FB5 /* OverTheCounterTitleView.h */,
+				044CF0AD25A2F39300870FB5 /* OverTheCounterTitleView.m */,
+				044CF0B225A2F3B300870FB5 /* OverTheCounterTitleView.xib */,
+				0447A94B259AD9C700F5FB54 /* OTC买首页 */,
+				0447AA18259B382E00F5FB54 /* OTC卖首页 */,
+				0447A9CC259B26E900F5FB54 /* 订单详情页面 */,
+				0447A94A259AD9BA00F5FB54 /* 我的订单 */,
+				0447A949259AD9B200F5FB54 /* 设置 */,
+			);
+			path = "OTC快捷买卖";
+			sourceTree = "<group>";
+		};
+		0447A949259AD9B200F5FB54 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				0447A94C259ADA0600F5FB54 /* OverTheCounterSetTableViewController.h */,
+				0447A94D259ADA0600F5FB54 /* OverTheCounterSetTableViewController.m */,
+				04E3182F259C62DF008C64EC /* 收款方式 */,
+				04E31825259C5CA1008C64EC /* 联系方式 */,
+			);
+			path = "设置";
+			sourceTree = "<group>";
+		};
+		0447A94A259AD9BA00F5FB54 /* 我的订单 */ = {
+			isa = PBXGroup;
+			children = (
+				0447A9D8259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.h */,
+				0447A9D9259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.m */,
+				0447A9DE259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.h */,
+				0447A9DF259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.m */,
+				0447A9E4259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.h */,
+				0447A9E5259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.m */,
+			);
+			path = "我的订单";
+			sourceTree = "<group>";
+		};
+		0447A94B259AD9C700F5FB54 /* OTC买首页 */ = {
+			isa = PBXGroup;
+			children = (
+				0447A904259AC91B00F5FB54 /* OverTheCounterHomeViewController.h */,
+				0447A905259AC91B00F5FB54 /* OverTheCounterHomeViewController.m */,
+				0447A955259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.h */,
+				0447A956259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.m */,
+				0447A986259B08A100F5FB54 /* 购买输入弹窗页面 */,
+			);
+			path = "OTC买首页";
+			sourceTree = "<group>";
+		};
+		0447A986259B08A100F5FB54 /* 购买输入弹窗页面 */ = {
+			isa = PBXGroup;
+			children = (
+				0447A9BF259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.h */,
+				0447A9C0259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.m */,
+				0447A9C5259B1B5E00F5FB54 /* OverTheCounterBuyViewController.h */,
+				0447A9C6259B1B5E00F5FB54 /* OverTheCounterBuyViewController.m */,
+			);
+			path = "购买输入弹窗页面";
+			sourceTree = "<group>";
+		};
+		0447A9B8259B106600F5FB54 /* JXButton */ = {
+			isa = PBXGroup;
+			children = (
+				0447A9B9259B107600F5FB54 /* JXButton.h */,
+				0447A9BA259B107600F5FB54 /* JXButton.m */,
+			);
+			path = JXButton;
+			sourceTree = "<group>";
+		};
+		0447A9CC259B26E900F5FB54 /* 订单详情页面 */ = {
+			isa = PBXGroup;
+			children = (
+				04F5280F25A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.h */,
+				04F5281025A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.m */,
+				0447A9CD259B271000F5FB54 /* OverTheCounterOrderDetailViewController.h */,
+				0447A9CE259B271000F5FB54 /* OverTheCounterOrderDetailViewController.m */,
+				04403869259D77A400D75301 /* Model */,
+				04E31815259C32B1008C64EC /* view */,
+			);
+			path = "订单详情页面";
+			sourceTree = "<group>";
+		};
+		0447AA18259B382E00F5FB54 /* OTC卖首页 */ = {
+			isa = PBXGroup;
+			children = (
+				0447AA19259B387400F5FB54 /* OverTheCounterSellHomeViewController.h */,
+				0447AA1A259B387400F5FB54 /* OverTheCounterSellHomeViewController.m */,
+			);
+			path = "OTC卖首页";
+			sourceTree = "<group>";
+		};
 		044CB2D0251B26F800AE1840 /* MGP+HMIO操作流程 */ = {
 			isa = PBXGroup;
 			children = (
@@ -5041,47 +5235,43 @@
 			path = "MGP+HMIO操作流程";
 			sourceTree = "<group>";
 		};
-		04549903253D370E006CC2BC /* 投票应用 */ = {
+		044CF08D25A2EE1D00870FB5 /* ERPageController */ = {
 			isa = PBXGroup;
 			children = (
-				04549904253D38D2006CC2BC /* ThemeVoteHomeTableViewController.h */,
-				04549905253D38D2006CC2BC /* ThemeVoteHomeTableViewController.m */,
-				0497712025416E7600A01E2B /* View */,
-				04AA455B253E960C005A2F08 /* 记录 */,
-				04549921253D8F31006CC2BC /* 详情 */,
-				04549914253D4356006CC2BC /* 发布投票 */,
-				0454990A253D4066006CC2BC /* 我的投票 */,
+				044CF08E25A2EE1D00870FB5 /* PageViewControllers */,
+				044CF09625A2EE1D00870FB5 /* EditMenuControllers */,
 			);
-			path = "投票应用";
+			path = ERPageController;
 			sourceTree = "<group>";
 		};
-		0454990A253D4066006CC2BC /* 我的投票 */ = {
+		044CF08E25A2EE1D00870FB5 /* PageViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0454990B253D4080006CC2BC /* MyThemeTableViewController.h */,
-				0454990C253D4080006CC2BC /* MyThemeTableViewController.m */,
-				0490EC932542BE65006FDC01 /* MyVoteViewController.h */,
-				0490EC942542BE65006FDC01 /* MyVoteViewController.m */,
+				044CF08F25A2EE1D00870FB5 /* ERSegmentCollectionViewCell.m */,
+				044CF09025A2EE1D00870FB5 /* ERPageViewController.h */,
+				044CF09125A2EE1D00870FB5 /* ERSegmentCollectionViewCell.xib */,
+				044CF09225A2EE1D00870FB5 /* ERSegmentController.h */,
+				044CF09325A2EE1D00870FB5 /* ERPageViewController.m */,
+				044CF09425A2EE1D00870FB5 /* ERSegmentCollectionViewCell.h */,
+				044CF09525A2EE1D00870FB5 /* ERSegmentController.m */,
 			);
-			path = "我的投票";
+			path = PageViewControllers;
 			sourceTree = "<group>";
 		};
-		04549914253D4356006CC2BC /* 发布投票 */ = {
+		044CF09625A2EE1D00870FB5 /* EditMenuControllers */ = {
 			isa = PBXGroup;
 			children = (
-				04549915253D437B006CC2BC /* LHSendThemeViewController.h */,
-				04549916253D437B006CC2BC /* LHSendThemeViewController.m */,
+				044CF09725A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.h */,
+				044CF09825A2EE1D00870FB5 /* ERSegmentMenuController.h */,
+				044CF09925A2EE1D00870FB5 /* EditMenuCollectionViewCell.xib */,
+				044CF09A25A2EE1D00870FB5 /* SectionHeader.h */,
+				044CF09B25A2EE1D00870FB5 /* EditMenuCollectionViewCell.h */,
+				044CF09C25A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.m */,
+				044CF09D25A2EE1D00870FB5 /* ERSegmentMenuController.m */,
+				044CF09E25A2EE1D00870FB5 /* EditMenuCollectionViewCell.m */,
+				044CF09F25A2EE1D00870FB5 /* SectionHeader.m */,
 			);
-			path = "发布投票";
-			sourceTree = "<group>";
-		};
-		04549921253D8F31006CC2BC /* 详情 */ = {
-			isa = PBXGroup;
-			children = (
-				04549922253D8FAF006CC2BC /* ThemeVoteDetailViewController.h */,
-				04549923253D8FAF006CC2BC /* ThemeVoteDetailViewController.m */,
-			);
-			path = "详情";
+			path = EditMenuControllers;
 			sourceTree = "<group>";
 		};
 		0457755C24CFC08F007DCD2B /* 交易发送页面 */ = {
@@ -5272,13 +5462,17 @@
 			path = LHWalletManager;
 			sourceTree = "<group>";
 		};
-		0497712025416E7600A01E2B /* View */ = {
+		049814B025A415C6003FAB9F /* HQStepper */ = {
 			isa = PBXGroup;
 			children = (
-				0497712125416EBD00A01E2B /* ThemeVoteTableViewCell.h */,
-				0497712225416EBD00A01E2B /* ThemeVoteTableViewCell.m */,
+				049814B125A415C6003FAB9F /* HQStepper.m */,
+				049814B225A415C6003FAB9F /* UIColor+HQStepper.h */,
+				049814B325A415C6003FAB9F /* HQStepperButton.h */,
+				049814B425A415C6003FAB9F /* UIColor+HQStepper.m */,
+				049814B525A415C6003FAB9F /* HQStepper.h */,
+				049814B625A415C6003FAB9F /* HQStepperButton.m */,
 			);
-			path = View;
+			path = HQStepper;
 			sourceTree = "<group>";
 		};
 		049CB4F324C9735C00951BF2 /* 实时数据 */ = {
@@ -5307,15 +5501,6 @@
 				04A2FDCF2500CCB600B16CC4 /* DCMGPWalletTool.m */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		04AA455B253E960C005A2F08 /* 记录 */ = {
-			isa = PBXGroup;
-			children = (
-				04AA455C253E9646005A2F08 /* VoteRecordTableViewController.h */,
-				04AA455D253E9646005A2F08 /* VoteRecordTableViewController.m */,
-			);
-			path = "记录";
 			sourceTree = "<group>";
 		};
 		04B2B94B21A699D5000F35A3 /* VTwoModel */ = {
@@ -5817,6 +6002,61 @@
 				04DFBB5924FE296E00818F38 /* MangoDefiAddViewController.m */,
 			);
 			path = addMangoDefi;
+			sourceTree = "<group>";
+		};
+		04E31815259C32B1008C64EC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04F6153425A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.h */,
+				04F6153525A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.m */,
+				04E31816259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.h */,
+				04E31817259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.m */,
+				04E3181F259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.h */,
+				04E31820259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		04E31825259C5CA1008C64EC /* 联系方式 */ = {
+			isa = PBXGroup;
+			children = (
+				04E31826259C5D1E008C64EC /* OverTheCounterContactViewController.h */,
+				04E31827259C5D1E008C64EC /* OverTheCounterContactViewController.m */,
+				043C098B25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.h */,
+				043C098C25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m */,
+			);
+			path = "联系方式";
+			sourceTree = "<group>";
+		};
+		04E3182F259C62DF008C64EC /* 收款方式 */ = {
+			isa = PBXGroup;
+			children = (
+				04E31830259C6310008C64EC /* OverTheCounterPaymentTableViewController.h */,
+				04E31831259C6310008C64EC /* OverTheCounterPaymentTableViewController.m */,
+				04E31846259C65D6008C64EC /* 添加收款方式 */,
+				04E31836259C636C008C64EC /* view */,
+			);
+			path = "收款方式";
+			sourceTree = "<group>";
+		};
+		04E31836259C636C008C64EC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04E31837259C6386008C64EC /* OverTheCounterPaymentTableViewCell.h */,
+				04E31838259C6386008C64EC /* OverTheCounterPaymentTableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		04E31846259C65D6008C64EC /* 添加收款方式 */ = {
+			isa = PBXGroup;
+			children = (
+				04E31840259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.h */,
+				04E31841259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.m */,
+				04E31847259C6612008C64EC /* OverTheCounterAddPaymentViewController.h */,
+				04E31848259C6612008C64EC /* OverTheCounterAddPaymentViewController.m */,
+			);
+			path = "添加收款方式";
 			sourceTree = "<group>";
 		};
 		04EFE96825737B300055D516 /* 查看规则 */ = {
@@ -6324,6 +6564,9 @@
 		843EC9C52121212D002D5C2A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				049814B025A415C6003FAB9F /* HQStepper */,
+				044CF08D25A2EE1D00870FB5 /* ERPageController */,
+				0447A9B8259B106600F5FB54 /* JXButton */,
 				04FFF7792519F6D600EC99D0 /* JPAlertView */,
 				04FFF6AB2519E2E600EC99D0 /* CCPActionSheet */,
 				043456D02511ADA900FD8654 /* MallstoreADView */,
@@ -7029,6 +7272,7 @@
 				04BBD1B524D907F500375025 /* MyCenterFlow1.plist in Resources */,
 				04049E3324C69B76003D15F9 /* ClassiftyGoods03.plist in Resources */,
 				04049E3024C69B76003D15F9 /* shareTerrace.plist in Resources */,
+				0447A90E259AC94400F5FB54 /* OverTheCounter.storyboard in Resources */,
 				04361B8524FCEA0E0053B6D7 /* MangoDefiListViewController.xib in Resources */,
 				04049E2A24C69B76003D15F9 /* DCUserAdressCell.xib in Resources */,
 				04049E3D24C69B76003D15F9 /* CommentPic.plist in Resources */,
@@ -7042,9 +7286,11 @@
 				0415EDFE24BD6CAB00A55C95 /* gray_tabbar_home_animation.json in Resources */,
 				04049D7624C69B76003D15F9 /* mask.jpg in Resources */,
 				04049E3624C69B76003D15F9 /* ClassiftyGoods02.plist in Resources */,
+				044CF0A125A2EE1D00870FB5 /* ERSegmentCollectionViewCell.xib in Resources */,
 				04049DF624C69B76003D15F9 /* DCStoresRecommendCell.xib in Resources */,
 				0415EDF824BD6CAB00A55C95 /* tab_me_animate.json in Resources */,
 				04049DF324C69B76003D15F9 /* DCBeautyHotTopicCell.xib in Resources */,
+				044CF0A425A2EE1D00870FB5 /* EditMenuCollectionViewCell.xib in Resources */,
 				04049E2424C69B76003D15F9 /* DCCenterBackCell.xib in Resources */,
 				04049E1F24C69B76003D15F9 /* DCUserMgHeadView.xib in Resources */,
 				04049D7424C69B76003D15F9 /* line.png in Resources */,
@@ -7122,6 +7368,7 @@
 				04A2FDCC250092AF00B16CC4 /* DCFiveTableViewCell.xib in Resources */,
 				04B7AF4C250877F200789838 /* accessory_normal@2x.png in Resources */,
 				043C77B524C7DD760063E501 /* ExchangeHome.storyboard in Resources */,
+				044CF0B325A2F3B300870FB5 /* OverTheCounterTitleView.xib in Resources */,
 				04049DB124C69B76003D15F9 /* DCVerificationView.xib in Resources */,
 				04FFF6BD2519E31500EC99D0 /* CCPMultipleChoiceCell.xib in Resources */,
 				0416D33D24CE73A200DE6409 /* guide_page_3@2x.png in Resources */,
@@ -7215,6 +7462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B32AFF216EF55D00C43DF9 /* MarketThreeBtnView.m in Sources */,
+				0447A9C1259B1B3E00F5FB54 /* OverTheCounterBuyManageViewController.m in Sources */,
 				04049DD924C69B76003D15F9 /* DCShowTypeFourCell.m in Sources */,
 				04F3848F2251B5EC006A8C71 /* InfoListModel.m in Sources */,
 				84B8D5392150C8BB00286631 /* RecordDetailLabel.m in Sources */,
@@ -7223,6 +7471,7 @@
 				84A9FF5721368830006F9D1B /* KLinePointModel.m in Sources */,
 				04049D5224C69B76003D15F9 /* DCMediaTopToolView.m in Sources */,
 				843EC9DC21212271002D5C2A /* UIView+HUD.m in Sources */,
+				049814B825A415C6003FAB9F /* UIColor+HQStepper.m in Sources */,
 				04049D4C24C69B76003D15F9 /* DCHomeRefreshGifHeader.m in Sources */,
 				04BBD20224E278C900375025 /* LHDApp1TableViewController.m in Sources */,
 				04049DC524C69B76003D15F9 /* DCCommentsItem.m in Sources */,
@@ -7233,6 +7482,7 @@
 				842FEE48213E38510075716E /* MySwitch.m in Sources */,
 				04049E2E24C69B76003D15F9 /* DCNewFeatureViewController.m in Sources */,
 				04049D6324C69B76003D15F9 /* XWFilterAnimator+XWRipple.m in Sources */,
+				0440386C259D77D900D75301 /* OverTheCounterOrderDetailModel.m in Sources */,
 				842FEE8621411D1A0075716E /* ControlBtnsView.m in Sources */,
 				04BBD1C024D95A3100375025 /* DCPayWayCell.m in Sources */,
 				04049DB624C69B76003D15F9 /* DCFillinOrderViewController.m in Sources */,
@@ -7292,10 +7542,13 @@
 				04049DEF24C69B76003D15F9 /* DCRecommendReusableView.m in Sources */,
 				842FEE892141286B0075716E /* SetPasswordView.m in Sources */,
 				04BBD18024D7E3E500375025 /* HXAlbumListViewController.m in Sources */,
+				044CF0A825A2EE1D00870FB5 /* SectionHeader.m in Sources */,
+				04E31821259C3325008C64EC /* OverTheCounterOrderDetail2TableViewCell.m in Sources */,
 				043456CF25109F9600FD8654 /* YXPopADView.m in Sources */,
 				047B88F42521D9150054C24E /* EthereumLocalTx.m in Sources */,
 				04AB69162589E6DA00CD4B51 /* CreateAccountTool.m in Sources */,
 				047B88E42521D9020054C24E /* LHWalletManager.m in Sources */,
+				0447A9E0259B2E8A00F5FB54 /* OverTheCounterMyOrderTableViewController.m in Sources */,
 				04FD2C0F2239E37E00BC2EE5 /* HuobiBtn.m in Sources */,
 				04F3849C2251B7E6006A8C71 /* InfoBaseModel.m in Sources */,
 				047AF03F253193AE00ED51A1 /* LHRecordTableViewController.m in Sources */,
@@ -7322,6 +7575,7 @@
 				04049E0D24C69B76003D15F9 /* DCCustionHeadView.m in Sources */,
 				04049DBB24C69B76003D15F9 /* DCFiltrateViewController.m in Sources */,
 				84143011215B117B0079EFEC /* EOSAccountKey.m in Sources */,
+				0447AA1B259B387400F5FB54 /* OverTheCounterSellHomeViewController.m in Sources */,
 				04BBD16E24D7E3E500375025 /* HXPhotoViewTransition.m in Sources */,
 				046C330A21D461CD00C83340 /* EOSHelpRegisterVC.m in Sources */,
 				04FFF78B2519F6EB00EC99D0 /* JPAlertViewTextView.m in Sources */,
@@ -7333,6 +7587,7 @@
 				84B0A9642122CD7B002EFA0A /* RemindView.m in Sources */,
 				04049D8724C69B76003D15F9 /* DCTitleRolling.m in Sources */,
 				04049D7824C69B76003D15F9 /* XWTransitionAnimator.m in Sources */,
+				043C098D25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m in Sources */,
 				04BBD16024D7E3E500375025 /* SelwynExpandableTextView.m in Sources */,
 				0415EDDE24BD600000A55C95 /* CYLPlusButtonSubclass.m in Sources */,
 				04F59A3C21796715004A1387 /* ModifyPasswordVC.m in Sources */,
@@ -7343,6 +7598,7 @@
 				84C0DF30212CFF9100BCC91D /* NSMutableData+Bitcoin.m in Sources */,
 				04BBD17A24D7E3E500375025 /* UIButton+HXExtension.m in Sources */,
 				04CF7D9B21CB3C180083BA81 /* EOSCNDetailView.m in Sources */,
+				04E31849259C6612008C64EC /* OverTheCounterAddPaymentViewController.m in Sources */,
 				04361B7324F613490053B6D7 /* LHCurrencyModel.m in Sources */,
 				842FEE7E2141106A0075716E /* ImportWalletSwitchVC.m in Sources */,
 				04BBD18324D7E3E500375025 /* HXPhotoBottomSelectView.m in Sources */,
@@ -7380,6 +7636,7 @@
 				040071A321A64A9F005113A7 /* SortTypeSelectView.m in Sources */,
 				042738ED24ED127C001876CF /* DomainConfigManager.m in Sources */,
 				0415BDAC2131BC850022DEB7 /* YYKlineVolumeView.m in Sources */,
+				0447A9CF259B271100F5FB54 /* OverTheCounterOrderDetailViewController.m in Sources */,
 				0437061B24BEFA7C00873023 /* MainCoinDetailTableViewCell.m in Sources */,
 				043B56012235FD8600054016 /* HuobiNetBaseModel.m in Sources */,
 				843ECA3B21216320002D5C2A /* UIColor+Util.m in Sources */,
@@ -7405,7 +7662,6 @@
 				843EC9DA21212271002D5C2A /* NSObject+Parse.m in Sources */,
 				04049D4924C69B76003D15F9 /* DCGoodsCountDownCell.m in Sources */,
 				04BBD16C24D7E3E500375025 /* HXPhotoViewPresentTransition.m in Sources */,
-				04549906253D38D2006CC2BC /* ThemeVoteHomeTableViewController.m in Sources */,
 				04FD2C152239F0CD00BC2EE5 /* HuobiTypeOneTF.m in Sources */,
 				04FFF7882519F6EB00EC99D0 /* JPAlertViewButton.m in Sources */,
 				04BBD16B24D7E3E500375025 /* HXPhotoInteractiveTransition.m in Sources */,
@@ -7436,6 +7692,7 @@
 				843EC9ED212122A7002D5C2A /* BaseNetworking.m in Sources */,
 				04EB8061219AB4120089C59F /* SearchResultCell.m in Sources */,
 				043C77B924C7DF1B0063E501 /* LHDAppTableViewController.m in Sources */,
+				0447A9E6259B2F5A00F5FB54 /* OverTheCounterMyOrderTableViewCell.m in Sources */,
 				04049E2724C69B76003D15F9 /* DCStateItemCell.m in Sources */,
 				046D540821FA9E9D0069B9B0 /* NSMutableDictionary+Safe.m in Sources */,
 				047B88F12521D9150054C24E /* TokenModel.m in Sources */,
@@ -7456,14 +7713,18 @@
 				04BBD15624D7E3E500375025 /* JhFormCustumALLViewCell.m in Sources */,
 				04BBD1C124D95A3100375025 /* DCUserPayViewController.m in Sources */,
 				0417A6C5227575360053CA1A /* USDTTxDetailModel.m in Sources */,
+				049814B925A415C6003FAB9F /* HQStepperButton.m in Sources */,
 				04BBD1E724DCF51000375025 /* STToolbar.m in Sources */,
 				04BBD17224D7E3E500375025 /* NSBundle+HXPhotoPicker.m in Sources */,
 				04049D9724C69B76003D15F9 /* YBPopupMenu.m in Sources */,
 				046D540421FA9E9D0069B9B0 /* NSObject+Safe.m in Sources */,
 				04CAF7C9251DC0E900E714D4 /* LHHomeWalletViewController.m in Sources */,
 				04049DD524C69B76003D15F9 /* DCFeatureItemCell.m in Sources */,
+				0447A9C7259B1B5E00F5FB54 /* OverTheCounterBuyViewController.m in Sources */,
 				04BBD18F24D7E3E500375025 /* HXPhotoView.m in Sources */,
 				04BBD18124D7E3E500375025 /* HXPhotoPreviewVideoViewCell.m in Sources */,
+				044CF0A525A2EE1D00870FB5 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
+				0447A9DA259B2DE400F5FB54 /* OverTheCounterMyOrderViewController.m in Sources */,
 				04049DC024C69B76003D15F9 /* DCFooterReusableView.m in Sources */,
 				04049DC624C69B76003D15F9 /* DCDetailPicCell.m in Sources */,
 				04049E0B24C69B76003D15F9 /* DCHoverFlowLayout.m in Sources */,
@@ -7481,6 +7742,7 @@
 				04049D9324C69B76003D15F9 /* PPNumberButton.m in Sources */,
 				843ECA2A212162FB002D5C2A /* NSMutableAttributedString+ExFoundation.m in Sources */,
 				843ECA27212162FB002D5C2A /* NSDate+ExFoundation.m in Sources */,
+				044CF0A725A2EE1D00870FB5 /* EditMenuCollectionViewCell.m in Sources */,
 				04049DDD24C69B76003D15F9 /* DCCommentPicCell.m in Sources */,
 				04BBD16D24D7E3E500375025 /* HXPhotoPersentInteractiveTransition.m in Sources */,
 				04049D7A24C69B76003D15F9 /* XWDrawerAnimator.m in Sources */,
@@ -7524,6 +7786,7 @@
 				04049DB524C69B76003D15F9 /* DCGoodBaseViewController.m in Sources */,
 				04049D3C24C69B76003D15F9 /* DCGridItem.m in Sources */,
 				04375C03218306190006D530 /* MISTransactionRecordModel.m in Sources */,
+				044CF0A325A2EE1D00870FB5 /* ERSegmentController.m in Sources */,
 				8428A54521242323003E1DD8 /* MarketCell.m in Sources */,
 				8428A53F2123FE76003E1DD8 /* CurrencyModel.m in Sources */,
 				04BBD15E24D7E3E500375025 /* NSString+JhForm.m in Sources */,
@@ -7564,7 +7827,6 @@
 				04049D7E24C69B76003D15F9 /* UIView+Frame.m in Sources */,
 				842FEE70213F84B90075716E /* SelectButtonView.m in Sources */,
 				04C8BFD02192B5D1007C685E /* NSError+MisError.m in Sources */,
-				04549924253D8FAF006CC2BC /* ThemeVoteDetailViewController.m in Sources */,
 				843ECA312121630A002D5C2A /* RegularExpression.m in Sources */,
 				04049E0124C69B76003D15F9 /* DCFootprintGoodsViewController.m in Sources */,
 				046D540721FA9E9D0069B9B0 /* NSMutableAttributedString+Safe.m in Sources */,
@@ -7579,7 +7841,6 @@
 				842FEE6A213F806C0075716E /* ExportWalletAddressVC.m in Sources */,
 				04049E1624C69B76003D15F9 /* DCAdressItem.m in Sources */,
 				04049D4A24C69B76003D15F9 /* DCGoodsYouLikeCell.m in Sources */,
-				0454990D253D4080006CC2BC /* MyThemeTableViewController.m in Sources */,
 				8481805D2123B2630007DCF9 /* AESCrypt.m in Sources */,
 				043B55FB2235FD2200054016 /* HuobiCreateOrderModel.m in Sources */,
 				04BBD1E524DCF50F00375025 /* STPickerSingle.m in Sources */,
@@ -7595,7 +7856,6 @@
 				043B55F22235FC4800054016 /* HuobiDepthModel.m in Sources */,
 				04BBD19B24D7E3E500375025 /* HXPhotoPreviewViewCell.m in Sources */,
 				04049DF924C69B76003D15F9 /* DCStoresRecommendCell.m in Sources */,
-				0497712325416EBD00A01E2B /* ThemeVoteTableViewCell.m in Sources */,
 				04BBD17324D7E3E500375025 /* UIImageView+HXExtension.m in Sources */,
 				04049E1024C69B76003D15F9 /* DCSettingViewController.m in Sources */,
 				04F59A472179BA05004A1387 /* UpLoadIdInfoVC.m in Sources */,
@@ -7630,6 +7890,8 @@
 				04049D9F24C69B76003D15F9 /* Foundation+Log.m in Sources */,
 				04049D9424C69B76003D15F9 /* JPFPSStatus.m in Sources */,
 				0463C108218C4B4600793F99 /* NSBundle+language.m in Sources */,
+				04F5281125A46949002DDC4E /* OverTheCounterOrderDetailMangeViewController.m in Sources */,
+				04E31828259C5D1E008C64EC /* OverTheCounterContactViewController.m in Sources */,
 				04BBD18224D7E3E500375025 /* HXPhotoCustomNavigationBar.m in Sources */,
 				04E0B82A21B0F80900ABC4F4 /* ExportEOSPriKeyVC.m in Sources */,
 				046D540621FA9E9D0069B9B0 /* NSString+Safe.m in Sources */,
@@ -7637,6 +7899,8 @@
 				04BBD18824D7E3E500375025 /* HXPreviewContentView.m in Sources */,
 				04BBD14F24D7E3E500375025 /* JhFormTableViewVC.m in Sources */,
 				04FD2C122239E65600BC2EE5 /* HuobiToolView.m in Sources */,
+				044CF0A225A2EE1D00870FB5 /* ERPageViewController.m in Sources */,
+				044CF0A625A2EE1D00870FB5 /* ERSegmentMenuController.m in Sources */,
 				04A4AF4D2240BE9D0073BB20 /* HuobiUnAuthVC.m in Sources */,
 				840B1EA6216B0D3500700700 /* ShareMenuView.m in Sources */,
 				04049DDF24C69B76003D15F9 /* DCCommentFooterCell.m in Sources */,
@@ -7662,6 +7926,7 @@
 				046C32E821D0DBBA00C83340 /* ImportEOSWalletVC.m in Sources */,
 				04EFE96B25737B810055D516 /* LHViewRulesViewController.m in Sources */,
 				04049DBD24C69B76003D15F9 /* DCContentItem.m in Sources */,
+				0447A942259AD50400F5FB54 /* OverTheCounterManageViewController.m in Sources */,
 				04049E5124C69B77003D15F9 /* DCTabBarController.m in Sources */,
 				04049D5924C69B76003D15F9 /* UIView+Toast.m in Sources */,
 				04BBD19424D7E3E500375025 /* HXPhotoBottomConfiguration.m in Sources */,
@@ -7675,11 +7940,13 @@
 				04049D6124C69B76003D15F9 /* XWFilterAnimator+XWPageCurl.m in Sources */,
 				04049DBC24C69B76003D15F9 /* DCFiltrateItem.m in Sources */,
 				04049D5124C69B76003D15F9 /* DCMediaListViewController.m in Sources */,
+				04E31839259C6386008C64EC /* OverTheCounterPaymentTableViewCell.m in Sources */,
 				04049E1524C69B76003D15F9 /* DCMyCenterViewController.m in Sources */,
 				8484F3952159BA3A005992B1 /* JavascriptWebViewController.m in Sources */,
 				0400719C21A527C1005113A7 /* VTwoMarketListCell.m in Sources */,
 				04F59A2121782499004A1387 /* BindMailVC.m in Sources */,
 				04BBD17724D7E3E500375025 /* NSDate+HXExtension.m in Sources */,
+				04F6153625A592C8009C47AE /* OverTheCounterOrderDetail0TableViewCell.m in Sources */,
 				04BBD18E24D7E3E500375025 /* HXCustomAssetModel.m in Sources */,
 				046D540B21FA9E9D0069B9B0 /* NSNotificationCenter+Safe.m in Sources */,
 				04049DCF24C69B76003D15F9 /* DCFeatureItem.m in Sources */,
@@ -7714,8 +7981,10 @@
 				04049E0524C69B76003D15F9 /* DCClassMianItem.m in Sources */,
 				04F384872251AEC4006A8C71 /* NewsListVC.m in Sources */,
 				04FFF6BC2519E31500EC99D0 /* CCPMultipleChoiceView.m in Sources */,
+				04E31842259C6564008C64EC /* OverTheCounterPaymentTypeTableViewController.m in Sources */,
 				04F384922251B6F7006A8C71 /* IndoDetailModel.m in Sources */,
 				048E9BA821C9D960008B794F /* EOSProView.m in Sources */,
+				044CF0AE25A2F39300870FB5 /* OverTheCounterTitleView.m in Sources */,
 				04049E2124C69B76003D15F9 /* DCCenterServiceCell.m in Sources */,
 				04049D7324C69B76003D15F9 /* XWMagicMoveAnimator.m in Sources */,
 				0415BDA62131BC850022DEB7 /* YYStockScrollView.m in Sources */,
@@ -7728,6 +7997,7 @@
 				04BBD19224D7E3E500375025 /* HXPhotoSubViewCell.m in Sources */,
 				0465E83221802194000E11CB /* EOSWalletDetailVC.m in Sources */,
 				04CF7D9E21CCD1A70083BA81 /* EOSStakeView.m in Sources */,
+				0447A906259AC91B00F5FB54 /* OverTheCounterHomeViewController.m in Sources */,
 				842FEE38213E207A0075716E /* ReceiptQRCodeVC.m in Sources */,
 				84B0A95F2122C184002EFA0A /* UIButton+Gradient.m in Sources */,
 				04049DB224C69B76003D15F9 /* DCVerificationView.m in Sources */,
@@ -7740,6 +8010,7 @@
 				04049D8824C69B76003D15F9 /* UIView+DCRolling.m in Sources */,
 				04FFF7872519F6EB00EC99D0 /* JPAlertViewOptionalItemView.m in Sources */,
 				048E9BA221C8E771008B794F /* EOSDetailBtnsView.m in Sources */,
+				044CF0A025A2EE1D00870FB5 /* ERSegmentCollectionViewCell.m in Sources */,
 				04BBD19A24D7E3E500375025 /* HXPhotoEditViewController.m in Sources */,
 				04049DB024C69B76003D15F9 /* DCAccountPsdView.m in Sources */,
 				04049DF224C69B76003D15F9 /* DCBeautyHotItem.m in Sources */,
@@ -7751,7 +8022,6 @@
 				04049DDC24C69B76003D15F9 /* DCDetailGoodReferralCell.m in Sources */,
 				847BC6092133E001000B02AC /* MissionWallet.m in Sources */,
 				04930E4524E39739007E9376 /* LHMyExcitationTableViewCell.m in Sources */,
-				0490EC952542BE65006FDC01 /* MyVoteViewController.m in Sources */,
 				04F59A4321797E05004A1387 /* IdentityVerifyVC.m in Sources */,
 				046D540C21FA9E9D0069B9B0 /* NSMutableString+Safe.m in Sources */,
 				8460C7B02136A446002E4B2F /* YYLineDataModel.m in Sources */,
@@ -7763,7 +8033,6 @@
 				04F3848A2251AFD2006A8C71 /* NewsListCell.m in Sources */,
 				842FEE5B213E89940075716E /* ExportKeyStoreVC.m in Sources */,
 				04BBD18724D7E3E500375025 /* HXPreviewImageView.m in Sources */,
-				04549917253D437B006CC2BC /* LHSendThemeViewController.m in Sources */,
 				84B8D52E214FA6EF00286631 /* ETHTransactionRecordModel.m in Sources */,
 				0415BD9D2131BC850022DEB7 /* YYVolumePositionModel.m in Sources */,
 				04BBD1D024DBD89A00375025 /* DCOrderListTableViewCell.m in Sources */,
@@ -7831,9 +8100,11 @@
 				043B55E82232020400054016 /* HuobiAuthVC.m in Sources */,
 				04BBD16524D7E3E500375025 /* HXPhotoPreviewBottomView.m in Sources */,
 				0415EDD624BD58CD00A55C95 /* MainTabBarController.m in Sources */,
+				04E31818259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.m in Sources */,
 				043456D32511AE0F00FD8654 /* MallstoreADView.m in Sources */,
 				04049DD224C69B76003D15F9 /* DCShareItem.m in Sources */,
 				04049E0224C69B76003D15F9 /* DCCommodityViewController.m in Sources */,
+				0447A94E259ADA0600F5FB54 /* OverTheCounterSetTableViewController.m in Sources */,
 				84B0A9482122736B002EFA0A /* CustomizedTabBarController.m in Sources */,
 				04FD2C0C2239E17C00BC2EE5 /* HuobiExchangeView.m in Sources */,
 				84143021215C71060079EFEC /* sha2.c in Sources */,
@@ -7849,7 +8120,6 @@
 				04049DF124C69B76003D15F9 /* DCBeautyShopItem.m in Sources */,
 				04049DC424C69B76003D15F9 /* DCGoodCommentViewController.m in Sources */,
 				04049DCE24C69B76003D15F9 /* DCCommentPicItem.m in Sources */,
-				04AA455E253E9646005A2F08 /* VoteRecordTableViewController.m in Sources */,
 				843ECA25212162FB002D5C2A /* UIColor+AppConfigColor.m in Sources */,
 				04FFF7862519F6EB00EC99D0 /* JPAlertViewOptionalItem.m in Sources */,
 				04049D4624C69B76003D15F9 /* DCNewWelfareCell.m in Sources */,
@@ -7857,11 +8127,13 @@
 				04BBD20524E27B4D00375025 /* LHDAppTableViewCell.m in Sources */,
 				04049D4224C69B76003D15F9 /* DCCountDownHeadView.m in Sources */,
 				04BBD17524D7E3E500375025 /* UIView+HXExtension.m in Sources */,
+				0447A957259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.m in Sources */,
 				04049D6824C69B76003D15F9 /* XWFilterAnimator+XWSwipe.m in Sources */,
 				842FEE2B213D27470075716E /* SGWebView.m in Sources */,
 				04049D5F24C69B76003D15F9 /* SDBrowserImageView.m in Sources */,
 				04049DE124C69B76003D15F9 /* DCCommentHeaderCell.m in Sources */,
 				8414301A215B57D10079EFEC /* ImportHDWalletVC.m in Sources */,
+				049814B725A415C6003FAB9F /* HQStepper.m in Sources */,
 				04BBD15424D7E3E500375025 /* JhFormInputCell.m in Sources */,
 				04049DF024C69B76003D15F9 /* DCBeautyShopViewController.m in Sources */,
 				04049E4824C69B77003D15F9 /* Reachability.m in Sources */,
@@ -7878,6 +8150,7 @@
 				04049D6924C69B76003D15F9 /* XWFilterTransitionView.m in Sources */,
 				04049D4424C69B76003D15F9 /* DCSlideshowHeadView.m in Sources */,
 				04F59A3F2179672B004A1387 /* ResetByMailVC.m in Sources */,
+				0447A9BB259B107600F5FB54 /* JXButton.m in Sources */,
 				04BBD19524D7E3E500375025 /* HXAlbumlistView.m in Sources */,
 				842FEE58213E75D60075716E /* ExportWalletCell.m in Sources */,
 				04049E0824C69B76003D15F9 /* DCSwitchGridCell.m in Sources */,
@@ -7885,6 +8158,7 @@
 				04361B8A24FCEF000053B6D7 /* MangoDefiListTableViewCell.m in Sources */,
 				04F01FBD223B47F000EA9F4B /* HuobiRightExchangeVC.m in Sources */,
 				04049DE424C69B76003D15F9 /* DCDetailLikeItemCell.m in Sources */,
+				04E31832259C6310008C64EC /* OverTheCounterPaymentTableViewController.m in Sources */,
 				84B8D53C2151E1BA00286631 /* DashesLineView.m in Sources */,
 				84143053215EFFFA0079EFEC /* UserInfoHeadView.m in Sources */,
 				04049D9D24C69B76003D15F9 /* DCCheckRegular.m in Sources */,

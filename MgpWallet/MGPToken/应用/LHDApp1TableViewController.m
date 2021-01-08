@@ -13,6 +13,7 @@
 #import "DCHandPickViewController.h"
 #import "LHDAppModel.h"
 #import "MangoDefiMainViewController.h"
+#import "OverTheCounterManageViewController.h"
 
 @interface LHDApp1TableViewController ()
 
@@ -127,10 +128,23 @@
         }
             break;
         case 5:
-            [self performSegueWithIdentifier:@"ThemeVoteHomeTableViewControllerIndex" sender:nil];
+//            [self performSegueWithIdentifier:@"ThemeVoteHomeTableViewControllerIndex" sender:nil];
 
             break;
+        case 6:
+        {
+//            OverTheCounterManageViewController *vc = [OverTheCounterManageViewController new];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+            UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"OverTheCounter" bundle:[NSBundle mainBundle]];
+            UIViewController *secondNavigationController = secondStoryboard.instantiateInitialViewController;
+            secondNavigationController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:secondNavigationController animated:YES];
+
             
+        }
+            
+            break;
         default:
             [self.view showMsg:NSLocalizedString(@"即将开放", nil)];
 
@@ -139,7 +153,7 @@
     
 }
 
-/*
+/* OverTheCounter
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.

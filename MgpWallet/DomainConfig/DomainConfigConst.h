@@ -22,6 +22,7 @@ static  NSString * const nodeEth = @"nodeEth";
 static  NSString * const nodeEos = @"nodeEos";
 static  NSString * const nodeMgp = @"nodeMgp";
 static  NSString * const bpvoting = @"bpvoting";
+static  NSString * const otcstore = @"otcstore";
 
 
 #define kfilePath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/customDomains.plist"]

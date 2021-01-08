@@ -201,13 +201,6 @@
             self.gasCostLeftLabel.text = NSLocalizedString(@"订单星级", nil);
             self.levelRightLabel.text = NSLocalizedString(@"$0", nil);
             self.gasCostRightLabel.text = NSLocalizedString(@"M0", nil);
-            [[MGPHttpRequest shareManager]post:@"/api/userOrder/blend/orderSys" paramters:@{@"address":[MGPHttpRequest shareManager].curretWallet.address} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
-                
-                if ([responseObj[@"code"] intValue] == 0) {
-                    self.hmio_pro = [NSNumber numberWithDouble:[[responseObj[@"data"]objectForKey:@"hmio_pro"]doubleValue]];
-                }
-                
-            }];
         }
             break;
         case redeem:
@@ -274,7 +267,15 @@
                       [self.view showMsg:NSLocalizedString(@"输入的金额大于可用余额", nil)];
                       return;
                   }
-                  [self performSegueWithIdentifier:@"OperationProcessTableViewController" sender:nil];
+                  [[MGPHttpRequest shareManager]post:@"/api/userOrder/blend/blendOrderRatioByDollar" paramters:@{@"address":[MGPHttpRequest shareManager].curretWallet.address,@"num":self.amountTextField.text} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                      
+                      if ([responseObj[@"code"] intValue] == 0) {
+                          self.hmio_pro = [NSNumber numberWithDouble:[[responseObj[@"data"]objectForKey:@"hmio_pro"]doubleValue]];
+                          [self performSegueWithIdentifier:@"OperationProcessTableViewController" sender:nil];
+
+                      }
+                      
+                  }];
 
               }
               

@@ -21,6 +21,8 @@
 			<string>http://sh-expnode.vm.mgps.me:8888</string>
 			<key>bpvoting</key>
 			<string>mgp.bpvoting</string>
+			<key>otcstore</key>
+			<string>mgp.otcstore</string>
 		</dict>
 		<dict>
 			<key>kserveName</key>
@@ -34,9 +36,11 @@
 			<key>nodeEos</key>
 			<string>https://testnet.eos.io</string>
 			<key>nodeMgp</key>
-			<string>http://sh-test.vm.mgps.me:8888</string>
+			<string>http://47.56.127.227:8888</string>
 			<key>bpvoting</key>
 			<string>bpvotingo3o5</string>
+			<key>otcstore</key>
+			<string>mgp.otcstore</string>
 		</dict>
 		<dict>
 			<key>kserveName</key>
@@ -53,6 +57,8 @@
 			<string>http://sh-test.vm.mgps.me:8888</string>
 			<key>bpvoting</key>
 			<string>bpvotingo224</string>
+			<key>otcstore</key>
+			<string>mgp.otcstore</string>
 		</dict>
 		<dict>
 			<key>kserveName</key>
@@ -69,6 +75,8 @@
 			<string>http://sh-test.vm.mgps.me:8888</string>
 			<key>bpvoting</key>
 			<string>bpvotingo3o5</string>
+			<key>otcstore</key>
+			<string>mgp.otcstore</string>
 		</dict>
 		<dict>
 			<key>kserveName</key>
@@ -83,6 +91,8 @@
 			<string>https://jungle2.cryptolions.io</string>
 			<key>nodeMgp</key>
 			<string>http://sh-test.vm.mgps.me:8888</string>
+			<key>otcstore</key>
+			<string>mgp.otcstore</string>
 		</dict>
 	</array>
 </dict>

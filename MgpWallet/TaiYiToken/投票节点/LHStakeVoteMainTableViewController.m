@@ -159,7 +159,27 @@
         [self.tableView endFooterRefresh];
     } superView:self.view showFaliureDescription:YES];
     */
-    
+    /*
+    NSDictionary *dic = @{@"account_name":mgp_bpvoting};
+
+    [[HTTPRequestManager shareMgpManager] post:eos_get_account paramters:dic success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"eos_get_account:%@",responseObject);
+
+        if (isSuccess) {
+            NSString *balancestr = [(NSDictionary *)responseObject objectForKey:@"core_liquid_balance"];
+            NSString *valuestring = [balancestr componentsSeparatedByString:@" "].firstObject;
+            double balance = valuestring.doubleValue;
+            NSLog(@"eos blance = %.4f",balance);
+            self.titleLabel.text = [NSString stringWithFormat:@"%@:%@",NSLocalizedString(@"已投", nil),balancestr];
+
+        }else{
+
+        }
+    } failure:^(NSError *error) {
+        
+    } superView:self.view showFaliureDescription:YES];*/
+  
+        
     //
     [[HTTPRequestManager shareMgpManager] post:eos_get_table_rows paramters:@{@"json": @1,@"code": mgp_bpvoting,@"scope":mgp_bpvoting,@"table":@"global"} success:^(BOOL isSuccess, id responseObject) {
 
@@ -169,7 +189,6 @@
             NSArray *arr = (NSArray *)responseObject[@"rows"];
             NSDictionary *dic = arr.firstObject;
             _min_bp_list_quantity = [[dic[@"min_bp_list_quantity"] componentsSeparatedByString:@" "].firstObject intValue];
-            self.titleLabel.text = [NSString stringWithFormat:@"%@:%@",NSLocalizedString(@"已投", nil),dic[@"total_voted"]];
 
         }
     } failure:^(NSError *error) {
@@ -182,11 +201,25 @@
         
         if (isSuccess) {
             NSArray *temp = (NSArray *)responseObject;
-            _tokenBalance = [[temp.firstObject componentsSeparatedByString:@" "].firstObject intValue];
+            _tokenBalance = [[temp.firstObject componentsSeparatedByString:@" "].firstObject doubleValue];
         }
     } failure:^(NSError *error) {
         
     } superView:self.view showFaliureDescription:YES];
+    
+    [[HTTPRequestManager shareMgpManager] post:eos_get_currency_balance paramters:@{@"json": @1,@"code": @"eosio.token",@"account":mgp_bpvoting,@"symbol":@"MGP"} success:^(BOOL isSuccess, id responseObject) {
+        
+        if (isSuccess) {
+            NSArray *temp = (NSArray *)responseObject;
+            double titleDouble = [[temp.firstObject componentsSeparatedByString:@" "].firstObject doubleValue];
+            self.titleLabel.text = [NSString stringWithFormat:@"%@:%@ MGP",NSLocalizedString(@"已投", nil),[NSString getMoneyStringWithMoneyNumber:titleDouble]];
+
+
+        }
+    } failure:^(NSError *error) {
+        
+    } superView:self.view showFaliureDescription:YES];
+    
     
     
     [[MGPHttpRequest shareManager]post:@"/api/coinPrice" paramters:@{@"pair":@"MGP_USDT"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {

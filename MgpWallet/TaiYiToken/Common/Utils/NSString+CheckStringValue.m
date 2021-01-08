@@ -107,7 +107,7 @@
 + (NSString *)getMoneyStringWithMoneyNumber:(double)money{
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     // 设置格式
-    [numberFormatter setPositiveFormat:@"###,##0.0000;"];
+    [numberFormatter setPositiveFormat:@"###,##0.00;"];
     NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:money]];
     return formattedNumberString;
 }

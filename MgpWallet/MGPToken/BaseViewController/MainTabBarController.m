@@ -82,6 +82,7 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
                     self.mallstoreADView.model = model;
                     self.mallstoreADView.nameLabel.text = mgpName;
                     [self.mallstoreADView popADWithAnimated:YES];
+                    
                 }
 
             }

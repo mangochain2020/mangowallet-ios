@@ -521,7 +521,7 @@
                 }
                 
             }];
-        }
+        }//"voteId,1"
             break;
         case vote:
         {

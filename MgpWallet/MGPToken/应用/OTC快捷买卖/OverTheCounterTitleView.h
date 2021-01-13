@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabelR;
 
 @property (weak, nonatomic) IBOutlet UIImageView *rightIamge;
+@property (weak, nonatomic) IBOutlet UIView *timeBg;
+@property (weak, nonatomic) IBOutlet UIButton *timeBtn;
 
 @end
 

@@ -24,6 +24,11 @@ typedef enum _OverTheCounterOrderDetailType {
     OrderDetailType_BuyerPayment  = 7,//待买家付款
     OrderDetailType_BuyerPaid  = 8,//买家已付款
     OrderDetailType_Revoke  = 9,//卖家撤销
+    
+    //仲裁者状态
+    OrderDetailType_BuyerPayment_Arbiters  = 10,//仲裁者待买家付款
+    OrderDetailType_BuyerPaid_Arbiters  = 11,//仲裁者买家已付款
+
 
 } OverTheCounterOrderDetailType;
 
@@ -40,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) int orderPayType; //订单支付类型(银行卡0、支付宝1、微信2),订单类型为1、2时有效
 @property (nonatomic,strong) NSDictionary *sellUserInfo; //收款人信息
 @property (nonatomic,strong) NSDictionary *sellPayInfo; //收款方式信息
+@property (nonatomic,strong) NSDictionary *buyUserInfo; //付款方式信息
 
 
 @property (nonatomic,strong) OverTheCounterTitleView *titleView; //订单顶部视图

@@ -501,6 +501,7 @@
 		046D540C21FA9E9D0069B9B0 /* NSMutableString+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D53FD21FA9E9D0069B9B0 /* NSMutableString+Safe.m */; };
 		046D540D21FA9E9D0069B9B0 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D540021FA9E9D0069B9B0 /* NSDictionary+Safe.m */; };
 		046D540E21FA9E9D0069B9B0 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D540221FA9E9D0069B9B0 /* NSArray+Safe.m */; };
+		0478507525AE9E0B008D0E10 /* OverTheCounterContactArbitersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478507425AE9E0B008D0E10 /* OverTheCounterContactArbitersController.m */; };
 		0479BCEB2174351A00211EEA /* NewBaseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479BCEA2174351A00211EEA /* NewBaseInfoModel.m */; };
 		047AF03F253193AE00ED51A1 /* LHRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047AF03E253193AE00ED51A1 /* LHRecordTableViewController.m */; };
 		047B88E42521D9020054C24E /* LHWalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B88E32521D9020054C24E /* LHWalletManager.m */; };
@@ -1818,6 +1819,8 @@
 		046D540121FA9E9D0069B9B0 /* NSObject+KVOSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVOSafe.h"; sourceTree = "<group>"; };
 		046D540221FA9E9D0069B9B0 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		046D540321FA9E9D0069B9B0 /* NSAttributedString+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Safe.h"; sourceTree = "<group>"; };
+		0478507325AE9E0B008D0E10 /* OverTheCounterContactArbitersController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterContactArbitersController.h; sourceTree = "<group>"; };
+		0478507425AE9E0B008D0E10 /* OverTheCounterContactArbitersController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterContactArbitersController.m; sourceTree = "<group>"; };
 		0479BCE92174351A00211EEA /* NewBaseInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBaseInfoModel.h; sourceTree = "<group>"; };
 		0479BCEA2174351A00211EEA /* NewBaseInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBaseInfoModel.m; sourceTree = "<group>"; };
 		047AF03D253193AE00ED51A1 /* LHRecordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHRecordTableViewController.h; sourceTree = "<group>"; };
@@ -5244,6 +5247,7 @@
 			children = (
 				0447A94C259ADA0600F5FB54 /* OverTheCounterSetTableViewController.h */,
 				0447A94D259ADA0600F5FB54 /* OverTheCounterSetTableViewController.m */,
+				0478507225AE9DB5008D0E10 /* 管理者仲裁 */,
 				04E3182F259C62DF008C64EC /* 收款方式 */,
 				04E31825259C5CA1008C64EC /* 联系方式 */,
 			);
@@ -5459,6 +5463,15 @@
 				046D540321FA9E9D0069B9B0 /* NSAttributedString+Safe.h */,
 			);
 			path = LSSafeProtector;
+			sourceTree = "<group>";
+		};
+		0478507225AE9DB5008D0E10 /* 管理者仲裁 */ = {
+			isa = PBXGroup;
+			children = (
+				0478507325AE9E0B008D0E10 /* OverTheCounterContactArbitersController.h */,
+				0478507425AE9E0B008D0E10 /* OverTheCounterContactArbitersController.m */,
+			);
+			path = "管理者仲裁";
 			sourceTree = "<group>";
 		};
 		047AF03C253192F800ED51A1 /* 记录 */ = {
@@ -7891,6 +7904,7 @@
 				04049D4824C69B76003D15F9 /* DCGoodsGridCell.m in Sources */,
 				04049DB524C69B76003D15F9 /* DCGoodBaseViewController.m in Sources */,
 				04049D3C24C69B76003D15F9 /* DCGridItem.m in Sources */,
+				0478507525AE9E0B008D0E10 /* OverTheCounterContactArbitersController.m in Sources */,
 				04375C03218306190006D530 /* MISTransactionRecordModel.m in Sources */,
 				044CF0A325A2EE1D00870FB5 /* ERSegmentController.m in Sources */,
 				8428A54521242323003E1DD8 /* MarketCell.m in Sources */,

@@ -16,7 +16,14 @@ static int overTheCounterTitleViewheight = 70;
 @interface OverTheCounterOrderDetailMangeViewController ()<ERPageViewControllerDataSource,ERSegmentControllerDelegte>
 
 @property(strong, nonatomic)NSArray *listArray;
+
+@property(strong, nonatomic)NSArray *sellPayInfos;
+@property(strong, nonatomic)NSDictionary *sellUserInfo;
+@property(strong, nonatomic)NSDictionary *buyUserInfo;
+
 @property(strong, nonatomic)NSMutableArray *titleArray;
+
+
 
 @end
 
@@ -44,9 +51,84 @@ static int overTheCounterTitleViewheight = 70;
         [self addPageController];
 
     }else{
-        mgpName = self.dicData[@"order_maker"];
-        self.title = NSLocalizedString(@"我的订单", nil);
+        self.title = (self.orderDetailType == OrderDetailType_BuyerPayment_Arbiters || self.orderDetailType == OrderDetailType_BuyerPaid_Arbiters) ? NSLocalizedString(@"OTC仲裁订单列表", nil) : NSLocalizedString(@"我的订单", nil);
+     
         [self.view showHUD];
+        
+        dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+        dispatch_group_t group = dispatch_group_create();
+        dispatch_group_enter(group);//
+        dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            //买家信息
+            [[MGPHttpRequest shareManager]post:@"/moUsers/payInfo" isNewPath:YES paramters:@{@"mgpName":self.dicData[@"order_taker"]} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                dispatch_group_leave(group);
+                if ([responseObj[@"code"] intValue] == 0) {
+                    self.buyUserInfo = [responseObj[@"data"]objectForKey:@"userInfo"];
+                }
+            }];
+            
+        });
+        dispatch_group_enter(group);//
+        dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            //卖家信息
+            [[MGPHttpRequest shareManager]post:@"/moUsers/payInfo" isNewPath:YES paramters:@{@"mgpName":self.dicData[@"order_maker"]} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                dispatch_group_leave(group);
+                if ([responseObj[@"code"] intValue] == 0) {
+                    self.sellUserInfo = [responseObj[@"data"]objectForKey:@"userInfo"];
+                    self.sellPayInfos = [responseObj[@"data"]objectForKey:@"payInfos"];
+                }
+            }];
+            
+        });
+        //二个网络请求都完成统一处理
+        dispatch_group_notify(group, queue, ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view hideHUD];
+                for (NSDictionary *dict in self.sellPayInfos) {
+                    
+                    OverTheCounterOrderDetailViewController *vc = [secondStoryboard instantiateViewControllerWithIdentifier:@"OverTheCounterOrderDetailViewControllerIndex"];
+                    vc.orderDetailType = self.orderDetailType;
+                    vc.dicData = self.dicData;
+                    vc.orderPayType = [dict[@"payId"] intValue];
+                    vc.titleView = titleView;
+                    vc.sellPayInfo = dict;
+                    vc.sellUserInfo = self.sellUserInfo;
+                    vc.buyUserInfo = self.buyUserInfo;
+                    [tempArr addObject:vc];
+                    if (vc.orderPayType == 1) {
+                        [self.titleArray addObject:NSLocalizedString(@"银行卡", nil)];
+                    }else if (vc.orderPayType == 2){
+                        [self.titleArray addObject:NSLocalizedString(@"微信支付", nil)];
+
+                    }else if (vc.orderPayType == 3){
+                        [self.titleArray addObject:NSLocalizedString(@"支付宝", nil)];
+
+                    }
+                }
+                if (self.orderDetailType == OrderDetailType_PaymentSeller) {
+                    self.listArray = tempArr;
+
+                }else if ([self.dicData[@"pay_type"] intValue] > 0){
+                    int index = ([self.dicData[@"pay_type"] intValue]);
+                    for (OverTheCounterOrderDetailViewController *vc in tempArr) {
+                        if (vc.orderPayType == index) {
+                            self.listArray = @[vc];
+                        }
+                    }
+
+                }else{
+                    self.listArray = @[tempArr.firstObject];
+
+                }
+                [self addPageController];
+                
+
+            });
+            
+        });
+        
+        
+        /*
         [[MGPHttpRequest shareManager]post:@"/moUsers/payInfo" isNewPath:YES paramters:@{@"mgpName":mgpName} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
             [self.view hideHUD];
             if ([responseObj[@"code"] intValue] == 0) {
@@ -90,7 +172,7 @@ static int overTheCounterTitleViewheight = 70;
                 [self addPageController];
 
             }
-        }];
+        }];*/
     }
     
     

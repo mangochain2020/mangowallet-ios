@@ -28,9 +28,15 @@
     switch (self.myOrderType) {
         case OverTheCounterMyOrderType_buy:
         case OverTheCounterMyOrderType_sell:
+        case OverTheCounterMyOrderType_arbiters:
         {
-            self.numTitleLabel.text = [NSString stringWithFormat:@"%@%@",self.myOrderType == OverTheCounterMyOrderType_buy ? NSLocalizedString(@"购买", nil) : NSLocalizedString(@"出售", nil),self.dic[@"deal_quantity"]];
-            
+            if (self.myOrderType == OverTheCounterMyOrderType_buy){
+                self.numTitleLabel.text = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"购买", nil),self.dic[@"deal_quantity"]];
+            }else if (self.myOrderType == OverTheCounterMyOrderType_sell){
+                self.numTitleLabel.text = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"购买", nil),self.dic[@"deal_quantity"]];
+            }else if (self.myOrderType == OverTheCounterMyOrderType_arbiters){
+                self.numTitleLabel.text = [NSString stringWithFormat:@"%@",self.dic[@"order_sn"]];
+            }
             //总额
             NSString *quantitystring = [self.dic[@"deal_quantity"] componentsSeparatedByString:@" "].firstObject;
             NSString *pricestring = [self.dic[@"order_price"] componentsSeparatedByString:@" "].firstObject;

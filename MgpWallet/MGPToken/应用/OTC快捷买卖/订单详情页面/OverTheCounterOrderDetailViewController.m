@@ -51,6 +51,8 @@
     _titleView.titleLabelL.text = @" ";
     _titleView.subTitleLabelL.text = @"";
     _titleView.subTitleLabelR.text = @"";
+    _titleView.timeBg.hidden = YES;
+
     self.listArray = [NSMutableArray array];
     
     
@@ -228,16 +230,19 @@
             _titleView.subTitleLabelR.text = @"";
             
             NSString *leftTitle = [self.dicData[@"order_maker"]isEqualToString:[MGPHttpRequest shareManager].curretWallet.address] ? NSLocalizedString(@"买家联系方式", nil):NSLocalizedString(@"卖家联系方式", nil);
+            NSDictionary *userInfo = [self.dicData[@"order_maker"]isEqualToString:[MGPHttpRequest shareManager].curretWallet.address] ? self.sellUserInfo:self.buyUserInfo;
 
+            
+            
             NSString *mgpName = [self.dicData[@"order_maker"]isEqualToString:[MGPHttpRequest shareManager].curretWallet.address] ? self.dicData[@"order_taker"]:self.dicData[@"order_maker"];
 
             
             NSArray *temp1 = @[
                 @{@"leftTitle":leftTitle,@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":mgpName,@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":userInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":userInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":userInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -416,9 +421,9 @@
             NSArray *temp1 = @[
                 @{@"leftTitle":NSLocalizedString(@"买家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_taker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -429,7 +434,6 @@
                 @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                 @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"支付方式", nil),@"isTitle":@(0),@"rightTitle":self.payArray[[self.dicData[@"pay_type"] intValue]],@"isCopy":@(0),@"isBold":@(0)},
             ];
             
             NSArray *temp3 = @[
@@ -493,9 +497,9 @@
             NSArray *temp1 = @[
                 @{@"leftTitle":NSLocalizedString(@"买家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_taker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -514,6 +518,171 @@
                 @{@"leftTitle":NSLocalizedString(@"如有疑问或与卖家发生纠纷，请联系客服", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":wechatName,@"isCopy":@(1),@"isBold":@(0)},
             ];
+            [self.listArray addObject:temp1];
+            [self.listArray addObject:temp2];
+            [self.listArray addObject:temp3];
+
+            
+            
+        }
+            break;
+        case OrderDetailType_BuyerPayment_Arbiters://仲裁者待买家付款
+        {
+            
+            self.tableView.tableFooterView = [UIView new];
+      
+            NSString *order_price_string = [self.dicData[@"order_price"] componentsSeparatedByString:@" "].firstObject;
+            NSString *deal_quantity_string = [self.dicData[@"deal_quantity"] componentsSeparatedByString:@" "].firstObject;
+            
+            NSString *price = [NSString stringWithFormat:@"￥%@",order_price_string];
+            NSString *totalPrice = [NSString stringWithFormat:@"￥%.2f",order_price_string.doubleValue * deal_quantity_string.doubleValue];
+
+            _titleView.titleLabelL.text = NSLocalizedString(@"待买家付款", nil);
+            _titleView.titleLabelR.text = totalPrice;
+            
+            NSDate *date = [NSDate dateFromString:self.dicData[@"created_at"]];
+            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+            NSTimeInterval time = [timeSp doubleValue];
+            NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+            NSDate *date3 = [date2 dateByAddingHours:8];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            NSString *staartstr=[dateformatter stringFromDate:date3];
+            NSDate* date1 = [dateformatter dateFromString:staartstr];
+            NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
+            
+            NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+            NSInteger timeCurren = interval;
+            
+            NSInteger timePay = timeSp1+15*60;
+            
+
+            NSInteger timeInt = timePay - timeCurren;
+            if (timeInt > 0) {
+                [self setupGCDTime:timeInt];
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"付款剩余时间", nil);
+
+            }else{
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"订单已超时", nil);
+                _titleView.timeBg.hidden = NO;
+
+            }
+            
+            
+            NSArray *temp1 = @[
+                @{@"leftTitle":NSLocalizedString(@"买家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_taker"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+
+            ];
+            
+            NSArray *temp2 = @[
+                @{@"leftTitle":NSLocalizedString(@"卖家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+
+            ];
+            
+            
+            NSArray *temp3 = @[
+                @{@"leftTitle":NSLocalizedString(@"交易明细", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"总价", nil),@"isTitle":@(0),@"rightTitle":totalPrice,@"isCopy":@(0),@"isBold":@(1)},
+                @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
+                @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(1),@"isBold":@(0)},
+            ];
+            
+            
+            [self.listArray addObject:temp1];
+            [self.listArray addObject:temp2];
+            [self.listArray addObject:temp3];
+
+            
+            
+        }
+            break;
+        case OrderDetailType_BuyerPaid_Arbiters://仲裁者买家已付款
+        {
+            
+            self.tableView.tableFooterView = [UIView new];
+            self.bottomHeight.constant = 60;
+            [self.leftButton setTitle:NSLocalizedString(@"确认买家已付款", nil) forState:UIControlStateNormal];
+            [self.rightButton setTitle:NSLocalizedString(@"买家未付正确款项", nil) forState:UIControlStateNormal];
+            
+            NSString *order_price_string = [self.dicData[@"order_price"] componentsSeparatedByString:@" "].firstObject;
+            NSString *deal_quantity_string = [self.dicData[@"deal_quantity"] componentsSeparatedByString:@" "].firstObject;
+            
+            NSString *price = [NSString stringWithFormat:@"￥%@",order_price_string];
+            NSString *totalPrice = [NSString stringWithFormat:@"￥%.2f",order_price_string.doubleValue * deal_quantity_string.doubleValue];
+
+            _titleView.titleLabelL.text = NSLocalizedString(@"买家已付款", nil);
+            _titleView.titleLabelR.text = totalPrice;
+            
+            NSDate *date = [NSDate dateFromString:self.dicData[@"created_at"]];
+            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+            NSTimeInterval time = [timeSp doubleValue];
+            NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+            NSDate *date3 = [date2 dateByAddingHours:8];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            NSString *staartstr=[dateformatter stringFromDate:date3];
+            NSDate* date1 = [dateformatter dateFromString:staartstr];
+            NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
+            
+            NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+            NSInteger timeCurren = interval;
+            
+            NSInteger timePay = timeSp1+15*60;
+            
+
+            NSInteger timeInt = timePay - timeCurren;
+            if (timeInt > 0) {
+                [self setupGCDTime:timeInt];
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"放行剩余时间", nil);
+
+            }else{
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"订单已超时", nil);
+                _titleView.timeBg.hidden = NO;
+
+            }
+            
+            
+            NSArray *temp1 = @[
+                @{@"leftTitle":NSLocalizedString(@"买家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_taker"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.buyUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+
+            ];
+            
+            NSArray *temp2 = @[
+                @{@"leftTitle":NSLocalizedString(@"卖家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
+
+            ];
+            
+            
+            NSArray *temp3 = @[
+                @{@"leftTitle":NSLocalizedString(@"交易明细", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"总价", nil),@"isTitle":@(0),@"rightTitle":totalPrice,@"isCopy":@(0),@"isBold":@(1)},
+                @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
+                @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"支付方式", nil),@"isTitle":@(0),@"rightTitle":self.payArray[[self.dicData[@"pay_type"] intValue]],@"isCopy":@(0),@"isBold":@(0)},
+
+            ];
+            
+            
             [self.listArray addObject:temp1];
             [self.listArray addObject:temp2];
             [self.listArray addObject:temp3];
@@ -789,6 +958,7 @@
         if (bottomCount <= 0) {
             //关闭定时器
             dispatch_source_cancel(timer);
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }else {
             bottomCount -= 1;
             dispatch_async(dispatch_get_main_queue(), ^{

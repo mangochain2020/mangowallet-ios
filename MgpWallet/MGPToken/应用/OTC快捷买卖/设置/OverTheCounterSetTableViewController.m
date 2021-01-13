@@ -9,7 +9,10 @@
 #import "OverTheCounterSetTableViewController.h"
 #import "OverTheCounterContactViewController.h"
 
+//
 @interface OverTheCounterSetTableViewController ()
+
+@property (nonatomic,assign) BOOL isOTCAdmin; //是否管理者
 
 @end
 
@@ -25,6 +28,31 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *mgp_otcstore = [[DomainConfigManager share]getCurrentEvnDict][otcstore];
+
+    NSDictionary *dic = @{
+        @"json": @1,
+        @"code": mgp_otcstore,
+        @"scope":mgp_otcstore,
+        @"table":@"global",
+    };
+    
+    [[HTTPRequestManager shareMgpManager] post:eos_get_table_rows paramters:dic success:^(BOOL isSuccess, id responseObject) {
+
+        if (isSuccess) {
+            NSDictionary *dic = ((NSArray *)responseObject[@"rows"]).firstObject;
+            NSArray *arr = (NSArray *)dic[@"otc_arbiters"];
+            self.isOTCAdmin = [arr containsObject:[MGPHttpRequest shareManager].curretWallet.address];
+            
+            [self.tableView reloadData];
+        }
+        NSLog(@"%@",responseObject);
+
+    } failure:^(NSError *error) {
+    } superView:self.view showFaliureDescription:YES];
+    
+    
+    
 }
 
 #pragma mark - Table view data source
@@ -38,7 +66,11 @@
 #warning Incomplete implementation, return the number of rows
     return [super tableView:tableView numberOfRowsInSection:section];
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
 
+    return indexPath.row == 2 ? (_isOTCAdmin ? [super tableView:tableView heightForRowAtIndexPath:indexPath] : 0) : [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

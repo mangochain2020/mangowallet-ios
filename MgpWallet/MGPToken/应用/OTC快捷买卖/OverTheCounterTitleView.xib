@@ -46,12 +46,42 @@
                         <constraint firstAttribute="height" constant="60" id="Yih-lM-0Lj"/>
                     </constraints>
                 </imageView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU0-qe-9iN">
+                    <rect key="frame" x="342" y="66" width="62" height="27"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obl-uw-GcU">
+                            <rect key="frame" x="0.0" y="0.0" width="62" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="重启定时器">
+                                <color key="titleColor" systemColor="systemTealColor"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TF5-zC-E6c">
+                            <rect key="frame" x="0.0" y="25" width="62" height="1"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="RX2-IS-eDd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="TF5-zC-E6c" secondAttribute="bottom" constant="1" id="2u3-21-wZd"/>
+                        <constraint firstAttribute="bottom" secondItem="obl-uw-GcU" secondAttribute="bottom" id="IpH-jN-ppa"/>
+                        <constraint firstItem="obl-uw-GcU" firstAttribute="leading" secondItem="mU0-qe-9iN" secondAttribute="leading" id="XDf-9X-HKP"/>
+                        <constraint firstItem="obl-uw-GcU" firstAttribute="top" secondItem="mU0-qe-9iN" secondAttribute="top" id="gRE-rm-LbN"/>
+                        <constraint firstItem="TF5-zC-E6c" firstAttribute="leading" secondItem="mU0-qe-9iN" secondAttribute="leading" id="ktw-le-jdo"/>
+                        <constraint firstAttribute="trailing" secondItem="TF5-zC-E6c" secondAttribute="trailing" id="nGl-IH-Ufj"/>
+                        <constraint firstAttribute="trailing" secondItem="obl-uw-GcU" secondAttribute="trailing" id="z6a-cR-yAr"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sfj-mk-VgF" secondAttribute="trailing" constant="20" id="4Fr-Us-b1U"/>
                 <constraint firstItem="n2g-B3-eTd" firstAttribute="top" secondItem="sgj-CA-ken" secondAttribute="bottom" constant="10" id="7Zr-US-Oy9"/>
+                <constraint firstItem="mU0-qe-9iN" firstAttribute="bottom" secondItem="zJP-ud-HjK" secondAttribute="bottom" id="Bjr-qs-eHi"/>
                 <constraint firstItem="n2g-B3-eTd" firstAttribute="leading" secondItem="sgj-CA-ken" secondAttribute="leading" id="G6i-MP-jk0"/>
                 <constraint firstItem="zJP-ud-HjK" firstAttribute="leading" secondItem="n2g-B3-eTd" secondAttribute="trailing" id="I2Y-BJ-MJQ"/>
                 <constraint firstItem="zJP-ud-HjK" firstAttribute="centerY" secondItem="n2g-B3-eTd" secondAttribute="centerY" id="VfC-Vk-cMQ"/>
@@ -59,6 +89,7 @@
                 <constraint firstItem="WIT-AK-Ylm" firstAttribute="leading" secondItem="sgj-CA-ken" secondAttribute="trailing" id="Xvv-Lj-vY6"/>
                 <constraint firstItem="sgj-CA-ken" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="cs5-Ap-yW6"/>
                 <constraint firstItem="WIT-AK-Ylm" firstAttribute="centerY" secondItem="sgj-CA-ken" secondAttribute="centerY" id="rzc-6W-sDf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mU0-qe-9iN" secondAttribute="trailing" constant="10" id="u4Y-NR-6pp"/>
                 <constraint firstItem="sgj-CA-ken" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="wOp-rY-DyD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -66,6 +97,8 @@
                 <outlet property="rightIamge" destination="sfj-mk-VgF" id="2c3-6I-GRd"/>
                 <outlet property="subTitleLabelL" destination="n2g-B3-eTd" id="6d8-du-hHF"/>
                 <outlet property="subTitleLabelR" destination="zJP-ud-HjK" id="OUf-Eg-CAu"/>
+                <outlet property="timeBg" destination="mU0-qe-9iN" id="gxg-P9-lNo"/>
+                <outlet property="timeBtn" destination="obl-uw-GcU" id="3Cs-5j-Ad1"/>
                 <outlet property="titleLabelL" destination="sgj-CA-ken" id="rcu-zS-r4i"/>
                 <outlet property="titleLabelR" destination="WIT-AK-Ylm" id="GD3-EI-mcd"/>
             </connections>
@@ -76,6 +109,9 @@
         <image name="OverTheCounterTitleViewImage" width="57.5" height="57.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

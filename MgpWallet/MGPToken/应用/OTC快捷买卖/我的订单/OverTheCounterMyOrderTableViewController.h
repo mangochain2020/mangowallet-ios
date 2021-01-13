@@ -15,6 +15,7 @@ typedef enum _OverTheCounterMyOrderType {
     OverTheCounterMyOrderType_buy = 1,//购买的mgp
     OverTheCounterMyOrderType_sell = 2,//出售的mgp
     OverTheCounterMyOrderType_myPos = 3,//我的委托
+    OverTheCounterMyOrderType_arbiters = 4,//仲裁
 
 } OverTheCounterMyOrderType;
 

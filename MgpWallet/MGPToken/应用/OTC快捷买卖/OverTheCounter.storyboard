@@ -498,7 +498,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wx_" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-hL-dqn">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-hL-dqn">
                                             <rect key="frame" x="372" y="54" width="22" height="22"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -506,11 +506,11 @@
                                                 <constraint firstAttribute="height" constant="22" id="iZV-EY-BtK"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zfb_" translatesAutoresizingMaskIntoConstraints="NO" id="3yI-Ny-pam">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3yI-Ny-pam">
                                             <rect key="frame" x="347" y="54" width="22" height="22"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yl_" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-Dt-Eff">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-Dt-Eff">
                                             <rect key="frame" x="322" y="54" width="22" height="22"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
@@ -546,6 +546,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="buyButton" destination="SK7-JG-iTS" id="qhh-hJ-KLu"/>
+                                    <outlet property="image1" destination="iiM-hL-dqn" id="SRs-9F-P4t"/>
+                                    <outlet property="image2" destination="3yI-Ny-pam" id="iHZ-80-XWJ"/>
+                                    <outlet property="image3" destination="Ygq-Dt-Eff" id="0rX-PF-JMU"/>
                                     <outlet property="min_accept_quantityLabel" destination="v3q-0r-Cd3" id="QVP-LD-MsK"/>
                                     <outlet property="min_accept_quantityLeftLabel" destination="ChW-gm-Jyr" id="voT-LC-EDu"/>
                                     <outlet property="ownerLabel" destination="3Qb-NA-51S" id="InG-dG-p1k"/>
@@ -564,11 +567,11 @@
                     <navigationItem key="navigationItem" id="a3l-DY-404">
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="asE-Fw-2iB">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gdS-Le-30E">
-                                    <rect key="frame" x="341" y="11" width="53" height="22"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" id="gdS-Le-30E">
+                                    <rect key="frame" x="342" y="10.5" width="52" height="23"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="订单">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="订单" image="otcOrderBtn">
                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
@@ -578,26 +581,26 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="HX8-T2-mJS">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zs7-ra-iUU">
-                                    <rect key="frame" x="277" y="11" width="56" height="22"/>
+                                    <rect key="frame" x="280" y="10.5" width="54" height="23"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="设置">
+                                    <state key="normal" title="设置" image="otcSetBtn">
                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
-                                    <connections>
-                                        <segue destination="7zL-sh-Io6" kind="push" id="cwo-Wv-5Ip"/>
-                                    </connections>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="right1Button" destination="gdS-Le-30E" id="cxF-eM-wQd"/>
+                        <outlet property="right2Button" destination="zs7-ra-iUU" id="qu2-z6-YBr"/>
                         <segue destination="kLx-zq-oqf" kind="push" identifier="OverTheCounterSetTableViewControllerIndex" id="R8J-Qu-9gI"/>
+                        <segue destination="7zL-sh-Io6" kind="push" identifier="OverTheCounterSetTableViewControllerIndexs" id="zR8-bf-pOA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b77-gp-i0U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628.98550724637687" y="-1408.2589285714284"/>
+            <point key="canvasLocation" x="2449.275362318841" y="-1408.2589285714284"/>
         </scene>
         <!--Over The Counter My Order Table View Controller-->
         <scene sceneID="xvV-UT-zI3">
@@ -1351,7 +1354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6M-cH-BJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344.9275362318842" y="-1419.6428571428571"/>
+            <point key="canvasLocation" x="3165.217391304348" y="-1419.6428571428571"/>
         </scene>
         <!--Over The Counter Order Detail View Controller-->
         <scene sceneID="RPJ-e9-Bo2">
@@ -1986,7 +1989,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZH-2P-2Lk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2150.7246376811595" y="-1420.3125"/>
+            <point key="canvasLocation" x="3971.0144927536235" y="-1420.3125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yFT-Ol-5YD">
@@ -2166,13 +2169,15 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aR1-da-TAn"/>
-        <segue reference="cwo-Wv-5Ip"/>
+        <segue reference="zR8-bf-pOA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="accessory_normal.png" width="9" height="9"/>
         <image name="codeBg" width="26.666666030883789" height="56"/>
         <image name="ico_password" width="18" height="18"/>
         <image name="icon_jiantoucityarea" width="12" height="12"/>
+        <image name="otcOrderBtn" width="22.5" height="22.5"/>
+        <image name="otcSetBtn" width="22.5" height="22.5"/>
         <image name="wallet_code-2" width="24.5" height="24.5"/>
         <image name="wx_" width="32" height="32"/>
         <image name="yl_" width="32" height="32"/>

@@ -10,7 +10,8 @@
 
 @interface OverTheCounterAddPaymentViewController ()
 @property (strong,nonatomic)NSMutableArray *cellArr0;
-@property (strong,nonatomic)NSArray *image;
+@property (strong,nonatomic)NSString *imageUrl;
+@property (nonatomic, weak) XFDialogFrame *dialogView;
 
 @end
 
@@ -29,12 +30,24 @@
     if (self.model) {
         self.Jh_navRightTitle =@"删除";
         self.JhClickNavRightItemBlock = ^{
-            [[MGPHttpRequest shareManager]post:@"/moPayInfo/del" isNewPath:YES paramters:@{@"payInfoId":self.model[@"payInfoId"]} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
-                if ([responseObj[@"code"]intValue] == 0) {
-
-                }
+            
+            WEAKSELF; //
+            NSDictionary *attrs = @{XFDialogNoticeText:NSLocalizedString(@"您确定要删除联系方式吗?", nil), XFDialogCancelButtonTitle: NSLocalizedString(@"取消", nil), XFDialogCommitButtonTitle: NSLocalizedString(@"确定", nil),XFDialogTitleViewBackgroundColor:[UIColor orangeColor]};
+            
+            self.dialogView = [[[XFDialogNotice dialogWithTitle:NSLocalizedString(@"删除联系方式", nil) attrs:attrs commitCallBack:^(NSString *inputText) {
+                            
+                [weakSelf.dialogView hideWithAnimationBlock:nil];
+                [[MGPHttpRequest shareManager]post:@"/moPayInfo/del" isNewPath:YES paramters:@{@"payInfoId":self.model[@"payInfoId"]} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                    if ([responseObj[@"code"]intValue] == 0) {
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }
+                    
+                }];
                 
-            }];
+                
+            }] showWithAnimationBlock:nil]setCancelCallBack:nil];
+            
+            
 
         };
     }
@@ -73,8 +86,9 @@
         cell7.Jh_maxImageCount = 1;
         cell7.Jh_required = YES;
         if (self.model){
-            cell7.Jh_imageArr = @[VALIDATE_STRING(self.model[@"qrCode"])];
+            cell7.Jh_imageArr = @[[NSURL URLWithString:self.model[@"qrCode"]]];
         }
+        
         [_cellArr0 addObject:cell7];
     }
     
@@ -144,10 +158,10 @@
     dispatch_group_enter(group);//
     dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         JhFormCellModel *cell8 = temp.Jh_sectionModelArr[2];
-        [[MGPHttpRequest shareManager]post:@"/file/upload" andImages:cell8.Jh_selectImageArr completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+        [[MGPHttpRequest shareManager]post:@"/file/uploadFile" isNew:YES andImages:cell8.Jh_selectImageArr completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
             dispatch_group_leave(group);
             if ([responseObj[@"code"]intValue] == 0) {
-                weakSelf.image = responseObj[@"data"];
+                weakSelf.imageUrl = [responseObj[@"data"]objectForKey:@"url"];
             }
         }];
         
@@ -165,7 +179,7 @@
                 @"cardNum":cell1.Jh_info,
                 @"name":payTypeStr,
                 @"payId":@(weakSelf.payType),
-                @"qrCode":self.image.firstObject,
+                @"qrCode":self.imageUrl,
             }];
             
            NSString *urlStr =  @"/moPayInfo/save";

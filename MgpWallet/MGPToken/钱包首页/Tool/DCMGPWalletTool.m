@@ -37,6 +37,10 @@
 //合约参数
 @property (nonatomic, strong) NSDictionary *parameter;
 
+@property (nonatomic, strong) NSArray *parameters;
+@property (nonatomic, strong) NSMutableArray *binargs_arr;
+
+
 
 @end
 

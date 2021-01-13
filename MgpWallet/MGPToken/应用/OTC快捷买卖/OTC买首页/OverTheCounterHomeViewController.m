@@ -17,6 +17,7 @@
 #import "OverTheCounterSetTableViewController.h"
 
 #import "OverTheCounterBuyViewController.h"
+#import "UIButton+HXExtension.h"
 
 
 @interface OverTheCounterHomeViewController ()
@@ -29,6 +30,9 @@
 @property(strong, nonatomic) UIButton *flowButton;
 @property (nonatomic, weak) XFDialogFrame *dialogView;
 
+@property (weak, nonatomic) IBOutlet UIButton *right1Button;
+@property (weak, nonatomic) IBOutlet UIButton *right2Button;
+
 @end
 
 @implementation OverTheCounterHomeViewController
@@ -39,7 +43,6 @@
     [[MGPHttpRequest shareManager]post:@"/moUsers/isBind" isNewPath:YES paramters:@{@"mgpName":[MGPHttpRequest shareManager].curretWallet.address,@"type":@"0"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
         if ([responseObj[@"code"] intValue] == 0) {
             isOverTheCounterContact = [responseObj[@"data"] intValue];
-            isOverTheCounterContact=0;
         }
     }];
     
@@ -53,9 +56,60 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(overTheCounterBuyNotification:) name:@"OverTheCounterBuyNotification" object:nil];
     
     [self setup];
+//    [self.right1Button refreshTopBottom];
+//    [self.right2Button refreshTopBottom];
+
+    [self setNavigationItems];
     
     
 }
+- (void)setNavigationItems{
+    
+    UIButton *pulishButton=[UIButton buttonWithType:(UIButtonTypeCustom)];
+    [pulishButton setTitle:@"设置" forState:(UIControlStateNormal)];
+    [pulishButton setTitleColor:[UIColor darkGrayColor] forState:(UIControlStateNormal)];
+    [pulishButton setImage:[UIImage imageNamed:@"otcSetBtn"] forState:UIControlStateNormal];
+//    pulishButton.backgroundColor = [UIColor redColor];
+    
+    pulishButton.titleLabel.font=[UIFont systemFontOfSize:12];
+    [pulishButton addTarget:self action:@selector(pulish) forControlEvents:UIControlEventTouchUpInside];
+      
+    UIButton *saveButton=[UIButton buttonWithType:(UIButtonTypeCustom)];
+    [saveButton setTitle:@"订单" forState:(UIControlStateNormal)];
+    [saveButton setImage:[UIImage imageNamed:@"otcOrderBtn"] forState:UIControlStateNormal];
+
+    [saveButton setTitleColor:[UIColor darkGrayColor] forState:(UIControlStateNormal)];
+    saveButton.titleLabel.font=[UIFont systemFontOfSize:12];
+    [saveButton addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
+//    saveButton.backgroundColor = [UIColor orangeColor];
+
+    pulishButton.frame = CGRectMake(0, 0, 50, 40);
+    saveButton.frame=CGRectMake(0, 0, 50, 40);
+      
+    [pulishButton refreshTopBottom];
+    [saveButton refreshTopBottom];
+    pulishButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    saveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+
+    
+    UIBarButtonItem *pulish = [[UIBarButtonItem alloc] initWithCustomView:pulishButton];
+    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
+      
+        
+    self.navigationItem.rightBarButtonItems = @[save,pulish];
+
+    
+    
+}
+-(void)pulish{
+    [self performSegueWithIdentifier:@"OverTheCounterSetTableViewControllerIndexs" sender:nil];
+
+}
+-(void)save{
+    [self.navigationController pushViewController:[OverTheCounterMyOrderViewController new] animated:YES];
+
+}
+
 -(void)dealloc{
     NSLog(@"0000");
     [[NSNotificationCenter defaultCenter]removeObserver:self];
@@ -137,7 +191,63 @@
     
     cell.buyButton.tag = indexPath.row;
     [cell.buyButton addTarget:self action:@selector(buyButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    NSString *mgpName = dic[@"owner"];
 
+    cell.image1.image = [UIImage imageNamed:@""];
+    cell.image2.image = [UIImage imageNamed:@""];
+    cell.image3.image = [UIImage imageNamed:@""];
+
+    [[MGPHttpRequest shareManager]post:@"/moUsers/payInfo" isNewPath:YES paramters:@{@"mgpName":mgpName} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+
+        if ([responseObj[@"code"] intValue] == 0) {
+            
+            
+            NSArray *payInfos = [responseObj[@"data"]objectForKey:@"payInfos"];
+            switch (payInfos.count) {
+                case 1:
+                {
+                    NSDictionary *pay = payInfos.firstObject;
+                    NSString *name = [pay[@"payId"]intValue]==1 ? @"yl_" : [pay[@"payId"]intValue]==2 ? @"wx_" : @"zfb_";
+                    cell.image1.image = [UIImage imageNamed:name];
+                }
+                    break;
+                case 2:
+                {
+                    NSDictionary *pay = payInfos.firstObject;
+                    NSString *name = [pay[@"payId"]intValue]==1 ? @"yl_" : [pay[@"payId"]intValue]==2 ? @"wx_" : @"zfb_";
+                    cell.image1.image = [UIImage imageNamed:name];
+                    
+                    NSDictionary *pay1 = payInfos.lastObject;
+                    NSString *name1 = [pay1[@"payId"]intValue]==1 ? @"yl_" : [pay1[@"payId"]intValue]==2 ? @"wx_" : @"zfb_";
+                    cell.image2.image = [UIImage imageNamed:name1];
+                }
+                    break;
+                    
+                case 3:
+                {
+                    NSDictionary *pay = payInfos.firstObject;
+                    NSString *name = [pay[@"payId"]intValue]==1 ? @"yl_" : [pay[@"payId"]intValue]==2 ? @"wx_" : @"zfb_";
+                    cell.image1.image = [UIImage imageNamed:name];
+                    
+                    NSDictionary *pay1 = payInfos[1];
+                    NSString *name1 = [pay1[@"payId"]intValue]==1 ? @"yl_" : [pay1[@"payId"]intValue]==2 ? @"wx_" : @"zfb_";
+                    cell.image2.image = [UIImage imageNamed:name1];
+                    
+                    NSDictionary *pay2 = payInfos.lastObject;
+                    NSString *name2 = [pay2[@"payId"]intValue]==1 ? @"yl_" : [pay2[@"payId"]intValue]==2 ? @"wx_" : @"zfb_";
+                    cell.image3.image = [UIImage imageNamed:name2];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+
+            
+
+        }
+    }];
+    
     return cell;
 }
 - (void)buyButtonClick:(UIButton *)btn {
@@ -148,7 +258,7 @@
         [self presentPanModal:vc];
     }else{
         WEAKSELF; //
-        NSDictionary *attrs = @{XFDialogNoticeText:NSLocalizedString(@"您还未添加联系方式，添加后方可进行购买MGP", nil), XFDialogCancelButtonTitle: NSLocalizedString(@"取消", nil), XFDialogCommitButtonTitle: NSLocalizedString(@"添加联系方式", nil),XFDialogTitleViewBackgroundColor:[UIColor whiteColor]};
+        NSDictionary *attrs = @{XFDialogNoticeText:NSLocalizedString(@"您还未添加联系方式，添加后方可进行购买MGP", nil), XFDialogCancelButtonTitle: NSLocalizedString(@"取消", nil), XFDialogCommitButtonTitle: NSLocalizedString(@"添加联系方式", nil),XFDialogTitleViewBackgroundColor:[UIColor orangeColor]};
         
         self.dialogView = [[[XFDialogNotice dialogWithTitle:NSLocalizedString(@"添加联系方式", nil) attrs:attrs commitCallBack:^(NSString *inputText) {
                         
@@ -162,11 +272,6 @@
    
 }
 - (void)overTheCounterBuyNotification:(NSNotification *)notification{
-
-//    OverTheCounterOrderDetailMangeViewController *vc = [OverTheCounterOrderDetailMangeViewController new];
-//    vc.orderDetailType = OrderDetailType_PaymentSeller;
-//    [self.navigationController pushViewController:vc animated:YES];
-
     OverTheCounterOrderDetailMangeViewController *vc = [OverTheCounterOrderDetailMangeViewController new];
     vc.orderDetailType = OrderDetailType_PaymentSeller;
     vc.dicData = notification.object;

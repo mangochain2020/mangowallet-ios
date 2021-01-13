@@ -128,7 +128,7 @@
         }
             break;
         case 5:
-//            [self performSegueWithIdentifier:@"ThemeVoteHomeTableViewControllerIndex" sender:nil];
+            [self performSegueWithIdentifier:@"ThemeVoteHomeTableViewControllerIndex" sender:nil];
 
             break;
         case 6:

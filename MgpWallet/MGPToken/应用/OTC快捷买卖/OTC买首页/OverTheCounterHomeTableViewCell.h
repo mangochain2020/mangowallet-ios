@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *min_accept_quantityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *min_accept_quantityLeftLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *image1;
+@property (weak, nonatomic) IBOutlet UIImageView *image2;
+@property (weak, nonatomic) IBOutlet UIImageView *image3;
 
 
 

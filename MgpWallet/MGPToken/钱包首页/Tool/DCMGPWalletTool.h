@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)contractCode:(NSString *)code andAction:(NSString *)action andParameters:(NSDictionary *)parameters andPassWord:(NSString *)passWord completionHandler:(void (^)(id responseObj, NSError *error))handler;
 
 
+
+
 /**
  字典转json字符串
  */

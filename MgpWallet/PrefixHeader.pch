@@ -54,6 +54,7 @@
 #import "STPickerSingle.h"
 #import "DCMGPWalletTool.h"
 #import "CreateAccountTool.h"
+#import "DCWalletTool.h"
 
 
 #import "Constant.h"

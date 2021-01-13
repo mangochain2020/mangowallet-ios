@@ -195,7 +195,7 @@
     UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"ExchangeHome" bundle:[NSBundle mainBundle]];
     LHSendTransactionViewController *secondNavigationController = [secondStoryboard instantiateViewControllerWithIdentifier:@"LHSendTransactionViewController"];
     secondNavigationController.sendType = earnMoney;
-    [self.navigationController pushViewController:secondNavigationController animated:YES];
+//    [self.navigationController pushViewController:secondNavigationController animated:YES];
 }
 
 - (IBAction)allButtonClick:(id)sender {
@@ -280,7 +280,42 @@
                                 
                             };
         
+        NSDictionary *dic = @{
+            @"code":@"eosio.token",
+            @"action":@"transfer",
+            @"parameter":@{
+                    @"from":VALIDATE_STRING([MGPHttpRequest shareManager].curretWallet.address),
+                    @"to":VALIDATE_STRING(mgp_otcstore),
+                    @"memo":VALIDATE_STRING(@""),
+                    @"quantity":[NSString stringWithFormat:@"%.4f MGP", self.sellNumberTF.text.doubleValue]
+                }
+        };
+        NSDictionary *dic1 = @{
+            @"code":mgp_otcstore,
+            @"action":@"openorder",
+            @"parameter":@{
+                    @"owner":[MGPHttpRequest shareManager].curretWallet.address,
+                    @"quantity":quantity,
+                    @"price":price,
+                    @"min_accept_quantity":min_accept_quantity
+                    
+                }
+        };
         
+        [[DCWalletTool shareManager]contractParameters:@[dic,dic1] andPassWord:pwd completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                
+            if (responseObj) {
+                [self.view showMsg:NSLocalizedString(@"出售挂单成功", nil)];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                    
+                });
+            }
+
+        }];
+        
+        
+        /*
                             [[DCMGPWalletTool shareManager]transferAmount:VALIDATE_STRING(self.sellNumberTF.text) andFrom:[MGPHttpRequest shareManager].curretWallet.address andTo:mgp_otcstore andMemo:nil andPassWord:pwd completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
                                 
                                 if (responseObj) {
@@ -288,11 +323,6 @@
                                     [[DCMGPWalletTool shareManager]contractCode:mgp_otcstore andAction:@"openorder" andParameters:p andPassWord:pwd completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
                                         [self.view hideHUD];
                                         if (responseObj) {
-//                                            UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"OverTheCounter" bundle:[NSBundle mainBundle]];
-//                                            OverTheCounterOrderDetailViewController *vc = [secondStoryboard instantiateViewControllerWithIdentifier:@"OverTheCounterOrderDetailViewControllerIndex"];
-//                                            vc.orderDetailType = OrderDetailType_OnCommissionSale;
-//                                            [self.navigationController pushViewController:vc animated:YES];
-                                            
                                             [self.view showMsg:NSLocalizedString(@"出售挂单成功", nil)];
                                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                                 [self.navigationController popViewControllerAnimated:YES];
@@ -305,7 +335,7 @@
                                     
                                 }
                             }];
-        
+        */
                            
                         } errorCallBack:^(NSString *errorMessage) {
                             NSLog(@"error -- %@",errorMessage);

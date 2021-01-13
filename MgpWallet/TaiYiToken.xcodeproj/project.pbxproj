@@ -421,6 +421,14 @@
 		043B560922363E6700054016 /* ScrollBtnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B560822363E6700054016 /* ScrollBtnsView.m */; };
 		043B560D22365E4300054016 /* HuobisymbolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B560C22365E4300054016 /* HuobisymbolCell.m */; };
 		043C098D25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C098C25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m */; };
+		043C146225AD3D9A00F47EA7 /* DCWalletTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C146125AD3D9A00F47EA7 /* DCWalletTool.m */; };
+		043C14A525AD44E300F47EA7 /* LHSendThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C149325AD44E200F47EA7 /* LHSendThemeViewController.m */; };
+		043C14A625AD44E300F47EA7 /* VoteRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C149725AD44E200F47EA7 /* VoteRecordTableViewController.m */; };
+		043C14A725AD44E300F47EA7 /* ThemeVoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C149B25AD44E200F47EA7 /* ThemeVoteTableViewCell.m */; };
+		043C14A825AD44E300F47EA7 /* MyVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C149E25AD44E200F47EA7 /* MyVoteViewController.m */; };
+		043C14A925AD44E300F47EA7 /* MyThemeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C149F25AD44E300F47EA7 /* MyThemeTableViewController.m */; };
+		043C14AA25AD44E300F47EA7 /* ThemeVoteHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C14A125AD44E300F47EA7 /* ThemeVoteHomeTableViewController.m */; };
+		043C14AB25AD44E300F47EA7 /* ThemeVoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C14A325AD44E300F47EA7 /* ThemeVoteDetailViewController.m */; };
 		043C77B524C7DD760063E501 /* ExchangeHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043C77B424C7DD760063E501 /* ExchangeHome.storyboard */; };
 		043C77B924C7DF1B0063E501 /* LHDAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77B824C7DF1B0063E501 /* LHDAppTableViewController.m */; };
 		043C77C124C8416A0063E501 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C77C024C8416A0063E501 /* RSAEncryptor.m */; };
@@ -457,6 +465,9 @@
 		044CF0A825A2EE1D00870FB5 /* SectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF09F25A2EE1D00870FB5 /* SectionHeader.m */; };
 		044CF0AE25A2F39300870FB5 /* OverTheCounterTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CF0AD25A2F39300870FB5 /* OverTheCounterTitleView.m */; };
 		044CF0B325A2F3B300870FB5 /* OverTheCounterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CF0B225A2F3B300870FB5 /* OverTheCounterTitleView.xib */; };
+		044EF24925ABFFA000CB6136 /* CollectionCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EF24825ABFFA000CB6136 /* CollectionCodeView.m */; };
+		044EF24E25ABFFCA00CB6136 /* CollectionCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EF24D25ABFFCA00CB6136 /* CollectionCodeView.xib */; };
+		044EF27E25AC07AB00CB6136 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EF27D25AC07AB00CB6136 /* test.png */; };
 		04555DF125874E260092EB59 /* MGPHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04555DF025874E260092EB59 /* MGPHttpRequest.m */; };
 		0457755F24CFC0B0007DCD2B /* LHSendTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457755E24CFC0B0007DCD2B /* LHSendTransactionViewController.m */; };
 		045CA5832175B333005F2ACC /* BusinessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045CA5822175B333005F2ACC /* BusinessModel.m */; };
@@ -1657,6 +1668,22 @@
 		043B560C22365E4300054016 /* HuobisymbolCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HuobisymbolCell.m; sourceTree = "<group>"; };
 		043C098B25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterContactEmailTableViewController.h; sourceTree = "<group>"; };
 		043C098C25A6ECFE00E1DFED /* OverTheCounterContactEmailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterContactEmailTableViewController.m; sourceTree = "<group>"; };
+		043C146025AD3D9A00F47EA7 /* DCWalletTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCWalletTool.h; sourceTree = "<group>"; };
+		043C146125AD3D9A00F47EA7 /* DCWalletTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCWalletTool.m; sourceTree = "<group>"; };
+		043C149325AD44E200F47EA7 /* LHSendThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSendThemeViewController.m; sourceTree = "<group>"; };
+		043C149425AD44E200F47EA7 /* LHSendThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSendThemeViewController.h; sourceTree = "<group>"; };
+		043C149525AD44E200F47EA7 /* ThemeVoteHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeVoteHomeTableViewController.h; sourceTree = "<group>"; };
+		043C149725AD44E200F47EA7 /* VoteRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteRecordTableViewController.m; sourceTree = "<group>"; };
+		043C149825AD44E200F47EA7 /* VoteRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteRecordTableViewController.h; sourceTree = "<group>"; };
+		043C149A25AD44E200F47EA7 /* ThemeVoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeVoteTableViewCell.h; sourceTree = "<group>"; };
+		043C149B25AD44E200F47EA7 /* ThemeVoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteTableViewCell.m; sourceTree = "<group>"; };
+		043C149D25AD44E200F47EA7 /* MyThemeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyThemeTableViewController.h; sourceTree = "<group>"; };
+		043C149E25AD44E200F47EA7 /* MyVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVoteViewController.m; sourceTree = "<group>"; };
+		043C149F25AD44E300F47EA7 /* MyThemeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyThemeTableViewController.m; sourceTree = "<group>"; };
+		043C14A025AD44E300F47EA7 /* MyVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVoteViewController.h; sourceTree = "<group>"; };
+		043C14A125AD44E300F47EA7 /* ThemeVoteHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteHomeTableViewController.m; sourceTree = "<group>"; };
+		043C14A325AD44E300F47EA7 /* ThemeVoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeVoteDetailViewController.m; sourceTree = "<group>"; };
+		043C14A425AD44E300F47EA7 /* ThemeVoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeVoteDetailViewController.h; sourceTree = "<group>"; };
 		043C77B424C7DD760063E501 /* ExchangeHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExchangeHome.storyboard; sourceTree = "<group>"; };
 		043C77B724C7DF1B0063E501 /* LHDAppTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHDAppTableViewController.h; sourceTree = "<group>"; };
 		043C77B824C7DF1B0063E501 /* LHDAppTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHDAppTableViewController.m; sourceTree = "<group>"; };
@@ -1723,6 +1750,10 @@
 		044CF0AC25A2F39300870FB5 /* OverTheCounterTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverTheCounterTitleView.h; sourceTree = "<group>"; };
 		044CF0AD25A2F39300870FB5 /* OverTheCounterTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverTheCounterTitleView.m; sourceTree = "<group>"; };
 		044CF0B225A2F3B300870FB5 /* OverTheCounterTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverTheCounterTitleView.xib; sourceTree = "<group>"; };
+		044EF24725ABFFA000CB6136 /* CollectionCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionCodeView.h; sourceTree = "<group>"; };
+		044EF24825ABFFA000CB6136 /* CollectionCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCodeView.m; sourceTree = "<group>"; };
+		044EF24D25ABFFCA00CB6136 /* CollectionCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCodeView.xib; sourceTree = "<group>"; };
+		044EF27D25AC07AB00CB6136 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		04555DEF25874E260092EB59 /* MGPHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPHttpRequest.h; sourceTree = "<group>"; };
 		04555DF025874E260092EB59 /* MGPHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPHttpRequest.m; sourceTree = "<group>"; };
 		0457755D24CFC0B0007DCD2B /* LHSendTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHSendTransactionViewController.h; sourceTree = "<group>"; };
@@ -5032,9 +5063,71 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		043C149125AD44E200F47EA7 /* 投票应用 */ = {
+			isa = PBXGroup;
+			children = (
+				043C149525AD44E200F47EA7 /* ThemeVoteHomeTableViewController.h */,
+				043C14A125AD44E300F47EA7 /* ThemeVoteHomeTableViewController.m */,
+				043C149225AD44E200F47EA7 /* 发布投票 */,
+				043C149625AD44E200F47EA7 /* 记录 */,
+				043C149925AD44E200F47EA7 /* View */,
+				043C149C25AD44E200F47EA7 /* 我的投票 */,
+				043C14A225AD44E300F47EA7 /* 详情 */,
+			);
+			path = "投票应用";
+			sourceTree = "<group>";
+		};
+		043C149225AD44E200F47EA7 /* 发布投票 */ = {
+			isa = PBXGroup;
+			children = (
+				043C149325AD44E200F47EA7 /* LHSendThemeViewController.m */,
+				043C149425AD44E200F47EA7 /* LHSendThemeViewController.h */,
+			);
+			path = "发布投票";
+			sourceTree = "<group>";
+		};
+		043C149625AD44E200F47EA7 /* 记录 */ = {
+			isa = PBXGroup;
+			children = (
+				043C149725AD44E200F47EA7 /* VoteRecordTableViewController.m */,
+				043C149825AD44E200F47EA7 /* VoteRecordTableViewController.h */,
+			);
+			path = "记录";
+			sourceTree = "<group>";
+		};
+		043C149925AD44E200F47EA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043C149A25AD44E200F47EA7 /* ThemeVoteTableViewCell.h */,
+				043C149B25AD44E200F47EA7 /* ThemeVoteTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		043C149C25AD44E200F47EA7 /* 我的投票 */ = {
+			isa = PBXGroup;
+			children = (
+				043C149D25AD44E200F47EA7 /* MyThemeTableViewController.h */,
+				043C149E25AD44E200F47EA7 /* MyVoteViewController.m */,
+				043C149F25AD44E300F47EA7 /* MyThemeTableViewController.m */,
+				043C14A025AD44E300F47EA7 /* MyVoteViewController.h */,
+			);
+			path = "我的投票";
+			sourceTree = "<group>";
+		};
+		043C14A225AD44E300F47EA7 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				043C14A325AD44E300F47EA7 /* ThemeVoteDetailViewController.m */,
+				043C14A425AD44E300F47EA7 /* ThemeVoteDetailViewController.h */,
+			);
+			path = "详情";
+			sourceTree = "<group>";
+		};
 		043C77B624C7DEB00063E501 /* 应用 */ = {
 			isa = PBXGroup;
 			children = (
+				043C149125AD44E200F47EA7 /* 投票应用 */,
 				0447A903259AC79400F5FB54 /* OTC快捷买卖 */,
 				047AF03C253192F800ED51A1 /* 记录 */,
 				044CB2D0251B26F800AE1840 /* MGP+HMIO操作流程 */,
@@ -5499,6 +5592,8 @@
 			children = (
 				04A2FDCE2500CCB600B16CC4 /* DCMGPWalletTool.h */,
 				04A2FDCF2500CCB600B16CC4 /* DCMGPWalletTool.m */,
+				043C146025AD3D9A00F47EA7 /* DCWalletTool.h */,
+				043C146125AD3D9A00F47EA7 /* DCWalletTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -6013,6 +6108,9 @@
 				04E31817259C330E008C64EC /* OverTheCounterOrderDetail1TableViewCell.m */,
 				04E3181F259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.h */,
 				04E31820259C3324008C64EC /* OverTheCounterOrderDetail2TableViewCell.m */,
+				044EF24725ABFFA000CB6136 /* CollectionCodeView.h */,
+				044EF24825ABFFA000CB6136 /* CollectionCodeView.m */,
+				044EF24D25ABFFCA00CB6136 /* CollectionCodeView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -7112,6 +7210,7 @@
 				043457022512054C00FD8654 /* AppDelegate.h */,
 				043457012512054900FD8654 /* AppDelegate.m */,
 				041C87BC21A392F8009F48CC /* Assets.xcassets */,
+				044EF27D25AC07AB00CB6136 /* test.png */,
 				84D0E42421211AAB004E65AD /* ViewController.h */,
 				84D0E42521211AAB004E65AD /* ViewController.m */,
 				84D0E42721211AAB004E65AD /* Main.storyboard */,
@@ -7306,6 +7405,7 @@
 				041C87BD21A392F8009F48CC /* Assets.xcassets in Resources */,
 				0415EDF424BD6CAB00A55C95 /* img_tab_home_1.png in Resources */,
 				0415EDF924BD6CAB00A55C95 /* img_tab_message_0.png in Resources */,
+				044EF24E25ABFFCA00CB6136 /* CollectionCodeView.xib in Resources */,
 				04049DF524C69B76003D15F9 /* DCBestBeautyShopCell.xib in Resources */,
 				04049E3C24C69B76003D15F9 /* YouLikeGoods.plist in Resources */,
 				04049DAF24C69B76003D15F9 /* DCLoginViewController.xib in Resources */,
@@ -7359,6 +7459,7 @@
 				04049D7524C69B76003D15F9 /* restrictedshine.tiff in Resources */,
 				84C8E7D1212A95EC00627445 /* english.txt in Resources */,
 				0415EDF224BD6CAB00A55C95 /* green_lottie_tab_news.json in Resources */,
+				044EF27E25AC07AB00CB6136 /* test.png in Resources */,
 				0416D33B24CE73A200DE6409 /* guide_page_2@1x.png in Resources */,
 				0415EE0024BD6CAB00A55C95 /* img_tab_me_0.png in Resources */,
 				04049E3A24C69B76003D15F9 /* BeautyShop.plist in Resources */,
@@ -7508,6 +7609,7 @@
 				0417A6BC22703E550053CA1A /* OmniUSDTBalanceModel.m in Sources */,
 				04049D9E24C69B76003D15F9 /* DCObjManager.m in Sources */,
 				843EC9DD21212271002D5C2A /* UIImage+BaseToImage.m in Sources */,
+				043C14AB25AD44E300F47EA7 /* ThemeVoteDetailViewController.m in Sources */,
 				04555DF125874E260092EB59 /* MGPHttpRequest.m in Sources */,
 				04049DED24C69B76003D15F9 /* DCRecommendCell.m in Sources */,
 				046D540521FA9E9D0069B9B0 /* NSMutableArray+Safe.m in Sources */,
@@ -7645,9 +7747,11 @@
 				04BBD15024D7E3E500375025 /* JhFormCellModel.m in Sources */,
 				04049E5524C69B77003D15F9 /* DCUserInfo.m in Sources */,
 				04049E4A24C69B77003D15F9 /* RequestTool.m in Sources */,
+				043C14A925AD44E300F47EA7 /* MyThemeTableViewController.m in Sources */,
 				0403883C2505DE7100DD2D9E /* SettlementViewController.m in Sources */,
 				04049D5724C69B76003D15F9 /* DCUpDownButton.m in Sources */,
 				04049DAE24C69B76003D15F9 /* DCRegisteredViewController.m in Sources */,
+				043C14A725AD44E300F47EA7 /* ThemeVoteTableViewCell.m in Sources */,
 				04BBD1FC24DCFFF900375025 /* DCCommodityModel.m in Sources */,
 				04049DA224C69B76003D15F9 /* NSObject+DCNull.m in Sources */,
 				04049D9B24C69B76003D15F9 /* DCKeepNewUserData.m in Sources */,
@@ -7728,12 +7832,14 @@
 				04049DC024C69B76003D15F9 /* DCFooterReusableView.m in Sources */,
 				04049DC624C69B76003D15F9 /* DCDetailPicCell.m in Sources */,
 				04049E0B24C69B76003D15F9 /* DCHoverFlowLayout.m in Sources */,
+				043C14A825AD44E300F47EA7 /* MyVoteViewController.m in Sources */,
 				8481805F2123B2630007DCF9 /* Base64.m in Sources */,
 				04B7AF4B250877F200789838 /* LrdSuperMenu.m in Sources */,
 				04049E2C24C69B76003D15F9 /* DCUserMgCell.m in Sources */,
 				842FEE8221411C9E0075716E /* ImportBTCWalletVC.m in Sources */,
 				04049E2F24C69B76003D15F9 /* DCNewFeatureCell.m in Sources */,
 				84748845212AAAD70077AC0F /* VerifyMnemonicVC.m in Sources */,
+				043C14AA25AD44E300F47EA7 /* ThemeVoteHomeTableViewController.m in Sources */,
 				84B32B0621702B4700C43DF9 /* EditSelfChooseVC.m in Sources */,
 				04049D5B24C69B76003D15F9 /* UINavigationController+XWTransition.m in Sources */,
 				843EC9DE21212271002D5C2A /* NSString+URLString.m in Sources */,
@@ -7847,6 +7953,7 @@
 				04BBD15824D7E3E500375025 /* JhFormCustumRightCell.m in Sources */,
 				84143051215EFFFA0079EFEC /* ImageTextCell.m in Sources */,
 				046D540D21FA9E9D0069B9B0 /* NSDictionary+Safe.m in Sources */,
+				043C14A525AD44E300F47EA7 /* LHSendThemeViewController.m in Sources */,
 				04049D8A24C69B76003D15F9 /* JKDBHelper.m in Sources */,
 				84B8D51C214B591C00286631 /* BTCBalanceModel.m in Sources */,
 				04049DE524C69B76003D15F9 /* DCDetailLikeCell.m in Sources */,
@@ -7924,6 +8031,7 @@
 				04BBD19D24D7E3E500375025 /* HXVideoEditViewController.m in Sources */,
 				0467849524BC2AD9005117F9 /* WalletListCollectionViewCell.m in Sources */,
 				046C32E821D0DBBA00C83340 /* ImportEOSWalletVC.m in Sources */,
+				043C146225AD3D9A00F47EA7 /* DCWalletTool.m in Sources */,
 				04EFE96B25737B810055D516 /* LHViewRulesViewController.m in Sources */,
 				04049DBD24C69B76003D15F9 /* DCContentItem.m in Sources */,
 				0447A942259AD50400F5FB54 /* OverTheCounterManageViewController.m in Sources */,
@@ -8125,6 +8233,7 @@
 				04049D4624C69B76003D15F9 /* DCNewWelfareCell.m in Sources */,
 				04049D4D24C69B76003D15F9 /* DCNewWelfareLayout.m in Sources */,
 				04BBD20524E27B4D00375025 /* LHDAppTableViewCell.m in Sources */,
+				044EF24925ABFFA000CB6136 /* CollectionCodeView.m in Sources */,
 				04049D4224C69B76003D15F9 /* DCCountDownHeadView.m in Sources */,
 				04BBD17524D7E3E500375025 /* UIView+HXExtension.m in Sources */,
 				0447A957259ADB4B00F5FB54 /* OverTheCounterHomeTableViewCell.m in Sources */,
@@ -8144,6 +8253,7 @@
 				046C32E221D07D5200C83340 /* EOSRAMVC.m in Sources */,
 				04049DF824C69B76003D15F9 /* DCBeautyShopRecommendCell.m in Sources */,
 				84748848212BC2EC0077AC0F /* UserInfoVC.m in Sources */,
+				043C14A625AD44E300F47EA7 /* VoteRecordTableViewController.m in Sources */,
 				04BBD17C24D7E3E500375025 /* HXPhotoPreviewBottomConfiguration.m in Sources */,
 				842FEEA5214A5FE80075716E /* TransactionGasView.m in Sources */,
 				84BDD1702126B3DF0039FE09 /* ButtonsView.m in Sources */,

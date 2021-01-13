@@ -17,6 +17,7 @@
     
 }
 @property(strong, nonatomic)NSMutableArray *listArray;
+@property(strong, nonatomic)NSArray *payArray;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomHeight;
@@ -35,7 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     mgp_otcstore = [[DomainConfigManager share]getCurrentEvnDict][otcstore];
-
+    _payArray = @[@"",NSLocalizedString(@"银行卡", nil),NSLocalizedString(@"微信支付", nil),NSLocalizedString(@"支付宝", nil)];
+    
     // Do any additional setup after loading the view.
     self.tableView.mj_header = [DCHomeRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(setUpData)];
     [self.tableView.mj_header beginRefreshing];
@@ -45,8 +47,8 @@
 #pragma mark - 获取数据
 - (void)setUpData
 {
-    _titleView.titleLabelR.text = @"0";
-    _titleView.titleLabelL.text = @"0";
+    _titleView.titleLabelR.text = @" ";
+    _titleView.titleLabelL.text = @" ";
     _titleView.subTitleLabelL.text = @"";
     _titleView.subTitleLabelR.text = @"";
     self.listArray = [NSMutableArray array];
@@ -72,9 +74,36 @@
             _titleView.titleLabelL.text = NSLocalizedString(@"向卖家付款", nil);
             _titleView.titleLabelR.text = totalPrice;
             
-            _titleView.subTitleLabelL.text = NSLocalizedString(@"付款剩余时间", nil);
-            [self setupGCDTime:125];
+
+            NSDate *date = [NSDate dateFromString:self.dicData[@"created_at"]];
+            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+            NSTimeInterval time = [timeSp doubleValue];
+            NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+            NSDate *date3 = [date2 dateByAddingHours:8];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            NSString *staartstr=[dateformatter stringFromDate:date3];
+            NSDate* date1 = [dateformatter dateFromString:staartstr];
+            NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
             
+            NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+            NSInteger timeCurren = interval;
+            
+            NSInteger timePay = timeSp1+15*60;
+            
+
+            NSInteger timeInt = timePay - timeCurren;
+            if (timeInt > 0) {
+                [self setupGCDTime:timeInt];
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"付款剩余时间", nil);
+
+            }else{
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"到期未支付", nil);
+            }
+         
+            
+        
             NSArray *temp1 = @[
                 @{@"leftTitle":NSLocalizedString(@"卖家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
@@ -117,18 +146,44 @@
             NSString *price = [NSString stringWithFormat:@"￥%@",order_price_string];
             NSString *totalPrice = [NSString stringWithFormat:@"￥%.2f",order_price_string.doubleValue * deal_quantity_string.doubleValue];
 
-            _titleView.titleLabelL.text = @" ";
             _titleView.titleLabelR.text = NSLocalizedString(@"等待卖家放行", nil);
             
-            _titleView.subTitleLabelL.text = NSLocalizedString(@"放行剩余时间", nil);
-            _titleView.subTitleLabelR.text = @"14:59";
+            NSDate *date = [NSDate dateFromString:self.dicData[@"taker_passed_at"]];
+            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+            NSTimeInterval time = [timeSp doubleValue];
+            NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+            NSDate *date3 = [date2 dateByAddingHours:8];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            NSString *staartstr=[dateformatter stringFromDate:date3];
+            NSDate* date1 = [dateformatter dateFromString:staartstr];
+            NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
+            
+            NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+            NSInteger timeCurren = interval;
+            
+            NSInteger timePay = timeSp1+15*60;
+            
+
+            NSInteger timeInt = timePay - timeCurren;
+            if (timeInt > 0) {
+                [self setupGCDTime:timeInt];
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"放行剩余时间", nil);
+
+            }else{
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"到期未放行", nil);
+            }
+            
+            
+            
             
             NSArray *temp1 = @[
                 @{@"leftTitle":NSLocalizedString(@"卖家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"email"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"memo"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -139,6 +194,7 @@
                 @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                 @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"支付方式", nil),@"isTitle":@(0),@"rightTitle":self.payArray[[self.dicData[@"pay_type"] intValue]],@"isCopy":@(0),@"isBold":@(0)},
             ];
             
             NSArray *temp3 = @[
@@ -158,8 +214,6 @@
         case OrderDetailType_TransactionSuccessful://交易成功
         {
             _titleView.titleLabelR.text = NSLocalizedString(@"交易成功", nil);
-            _titleView.titleLabelL.text = @"";
-            
             self.tableView.tableFooterView = [UIView new];
          
             NSString *order_price_string = [self.dicData[@"order_price"] componentsSeparatedByString:@" "].firstObject;
@@ -181,9 +235,9 @@
             NSArray *temp1 = @[
                 @{@"leftTitle":leftTitle,@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":mgpName,@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"email"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"memo"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -196,6 +250,8 @@
                 @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"付款方式", nil),@"isTitle":@(0),@"rightTitle":@"银行卡",@"isCopy":@(0),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"支付方式", nil),@"isTitle":@(0),@"rightTitle":self.payArray[[self.dicData[@"pay_type"] intValue]],@"isCopy":@(0),@"isBold":@(0)},
+
             ];
             
             NSArray *temp3 = @[
@@ -258,7 +314,6 @@
                     @{@"leftTitle":NSLocalizedString(@"交易明细", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                     @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                     @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"quantity"],@"isCopy":@(0),@"isBold":@(0)},
-                    @{@"leftTitle":NSLocalizedString(@"交易哈希", nil),@"isTitle":@(0),@"rightTitle":@"0x000000000",@"isCopy":@(1),@"isBold":@(0)},
                 ];
                 NSArray *temp2 = @[
                     @{@"leftTitle":NSLocalizedString(@"已成功出售", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"fulfilled_quantity"],@"isCopy":@(0),@"isBold":@(0)},
@@ -281,11 +336,10 @@
                     @{@"leftTitle":NSLocalizedString(@"交易明细", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                     @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                     @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"quantity"],@"isCopy":@(0),@"isBold":@(0)},
-                    @{@"leftTitle":NSLocalizedString(@"交易哈希", nil),@"isTitle":@(0),@"rightTitle":@"0x000000000",@"isCopy":@(1),@"isBold":@(0)},
                 ];
                 NSArray *temp2 = @[
                     @{@"leftTitle":NSLocalizedString(@"已成功出售", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"fulfilled_quantity"],@"isCopy":@(0),@"isBold":@(0)},
-                    @{@"leftTitle":NSLocalizedString(@"已冻结", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"frozen_quantity"],@"isCopy":@(0),@"isBold":@(0)},
+                    @{@"leftTitle":NSLocalizedString(@"已撤销", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"frozen_quantity"],@"isCopy":@(0),@"isBold":@(0)},
                 ];
                 [self.listArray addObject:temp1];
                 [self.listArray addObject:temp2];
@@ -306,7 +360,6 @@
                     @{@"leftTitle":NSLocalizedString(@"交易明细", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                     @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                     @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"quantity"],@"isCopy":@(0),@"isBold":@(0)},
-                    @{@"leftTitle":NSLocalizedString(@"交易哈希", nil),@"isTitle":@(0),@"rightTitle":@"0x000000000",@"isCopy":@(1),@"isBold":@(0)},
                 ];
                 NSArray *temp2 = @[
                     @{@"leftTitle":NSLocalizedString(@"已成功出售", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"fulfilled_quantity"],@"isCopy":@(0),@"isBold":@(0)},
@@ -332,15 +385,40 @@
             _titleView.titleLabelL.text = NSLocalizedString(@"待买家付款", nil);
             _titleView.titleLabelR.text = totalPrice;
             
-            _titleView.subTitleLabelL.text = NSLocalizedString(@"付款剩余时间", nil);
-            _titleView.subTitleLabelR.text = @"14:59";
+            NSDate *date = [NSDate dateFromString:self.dicData[@"created_at"]];
+            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+            NSTimeInterval time = [timeSp doubleValue];
+            NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+            NSDate *date3 = [date2 dateByAddingHours:8];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            NSString *staartstr=[dateformatter stringFromDate:date3];
+            NSDate* date1 = [dateformatter dateFromString:staartstr];
+            NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
+            
+            NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+            NSInteger timeCurren = interval;
+            
+            NSInteger timePay = timeSp1+15*60;
+            
+
+            NSInteger timeInt = timePay - timeCurren;
+            if (timeInt > 0) {
+                [self setupGCDTime:timeInt];
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"付款剩余时间", nil);
+
+            }else{
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"到期未支付", nil);
+            }
+            
             
             NSArray *temp1 = @[
                 @{@"leftTitle":NSLocalizedString(@"买家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_taker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"email"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"memo"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -351,6 +429,7 @@
                 @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                 @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"支付方式", nil),@"isTitle":@(0),@"rightTitle":self.payArray[[self.dicData[@"pay_type"] intValue]],@"isCopy":@(0),@"isBold":@(0)},
             ];
             
             NSArray *temp3 = @[
@@ -385,14 +464,38 @@
             _titleView.titleLabelR.text = totalPrice;
             
             _titleView.subTitleLabelL.text = NSLocalizedString(@"确认付款剩余时间", nil);
-            _titleView.subTitleLabelR.text = @"14:59";
+            NSDate *date = [NSDate dateFromString:self.dicData[@"taker_passed_at"]];
+            NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+            NSTimeInterval time = [timeSp doubleValue];
+            NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+            NSDate *date3 = [date2 dateByAddingHours:8];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+            [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+            NSString *staartstr=[dateformatter stringFromDate:date3];
+            NSDate* date1 = [dateformatter dateFromString:staartstr];
+            NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
             
+            NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+            NSInteger timeCurren = interval;
+            
+            NSInteger timePay = timeSp1+15*60;
+            
+
+            NSInteger timeInt = timePay - timeCurren;
+            if (timeInt > 0) {
+                [self setupGCDTime:timeInt];
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"放行剩余时间", nil);
+
+            }else{
+                _titleView.subTitleLabelL.text = NSLocalizedString(@"到期未放行", nil);
+            }
             NSArray *temp1 = @[
                 @{@"leftTitle":NSLocalizedString(@"买家联系方式", nil),@"isTitle":@(1),@"rightTitle":@"",@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"MGP账户", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_taker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"email"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"order_maker"],@"isCopy":@(1),@"isBold":@(0)},
-                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"memo"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"邮箱", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"mail"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"电话", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"phone"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"微信号", nil),@"isTitle":@(0),@"rightTitle":self.sellUserInfo[@"weixin"],@"isCopy":@(1),@"isBold":@(0)},
 
             ];
             
@@ -403,6 +506,8 @@
                 @{@"leftTitle":NSLocalizedString(@"价格", nil),@"isTitle":@(0),@"rightTitle":price,@"isCopy":@(0),@"isBold":@(1)},
                 @{@"leftTitle":NSLocalizedString(@"数量", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"deal_quantity"],@"isCopy":@(0),@"isBold":@(0)},
                 @{@"leftTitle":NSLocalizedString(@"订单号", nil),@"isTitle":@(0),@"rightTitle":self.dicData[@"order_sn"],@"isCopy":@(1),@"isBold":@(0)},
+                @{@"leftTitle":NSLocalizedString(@"支付方式", nil),@"isTitle":@(0),@"rightTitle":self.payArray[[self.dicData[@"pay_type"] intValue]],@"isCopy":@(0),@"isBold":@(0)},
+
             ];
             
             NSArray *temp3 = @[
@@ -497,6 +602,10 @@
     if (self.orderDetailType == OrderDetailType_OnCommissionSale) {
         
         NSString *frozen_quantity_str = [self.dicData[@"frozen_quantity"] componentsSeparatedByString:@" "].firstObject;
+        NSString *quantity_str = [self.dicData[@"quantity"] componentsSeparatedByString:@" "].firstObject;
+        NSString *fufilled_quantity_str = [self.dicData[@"fufilled_quantity"] componentsSeparatedByString:@" "].firstObject;
+        
+        
         if ([frozen_quantity_str doubleValue] <= 0) {
             WEAKSELF;
 
@@ -511,21 +620,65 @@
                             
                 [weakSelf.dialogView hideWithAnimationBlock:nil];
                 NSString *mgp_otcstore = [[DomainConfigManager share]getCurrentEvnDict][otcstore];
-                NSDictionary *p = @{@"owner":self.dicData[@"owner"],@"order_id":self.dicData[@"id"]};
-                [[DCMGPWalletTool shareManager]contractCode:mgp_otcstore andAction:@"closeorder" andParameters:p andPassWord:VALIDATE_STRING([[NSUserDefaults standardUserDefaults]objectForKey:PassWordText]) completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                NSDictionary *dic = @{
+                    @"code":mgp_otcstore,
+                    @"action":@"closeorder",
+                    @"parameter":@{
+                            @"owner":self.dicData[@"owner"],
+                            @"order_id":self.dicData[@"id"]
+                    }
+                };
+                NSDictionary *dic1 = @{
+                    @"code":mgp_otcstore,
+                    @"action":@"withdraw",
+                    @"parameter":@{
+                            @"owner":self.dicData[@"owner"],
+                            @"quantity":[NSString stringWithFormat:@"%.4f MGP",[quantity_str doubleValue] - [fufilled_quantity_str doubleValue]]
+                    }
+                };
+                
+                [[DCWalletTool shareManager]contractParameters:@[dic,dic1] andPassWord:VALIDATE_STRING([[NSUserDefaults standardUserDefaults]objectForKey:PassWordText]) completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                        
                     if (responseObj) {
-
                         [self.view showMsg:NSLocalizedString(@"撤销成功", nil)];
                         self.orderDetailType = OrderDetailType_Revoke;
                         [self.tableView.mj_header beginRefreshing];
                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                            [self.navigationController popViewControllerAnimated:YES];
+                            [self.navigationController popViewControllerAnimated:YES];
                             
                         });
+                    }
+
+                }];
+                
+                
+                /*
+                [[DCMGPWalletTool shareManager]contractCode:mgp_otcstore andAction:@"closeorder" andParameters:p andPassWord:VALIDATE_STRING([[NSUserDefaults standardUserDefaults]objectForKey:PassWordText]) completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                    if (responseObj) {
+                        [[DCMGPWalletTool shareManager]contractCode:mgp_otcstore andAction:@"withdrawal" andParameters:@{@"owner":self.dicData[@"owner"],@"quantity":[NSString stringWithFormat:@"%.4f MGP",[quantity_str doubleValue] - [fufilled_quantity_str doubleValue]]} andPassWord:VALIDATE_STRING([[NSUserDefaults standardUserDefaults]objectForKey:PassWordText]) completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                            if (responseObj) {
+
+                                [self.view showMsg:NSLocalizedString(@"撤销成功", nil)];
+                                self.orderDetailType = OrderDetailType_Revoke;
+                                [self.tableView.mj_header beginRefreshing];
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    [self.navigationController popViewControllerAnimated:YES];
+                                    
+                                });
+                                
+                            }
+                        }];
+//                        [self.view showMsg:NSLocalizedString(@"撤销成功", nil)];
+//                        self.orderDetailType = OrderDetailType_Revoke;
+//                        [self.tableView.mj_header beginRefreshing];
+//                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+////                            [self.navigationController popViewControllerAnimated:YES];
+//
+//                        });
                         
                     }
                 }];
-                
+                */
                 
             }] showWithAnimationBlock:nil]setCancelCallBack:nil];
             
@@ -566,12 +719,21 @@
 }
 - (IBAction)rightClick:(id)sender {
     if (self.orderDetailType == OrderDetailType_PaymentSeller) {
-        NSDictionary *p = @{@"owner":self.dicData[@"order_taker"],@"deal_id":self.dicData[@"id"],@"pass":@"1",@"user_type":@"1"};
+        NSDictionary *p = @{@"owner":self.dicData[@"order_taker"],@"deal_id":self.dicData[@"id"],@"pass":@"1",@"user_type":@"1",@"pay_type":self.sellPayInfo[@"payId"]};
+        NSLog(@"%@---1----1---11----",p);
         [[DCMGPWalletTool shareManager]contractCode:mgp_otcstore andAction:@"passdeal" andParameters:p andPassWord:VALIDATE_STRING([[NSUserDefaults standardUserDefaults]objectForKey:PassWordText]) completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
             if (responseObj) {
-                self.orderDetailType = OrderDetailType_WaitingSellerPass;
-                [self.tableView.mj_header beginRefreshing];
                 
+                [[MGPHttpRequest shareManager]post:@"/email/send" isNewPath:YES paramters:@{@"mgpName":self.dicData[@"order_maker"],@"money":self.dicData[@"deal_quantity"],@"type":@"1"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                    if ([responseObj[@"code"]intValue] == 0) {
+                        [self.view showMsg:NSLocalizedString(@"已通知商家放行", nil)];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [self.navigationController popViewControllerAnimated:YES];
+                            
+                        });
+                    }
+                    
+                }];
             }
         }];
         
@@ -582,11 +744,19 @@
         self.dialogView = [[[XFDialogNotice dialogWithTitle:NSLocalizedString(@"确认收款", nil) attrs:attrs commitCallBack:^(NSString *inputText) {
                         
             [weakSelf.dialogView hideWithAnimationBlock:nil];
-            NSDictionary *p = @{@"owner":self.dicData[@"order_maker"],@"deal_id":self.dicData[@"id"],@"pass":@"1",@"user_type":@"0"};
+            NSDictionary *p = @{@"owner":self.dicData[@"order_maker"],@"deal_id":self.dicData[@"id"],@"pass":@"1",@"user_type":@"0",@"pay_type":self.dicData[@"pay_type"]};
             [[DCMGPWalletTool shareManager]contractCode:mgp_otcstore andAction:@"passdeal" andParameters:p andPassWord:VALIDATE_STRING([[NSUserDefaults standardUserDefaults]objectForKey:PassWordText]) completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
                 if (responseObj) {
                     self.orderDetailType = OrderDetailType_TransactionSuccessful;
                     [self.tableView.mj_header beginRefreshing];
+                    
+                    [[MGPHttpRequest shareManager]post:@"/email/send" isNewPath:YES paramters:@{@"mgpName":self.dicData[@"order_taker"],@"money":self.dicData[@"deal_quantity"],@"type":@"2"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+                        if ([responseObj[@"code"]intValue] == 0) {
+                            [self.view showMsg:NSLocalizedString(@"已通知会员查收", nil)];
+                            
+                        }
+                        
+                    }];
                     
                 }
             }];
@@ -623,8 +793,8 @@
             bottomCount -= 1;
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                NSString *str_minute = [NSString stringWithFormat:@"%02ld",(secondsCountDown%3600)/60];
-                NSString *str_second = [NSString stringWithFormat:@"%02ld",secondsCountDown%60];
+                NSString *str_minute = [NSString stringWithFormat:@"%02ld",(bottomCount%3600)/60];
+                NSString *str_second = [NSString stringWithFormat:@"%02ld",bottomCount%60];
                 NSString *format_time = [NSString stringWithFormat:@"%@:%@",str_minute,str_second];
                 weakSelf.titleView.subTitleLabelR.text = format_time;
 

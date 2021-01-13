@@ -19,6 +19,8 @@
 #define eos_get_required_keys @"v1/chain/get_required_keys"
 /** 提交区块 **/
 #define eos_push_transaction @"v1/chain/push_transaction"
+/** 调用将一组交易提交到链上 **/
+#define eos_push_transactions @"v1/chain/push_transactions"
 /** add **/
 #define eos_abi_bin_to_json @"v1/chain/abi_bin_to_json"
 /** 获取行动码 **/

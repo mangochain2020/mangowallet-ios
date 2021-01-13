@@ -34,7 +34,7 @@
 
 - (IBAction)sendEmail:(id)sender {
     
-    [[MGPHttpRequest shareManager]post:@"/email/send" isNewPath:YES paramters:@{@"mgpName":[MGPHttpRequest shareManager].curretWallet.address,@"mail":self.emailLabelR.text} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+    [[MGPHttpRequest shareManager]post:@"/email/send" isNewPath:YES paramters:@{@"mgpName":[MGPHttpRequest shareManager].curretWallet.address,@"mail":self.emailLabelR.text,@"type":@"0"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
         if ([responseObj[@"code"]intValue] == 0) {
             [self.view showMsg:NSLocalizedString(@"验证码发送成功", nil)];
             [self setupGCD];
@@ -58,6 +58,7 @@
     
 }
 - (void)setupGCD {
+    [self.sendBtn setEnabled:NO];
 
     __block NSInteger bottomCount = 59;
     [self.sendBtn setTitle:[NSString stringWithFormat:@"%lds",bottomCount] forState:UIControlStateNormal];
@@ -78,6 +79,11 @@
         if (bottomCount <= 0) {
             //关闭定时器
             dispatch_source_cancel(timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.sendBtn setTitle:NSLocalizedString(@"重新发送", nil) forState:UIControlStateNormal];
+                [weakSelf.sendBtn setEnabled:YES];
+            });
+
         }else {
             bottomCount -= 1;
             dispatch_async(dispatch_get_main_queue(), ^{

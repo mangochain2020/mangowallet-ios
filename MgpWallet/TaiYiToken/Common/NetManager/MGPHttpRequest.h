@@ -19,12 +19,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareManager;
 
+- (void)post:(NSString *)path isNewPath:(BOOL)newPath paramters:(NSDictionary *)paramters completionHandler:(void (^)(id responseObj, NSError *error))handler;
+
+
 - (void)post:(NSString *)path paramters:(NSDictionary *)paramters completionHandler:(void (^)(id responseObj, NSError *error))handler;
 
 - (void)test:(NSString *)path paramters:(NSDictionary *)paramters;
 
 //传图片流
 - (void)post:(NSString *)path andImages:(NSArray *)postImageArr completionHandler:(void (^)(id responseObj, NSError *error))handler;
+//传图片流
+- (void)post:(NSString *)path isNew:(BOOL) isNew andImages:(NSArray *)postImageArr completionHandler:(void (^)(id responseObj, NSError *error))handler;
+
 
 /*
 字典转json字符串

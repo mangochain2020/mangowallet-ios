@@ -7,6 +7,7 @@
 //
 
 #import "OverTheCounterOrderDetail1TableViewCell.h"
+#import "CollectionCodeView.h"
 
 @interface OverTheCounterOrderDetail1TableViewCell()
 
@@ -62,6 +63,11 @@
 }
 - (IBAction)thumbnailClick:(id)sender {
 
+    NSString *payType = self.dicData[@"qrCode"];
+    CollectionCodeView *mallstoreADView = [CollectionCodeView dc_viewFromXib];
+    [mallstoreADView.imageView sd_setImageWithURL:[NSURL URLWithString:payType]];
+    [mallstoreADView popADWithAnimated:YES];
+    
    
     
 }

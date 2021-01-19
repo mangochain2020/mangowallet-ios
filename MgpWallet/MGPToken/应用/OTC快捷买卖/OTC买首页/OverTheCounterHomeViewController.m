@@ -40,11 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"快捷买卖MGP", nil);
-    [[MGPHttpRequest shareManager]post:@"/moUsers/isBind" isNewPath:YES paramters:@{@"mgpName":[MGPHttpRequest shareManager].curretWallet.address,@"type":@"0"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
-        if ([responseObj[@"code"] intValue] == 0) {
-            isOverTheCounterContact = [responseObj[@"data"] intValue];
-        }
-    }];
+    
     
    self.tableView.tableFooterView = [UIView new];
     self.tableView.rowHeight = 130;
@@ -122,18 +118,51 @@
 #pragma mark - 获取数据
 - (void)setUpData
 {
+    [[MGPHttpRequest shareManager]post:@"/moUsers/isBind" isNewPath:YES paramters:@{@"mgpName":[MGPHttpRequest shareManager].curretWallet.address,@"type":@"0"} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+        if ([responseObj[@"code"] intValue] == 0) {
+            isOverTheCounterContact = [responseObj[@"data"] intValue];
+        }
+    }];
+    
     _listArray = [NSMutableArray array];
     NSString *mgp_otcstore = [[DomainConfigManager share]getCurrentEvnDict][otcstore];
 
     NSDictionary *dic = @{@"json": @1,@"code": mgp_otcstore,@"scope":mgp_otcstore,@"limit":@"500",@"table":@"selorders"};
+    
     [[HTTPRequestManager shareMgpManager] post:eos_get_table_rows paramters:dic success:^(BOOL isSuccess, id responseObject) {
                 
         if (isSuccess) {
             NSArray *arr = (NSArray *)responseObject[@"rows"];
             for (NSDictionary *dic in arr) {
-                if (![dic[@"closed"]intValue]) {
+                //数量
+                double quantity_str = [[dic[@"quantity"] componentsSeparatedByString:@" "].firstObject doubleValue];
+                double frozen_quantity_str = [[dic[@"frozen_quantity"] componentsSeparatedByString:@" "].firstObject doubleValue];
+                double fufilled_quantity_str = [[dic[@"fulfilled_quantity"] componentsSeparatedByString:@" "].firstObject doubleValue];
+                double min_accept_quantity = [[dic[@"min_accept_quantity"] componentsSeparatedByString:@" "].firstObject doubleValue];
+                double price = [[dic[@"price"] componentsSeparatedByString:@" "].firstObject doubleValue];
+
+                
+                double quantity = quantity_str - (fufilled_quantity_str + frozen_quantity_str);
+//
+                
+                if (![dic[@"closed"]intValue] && quantity > (min_accept_quantity / price)) {
                     [self.listArray insertObject:dic atIndex:0];
                 }
+             
+                
+                [self.listArray sortUsingComparator:^NSComparisonResult(id _Nonnull obj1, id _Nonnull obj2)
+                     {
+                         NSDictionary *objDic1 = obj1;
+                         NSDictionary *objDic2 = obj2;
+                    
+                    
+                         if ([[objDic1[@"price"] componentsSeparatedByString:@" "].firstObject doubleValue] < [[objDic2[@"price"] componentsSeparatedByString:@" "].firstObject doubleValue]){
+                             return NSOrderedAscending;
+                         }else{
+                             return NSOrderedDescending;
+                         }
+                     }];
+                                
             }
             [self.tableView.mj_header endRefreshing];
             [self.tableView reloadData];
@@ -142,9 +171,22 @@
         [self.tableView.mj_header endRefreshing];
     } superView:self.view showFaliureDescription:YES];
     
-    
-    
-    
+    //(quantity - (frozen_quantity + fufilled_quantity)) > (min_accept_quantity / price)
+    /**
+     {
+         closed = 0;
+         "closed_at" = "1970-01-01T00:00:00";
+         "created_at" = "2021-01-18T08:45:35";
+         "frozen_quantity" = "0.0760 MGP";
+         "fulfilled_quantity" = "0.0000 MGP";
+         id = 32;
+         "min_accept_quantity" = "2.00 CNY";
+         owner = testchenhanl;
+         price = "500.00 CNY";
+         quantity = "200.0000 MGP";
+     }
+     
+     */
     
     
 }

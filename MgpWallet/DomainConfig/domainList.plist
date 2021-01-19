@@ -40,7 +40,7 @@
 			<key>bpvoting</key>
 			<string>bpvotingo3o5</string>
 			<key>otcstore</key>
-			<string>tmgpotcstore</string>
+			<string>qmgpotcstore</string>
 		</dict>
 		<dict>
 			<key>kserveName</key>
@@ -82,7 +82,7 @@
 			<key>kserveName</key>
 			<string>FJ本地</string>
 			<key>kserveApi</key>
-			<string>http://v.babih.com</string>
+			<string>https://api.coom.pub</string>
 			<key>nodeBtc</key>
 			<string>http://test.bitstoreapp.com</string>
 			<key>nodeEth</key>
@@ -90,7 +90,7 @@
 			<key>nodeEos</key>
 			<string>https://jungle2.cryptolions.io</string>
 			<key>nodeMgp</key>
-			<string>http://sh-test.vm.mgps.me:8888</string>
+			<string>http://192.168.0.100:8888</string>
 			<key>otcstore</key>
 			<string>mgp.otcstore</string>
 		</dict>

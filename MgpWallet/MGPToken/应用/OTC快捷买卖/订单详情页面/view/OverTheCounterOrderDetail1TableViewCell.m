@@ -84,7 +84,7 @@
     _cardNumL.text = [self.dicData[@"payId"]intValue] == 2 ? NSLocalizedString(@"微信账号", nil) : NSLocalizedString(@"支付宝账号", nil);
 
     
-    _destLabel.text = NSLocalizedString(@"转账是，请使用您本人的交易方式，向对方转账，请勿备注，防止汇款被拦截，付款账户被冻结等问题", nil);
+    _destLabel.text = NSLocalizedString(@"转账时，请使用您本人的交易方式，向对方转账，请勿备注，防止汇款被拦截，付款账户被冻结等问题", nil);
 
     _userNameR.text = self.dicData[@"username"];
     _cardNumR.text = self.dicData[@"cardNum"];

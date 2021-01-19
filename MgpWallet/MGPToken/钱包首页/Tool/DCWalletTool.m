@@ -88,28 +88,33 @@ static DCWalletTool * defualt_shareMananger = nil;
     
     
     for (int i = 0; i < parameters.count; i++) {
-        dispatch_group_enter(group);//
+
+        dispatch_group_enter(group);
         dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             [self getJson:[self getAbiJsonToBinParamter][i] Binargs:^(id response) {
+                NSDictionary *p = parameters[i];
                 if ([response isKindOfClass:[NSDictionary class]]) {
                     dispatch_group_leave(group);
                     NSDictionary *d = (NSDictionary *)response;
-                    [weakSelf.binargs_arr addObject:[d objectForKey:@"binargs"]];
+                    [weakSelf.binargs_arr addObject:@{p[@"action"] : [d objectForKey:@"binargs"]}];
                 }
             }];
         });
+        
+        
     }
+
     //二个网络请求都完成统一处理
     dispatch_group_notify(group, queue, ^{
         dispatch_async(dispatch_get_main_queue(), ^{
-
+            
             [weakSelf getInfoSuccess:^(id response) {
                 if (response != nil) {
                     BlockChain *model = [BlockChain parse:response];// [@"data"]
                     weakSelf.expiration = [[[NSDate dateFromString: model.head_block_time] dateByAddingTimeInterval: 30] formatterToISO8601];
                     weakSelf.ref_block_num = [NSString stringWithFormat:@"%@",model.head_block_num];
-                    
+
                     NSString *js = @"function readUint32( tid, data, offset ){var hexNum= data.substring(2*offset+6,2*offset+8)+data.substring(2*offset+4,2*offset+6)+data.substring(2*offset+2,2*offset+4)+data.substring(2*offset,2*offset+2);var ret = parseInt(hexNum,16).toString(10);return(ret)}";
                     [weakSelf.context evaluateScript:js];
                     //读区块id，转化成**格式  ref_block_prefix: 515467051
@@ -131,7 +136,7 @@ static DCWalletTool * defualt_shareMananger = nil;
                         }
                     }];
                 }
-                            
+
             }];
         });
     });
@@ -161,7 +166,7 @@ static DCWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
     } superView:nil showFaliureDescription:YES];
     
 }
@@ -183,7 +188,7 @@ static DCWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
         NSLog(@"URL_GET_INFO_ERROR ==== %@",error.description);
     } superView:nil showFaliureDescription:YES];
     
@@ -191,7 +196,7 @@ static DCWalletTool * defualt_shareMananger = nil;
 #pragma mark - 获取公钥
 
 - (void)getRequiredPublicKeyRequestOperationSuccess:(void(^)(id response))handler {
-    NSLog(@"URL_GET_REQUIRED_KEYS parameters ============ %@",[[self getPramatersForRequiredKeys] modelToJSONString]);
+//    NSLog(@"URL_GET_REQUIRED_KEYS parameters ============ %@",[[self getPramatersForRequiredKeys] modelToJSONString]);
     HTTPRequestManager *manager = self.wallet.coinType == EOS ? [HTTPRequestManager shareEosManager] : [HTTPRequestManager shareMgpManager];
 
     [manager post:eos_get_required_keys paramters:[self getPramatersForRequiredKeys] success:^(BOOL isSuccess, id responseObject) {
@@ -201,6 +206,13 @@ static DCWalletTool * defualt_shareMananger = nil;
         }
     } failure:^(NSError *error) {
         handler(nil);
+        NSData *errorData = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+        NSDictionary *serializedData = [NSJSONSerialization JSONObjectWithData: errorData options:kNilOptions error:nil];
+        NSLog(@"error--%@",serializedData);
+        NSDictionary *err = [serializedData objectForKey:@"error"];
+        NSArray *detail = [err objectForKey:@"details"];
+        NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
         NSLog(@"URL_GET_REQUIRED_KEYS ==== %@",error.description);
     } superView:nil showFaliureDescription:YES];
     
@@ -236,9 +248,11 @@ static DCWalletTool * defualt_shareMananger = nil;
             [actionDict setObject:parameterDict[@"code"] forKey:@"account"];
 
             NSDictionary *parametersDic = self.parameters[i];
-            NSString *binargsStr = self.binargs_arr[i];
-            [actionDict setObject:parametersDic[@"action"] forKey:@"name"];
-            [actionDict setObject:VALIDATE_STRING(binargsStr) forKey:@"data"];
+            NSDictionary *binargsDic = self.binargs_arr[i];
+            NSString *action = parametersDic[@"action"];
+            
+            [actionDict setObject:action forKey:@"name"];
+            [actionDict setObject:VALIDATE_STRING(binargsDic[action]) forKey:@"data"];
 
             NSMutableDictionary *authorizationDict = [NSMutableDictionary dictionary];
             [authorizationDict setObject:from forKey:@"actor"];
@@ -256,6 +270,8 @@ static DCWalletTool * defualt_shareMananger = nil;
         
         [params setObject:availableDict forKey:@"available_keys"];
         
+        NSLog(@"%@ ==== ",transactionDict);
+
         
     }else{
         NSLog(@"URL_GET_REQUIRED_KEYS ==== 参数个数不一致");
@@ -307,13 +323,14 @@ static DCWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
-
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
+        
     } superView:nil showFaliureDescription:YES];
     
     
     
 }
+
 
 
 
@@ -329,7 +346,14 @@ static DCWalletTool * defualt_shareMananger = nil;
     }
     return temp;
 }
-
+/**
+ {"transaction":{"actions":[{"account":"eosio.token","data":"1042082163952b93a02ecd18655a99b4605b030000000000044d47500000000000","authorization":[{"actor":"mgptest11111","permission":"active"}],"name":"transfer"},{"account":"qmgpotcstore","data":"1042082163952b93605b030000000000044d475000000000450000000000000002434e5900000000f40100000000000002434e5900000000","authorization":[{"actor":"mgptest11111","permission":"active"}],"name":"openorder"}],"context_free_data":[],"ref_block_num":"4341534","delay_sec":0,"signatures":[],"context_free_actions":[],"ref_block_prefix":"3159727422","max_net_usage_words":0,"expiration":"2021-01-18T06:25:44","max_cpu_usage_ms":0},"available_keys":["EOS6xt9rXurXqp7TTx4FkPff9A28BoZXbAS6aU2Rk1cEjJNx6icqr","EOS6xt9rXurXqp7TTx4FkPff9A28BoZXbAS6aU2Rk1cEjJNx6icqr"]}
+ 
+ --------------------
+ {"transaction":{"actions":[{"account":"eosio.token","data":"1042082163952b9390d0030000000000044d475000000000450000000000000002434e5900000000640000000000000002434e5900000000","authorization":[{"actor":"mgptest11111","permission":"active"}],"name":"transfer"},{"account":"qmgpotcstore","data":"1042082163952b93a02ecd18655a99b490d0030000000000044d47500000000000","authorization":[{"actor":"mgptest11111","permission":"active"}],"name":"openorder"}],"context_free_data":[],"ref_block_num":"4341917","delay_sec":0,"signatures":[],"context_free_actions":[],"ref_block_prefix":"4071907415","max_net_usage_words":0,"expiration":"2021-01-18T06:28:55","max_cpu_usage_ms":0},"available_keys":["EOS6xt9rXurXqp7TTx4FkPff9A28BoZXbAS6aU2Rk1cEjJNx6icqr","EOS6xt9rXurXqp7TTx4FkPff9A28BoZXbAS6aU2Rk1cEjJNx6icqr"]}
+ 
+ 
+ */
 
 #pragma mark - getter
 

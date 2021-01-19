@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *voteContent;
 @property (weak, nonatomic) IBOutlet UILabel *voteTime;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+
+@property (copy,nonatomic)NSString *nodeMoney;
+@property (nonatomic, weak) XFDialogFrame *dialogView;
 
 @end
 
@@ -25,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"方案详情", nil);
+    [self.rightBtn setTitle:NSLocalizedString(@"节点投票", nil) forState:UIControlStateNormal];
+    self.rightBtn.hidden = YES;
     self.tableView.tableFooterView = [UIView new];
     self.voteTitle.text = self.dic[@"voteTitle"];
     self.voteAddress.text = self.dic[@"address"];
@@ -34,7 +40,43 @@
     if ([self.dic[@"type"]intValue] == 4) {
         self.button.hidden = YES;
     }
+    [[MGPHttpRequest shareManager]post:@"/voteTheme/checkSuperNode" paramters:@{@"mgpName":[MGPHttpRequest shareManager].curretWallet.address} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
 
+        if ([responseObj[@"code"]intValue] == 0) {
+            NSDictionary *dic = responseObj[@"data"];
+
+            self.rightBtn.hidden = ([dic[@"isSuperNode"]intValue] == 1 && [dic[@"isVote"]intValue] == 0 && [self.dic[@"type"]intValue] != 4) ? NO : YES;
+            self.nodeMoney = dic[@"money"];
+        }
+        
+    }];
+    
+
+    
+}
+- (IBAction)rightButtonClick:(id)sender {
+    NSString *titleName = [NSString stringWithFormat:@"%@(%@)%@",NSLocalizedString(@"您是否将超级节点票数", nil),self.nodeMoney,NSLocalizedString(@"投递给该方案", nil)];
+    
+    WEAKSELF; //
+    NSDictionary *attrs = @{XFDialogNoticeText:titleName, XFDialogCancelButtonTitle: NSLocalizedString(@"取消", nil), XFDialogCommitButtonTitle: NSLocalizedString(@"投票", nil),XFDialogTitleViewBackgroundColor:[UIColor orangeColor]};
+    
+    self.dialogView = [[[XFDialogNotice dialogWithTitle:NSLocalizedString(@"超级节点投票", nil) attrs:attrs commitCallBack:^(NSString *inputText) {
+                    
+        [weakSelf.dialogView hideWithAnimationBlock:nil];
+        [[MGPHttpRequest shareManager]post:@"/voteTheme/addSuperVote" paramters:@{@"address":[MGPHttpRequest shareManager].curretWallet.address,@"voteId":self.dic[@"voteId"],@"money":self.nodeMoney} completionHandler:^(id  _Nonnull responseObj, NSError * _Nonnull error) {
+
+            if ([responseObj[@"code"]intValue] == 0) {
+                [self.view showMsg:NSLocalizedString(@"节点投票成功", nil)];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            }
+            
+        }];
+        
+        
+    }] showWithAnimationBlock:nil]setCancelCallBack:nil];
+    
     
 }
 - (IBAction)buttonClick:(id)sender {

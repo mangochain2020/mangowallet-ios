@@ -246,7 +246,7 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
     } superView:nil showFaliureDescription:YES];
     
     
@@ -270,7 +270,7 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
     } superView:nil showFaliureDescription:YES];
     
 }
@@ -295,7 +295,7 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
         NSLog(@"URL_GET_INFO_ERROR ==== %@",error.description);
     } superView:nil showFaliureDescription:YES];
 }
@@ -318,7 +318,7 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
         NSLog(@"URL_GET_INFO_ERROR ==== %@",error.description);
     } superView:nil showFaliureDescription:YES];
     
@@ -343,7 +343,7 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
 
     } superView:nil showFaliureDescription:YES];
     
@@ -392,7 +392,7 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
         NSDictionary *err = [serializedData objectForKey:@"error"];
         NSArray *detail = [err objectForKey:@"details"];
         NSString *mesg = [[detail[0] objectForKey:@"message"] copy];
-        [[[UIApplication sharedApplication].windows lastObject] showMsg:mesg];
+        [[[MGPHttpRequest shareManager]jsd_findVisibleViewController].view showMsg:mesg];
 
     } superView:nil showFaliureDescription:YES];
     
@@ -509,5 +509,26 @@ static DCMGPWalletTool * defualt_shareMananger = nil;
     return jsonTemp;
 }
 
+- (NSInteger)isShowOutTimeExpirationData:(NSString *)str{
+    NSDate *date = [NSDate dateFromString:str];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+    NSTimeInterval time = [timeSp doubleValue];
+    NSDate *date2=[NSDate dateWithTimeIntervalSince1970:time];
+    NSDate *date3 = [date2 dateByAddingHours:8];
+    NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+    NSString *staartstr=[dateformatter stringFromDate:date3];
+    NSDate* date1 = [dateformatter dateFromString:staartstr];
+    NSInteger timeSp1 = [[NSNumber numberWithDouble:[date1 timeIntervalSince1970]] integerValue];
+
+    
+    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+    NSInteger timeCurren = interval;
+                
+
+    NSInteger timeInt = timeSp1 - timeCurren;
+    
+    return timeInt;
+}
 
 @end

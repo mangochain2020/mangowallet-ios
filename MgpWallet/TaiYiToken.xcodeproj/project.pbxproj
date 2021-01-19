@@ -543,6 +543,10 @@
 		04A4AF592241E6F00073BB20 /* HuobiBalanceCollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AF582241E6F00073BB20 /* HuobiBalanceCollectModel.m */; };
 		04AB69162589E6DA00CD4B51 /* CreateAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */; };
 		04ABE6FD219AA233008DF901 /* NodeSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ABE6FC219AA233008DF901 /* NodeSettingVC.m */; };
+		04AC08DC25B04AC5007C45DA /* GQGridViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC08D725B04AC5007C45DA /* GQGridViewControl.m */; };
+		04AC08DD25B04AC5007C45DA /* gridcontrol_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AC08D825B04AC5007C45DA /* gridcontrol_delete@2x.png */; };
+		04AC08DE25B04AC5007C45DA /* GQGridManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC08D925B04AC5007C45DA /* GQGridManagerView.m */; };
+		04AC08DF25B04AC5007C45DA /* gridcontrol_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AC08DA25B04AC5007C45DA /* gridcontrol_add@2x.png */; };
 		04B2B94E21A69A07000F35A3 /* MarketTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B94D21A69A07000F35A3 /* MarketTicketModel.m */; };
 		04B2B95121A69B01000F35A3 /* CoinBaseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B95021A69B01000F35A3 /* CoinBaseInfoModel.m */; };
 		04B2B95421AB93B3000F35A3 /* AddSelfChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B95321AB93B3000F35A3 /* AddSelfChooseCell.m */; };
@@ -1902,6 +1906,12 @@
 		04AB69152589E6DA00CD4B51 /* CreateAccountTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAccountTool.m; sourceTree = "<group>"; };
 		04ABE6FB219AA233008DF901 /* NodeSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeSettingVC.h; sourceTree = "<group>"; };
 		04ABE6FC219AA233008DF901 /* NodeSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodeSettingVC.m; sourceTree = "<group>"; };
+		04AC08D625B04AC5007C45DA /* GQGridManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQGridManagerView.h; sourceTree = "<group>"; };
+		04AC08D725B04AC5007C45DA /* GQGridViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQGridViewControl.m; sourceTree = "<group>"; };
+		04AC08D825B04AC5007C45DA /* gridcontrol_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gridcontrol_delete@2x.png"; sourceTree = "<group>"; };
+		04AC08D925B04AC5007C45DA /* GQGridManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQGridManagerView.m; sourceTree = "<group>"; };
+		04AC08DA25B04AC5007C45DA /* gridcontrol_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gridcontrol_add@2x.png"; sourceTree = "<group>"; };
+		04AC08DB25B04AC5007C45DA /* GQGridViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQGridViewControl.h; sourceTree = "<group>"; };
 		04B2B94C21A69A07000F35A3 /* MarketTicketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketTicketModel.h; sourceTree = "<group>"; };
 		04B2B94D21A69A07000F35A3 /* MarketTicketModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketTicketModel.m; sourceTree = "<group>"; };
 		04B2B94F21A69B01000F35A3 /* CoinBaseInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinBaseInfoModel.h; sourceTree = "<group>"; };
@@ -5121,8 +5131,8 @@
 		043C14A225AD44E300F47EA7 /* 详情 */ = {
 			isa = PBXGroup;
 			children = (
-				043C14A325AD44E300F47EA7 /* ThemeVoteDetailViewController.m */,
 				043C14A425AD44E300F47EA7 /* ThemeVoteDetailViewController.h */,
+				043C14A325AD44E300F47EA7 /* ThemeVoteDetailViewController.m */,
 			);
 			path = "详情";
 			sourceTree = "<group>";
@@ -5609,6 +5619,19 @@
 				043C146125AD3D9A00F47EA7 /* DCWalletTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		04AC08D525B04AC5007C45DA /* GQGridControlManager */ = {
+			isa = PBXGroup;
+			children = (
+				04AC08D625B04AC5007C45DA /* GQGridManagerView.h */,
+				04AC08D725B04AC5007C45DA /* GQGridViewControl.m */,
+				04AC08D825B04AC5007C45DA /* gridcontrol_delete@2x.png */,
+				04AC08D925B04AC5007C45DA /* GQGridManagerView.m */,
+				04AC08DA25B04AC5007C45DA /* gridcontrol_add@2x.png */,
+				04AC08DB25B04AC5007C45DA /* GQGridViewControl.h */,
+			);
+			path = GQGridControlManager;
 			sourceTree = "<group>";
 		};
 		04B2B94B21A699D5000F35A3 /* VTwoModel */ = {
@@ -6675,6 +6698,7 @@
 		843EC9C52121212D002D5C2A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				04AC08D525B04AC5007C45DA /* GQGridControlManager */,
 				049814B025A415C6003FAB9F /* HQStepper */,
 				044CF08D25A2EE1D00870FB5 /* ERPageController */,
 				0447A9B8259B106600F5FB54 /* JXButton */,
@@ -7398,6 +7422,7 @@
 				0415EDFE24BD6CAB00A55C95 /* gray_tabbar_home_animation.json in Resources */,
 				04049D7624C69B76003D15F9 /* mask.jpg in Resources */,
 				04049E3624C69B76003D15F9 /* ClassiftyGoods02.plist in Resources */,
+				04AC08DF25B04AC5007C45DA /* gridcontrol_add@2x.png in Resources */,
 				044CF0A125A2EE1D00870FB5 /* ERSegmentCollectionViewCell.xib in Resources */,
 				04049DF624C69B76003D15F9 /* DCStoresRecommendCell.xib in Resources */,
 				0415EDF824BD6CAB00A55C95 /* tab_me_animate.json in Resources */,
@@ -7464,6 +7489,7 @@
 				04049E1424C69B76003D15F9 /* DCNewAdressViewController.xib in Resources */,
 				0415EDFC24BD6CAB00A55C95 /* tab_search_animate.json in Resources */,
 				04BBD15D24D7E3E500375025 /* JhForm.bundle in Resources */,
+				04AC08DD25B04AC5007C45DA /* gridcontrol_delete@2x.png in Resources */,
 				04049E2024C69B76003D15F9 /* DCCenterServiceCell.xib in Resources */,
 				0415EE0224BD6CAB00A55C95 /* tab_message_animate.json in Resources */,
 				0415EDFF24BD6CAB00A55C95 /* green_lottie_tab_discover.json in Resources */,
@@ -7819,6 +7845,7 @@
 				0497B77C21893E42004B59CD /* TextLabelCell.m in Sources */,
 				0415BDA82131BC850022DEB7 /* YYKlineView.m in Sources */,
 				0415BDAB2131BC850022DEB7 /* YYKlineMaskView.m in Sources */,
+				04AC08DE25B04AC5007C45DA /* GQGridManagerView.m in Sources */,
 				0401784221940DC400BA5D23 /* MarketProfitModel.m in Sources */,
 				04049DDE24C69B76003D15F9 /* DCCommentCell.m in Sources */,
 				043B55F82235FD0C00054016 /* HuobiSymbolsModel.m in Sources */,
@@ -8176,6 +8203,7 @@
 				0465E82F217F2016000E11CB /* CurrentNodes.m in Sources */,
 				04049E5324C69B77003D15F9 /* DCNavigationController.m in Sources */,
 				04049D4724C69B76003D15F9 /* DCGoodsHandheldCell.m in Sources */,
+				04AC08DC25B04AC5007C45DA /* GQGridViewControl.m in Sources */,
 				04CF7D9821CB3B8C0083BA81 /* EOSCNVC.m in Sources */,
 				04049D5324C69B76003D15F9 /* DCNotificationCenterName.m in Sources */,
 				04049D6224C69B76003D15F9 /* XWFilterAnimator+XWCopyMachine.m in Sources */,

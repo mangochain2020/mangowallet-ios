@@ -22,6 +22,7 @@ static int overTheCounterTitleViewheight = 70;
 @property(strong, nonatomic)NSDictionary *buyUserInfo;
 
 @property(strong, nonatomic)NSMutableArray *titleArray;
+@property (nonatomic,copy) NSString *contact; //客服微信号
 
 
 
@@ -80,6 +81,35 @@ static int overTheCounterTitleViewheight = 70;
             }];
             
         });
+        dispatch_group_enter(group);//
+        dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *mgp_otcstore = [[DomainConfigManager share]getCurrentEvnDict][otcstore];
+
+            NSDictionary *dic = @{
+                @"json": @1,
+                @"code": mgp_otcstore,
+                @"scope":mgp_otcstore,
+                @"table":@"global",
+            };
+            
+            [[HTTPRequestManager shareMgpManager] post:eos_get_table_rows paramters:dic success:^(BOOL isSuccess, id responseObject) {
+                dispatch_group_leave(group);
+                if (isSuccess) {
+                    NSDictionary *dic = ((NSArray *)responseObject[@"rows"]).firstObject;
+                    self.contact = dic[@"cs_contact"];
+                }
+                NSLog(@"%@",responseObject);
+
+            } failure:^(NSError *error) {
+            } superView:self.view showFaliureDescription:YES];
+            
+            
+        });
+        
+        
+        
+        
+        
         //二个网络请求都完成统一处理
         dispatch_group_notify(group, queue, ^{
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -92,6 +122,7 @@ static int overTheCounterTitleViewheight = 70;
                     vc.orderPayType = [dict[@"payId"] intValue];
                     vc.titleView = titleView;
                     vc.sellPayInfo = dict;
+                    vc.contact = self.contact;
                     vc.sellUserInfo = self.sellUserInfo;
                     vc.buyUserInfo = self.buyUserInfo;
                     [tempArr addObject:vc];

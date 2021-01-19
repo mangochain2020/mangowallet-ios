@@ -829,13 +829,15 @@
         
     } superView:self.view showFaliureDescription:YES];
     
-//    [[HTTPRequestManager shareMgpManager] post:@"v1/chain/get_currency_stats" paramters:@{@"code":@"eosio",@"currency":@"MGP"} success:^(BOOL isSuccess, id responseObject) {
-//        NSLog(@"%@----------1",responseObject);
-//
-//
-//    } failure:^(NSError *error) {
-//
-//    } superView:self.view showFaliureDescription:YES];
+   
+    [[HTTPRequestManager shareMgpManager] post:eos_get_currency_balance paramters:@{@"json": @1,@"code": @"eosio.token",@"account":[MGPHttpRequest shareManager].curretWallet.address,@"symbol":@"MGP"} success:^(BOOL isSuccess, id responseObject) {
+
+        NSLog(@"%@----eos_get_currency_balance---",responseObject);
+        
+        
+    } failure:^(NSError *error) {
+        
+    } superView:self.view showFaliureDescription:YES];
     
     
 }

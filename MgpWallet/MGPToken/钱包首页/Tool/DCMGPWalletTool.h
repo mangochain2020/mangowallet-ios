@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)contractCode:(NSString *)code andAction:(NSString *)action andParameters:(NSDictionary *)parameters andPassWord:(NSString *)passWord completionHandler:(void (^)(id responseObj, NSError *error))handler;
 
 
+/**
+ 是否显示超时倒计时
+ */
+- (NSInteger)isShowOutTimeExpirationData:(NSString *)str;
+
 
 
 /**

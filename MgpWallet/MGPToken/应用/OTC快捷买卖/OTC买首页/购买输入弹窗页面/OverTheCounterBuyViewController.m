@@ -129,7 +129,7 @@
         NSString *mgp_otcstore = [[DomainConfigManager share]getCurrentEvnDict][otcstore];
         NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
         NSInteger time = interval;
-        NSString *order_sn = [NSString stringWithFormat:@"%zd%@%@",(long)time,self.dic[@"id"],buyNumStr];
+        NSString *order_sn = [NSString stringWithFormat:@"%zd",(long)time];
         
         NSDictionary *p = @{@"taker":[MGPHttpRequest shareManager].curretWallet.address,
                             @"order_id":self.dic[@"id"],

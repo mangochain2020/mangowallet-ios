@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="MGn-FN-XUB" customClass="OverTheCounterContactArbitersController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1XJ-bG-Wbd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜索订单号" id="mh9-Ht-5pJ">
@@ -1793,7 +1793,7 @@
                                                                 <constraint firstItem="ZRi-gQ-cli" firstAttribute="leading" secondItem="V5K-nr-fBc" secondAttribute="leading" id="sae-8e-qr6"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转账是，请使用您本人的交易方式，向对方转账，请勿备注，防止汇款被拦截，付款账户被冻结等问题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oig-Rq-DLx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转账时，请使用您本人的交易方式，向对方转账，请勿备注，防止汇款被拦截，付款账户被冻结等问题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oig-Rq-DLx">
                                                             <rect key="frame" x="10" y="216.5" width="374" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemRedColor"/>
                                                             <constraints>
@@ -1999,7 +1999,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="9Cr-Ed-96C" secondAttribute="bottom" id="g1a-bv-zJ5"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转账是，请使用您本人的交易方式，向对方转账，请勿备注，防止汇款被拦截，付款账户被冻结等问题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="got-QK-gbW">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转账时，请使用您本人的交易方式，向对方转账，请勿备注，防止汇款被拦截，付款账户被冻结等问题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="got-QK-gbW">
                                                             <rect key="frame" x="10" y="206.5" width="374" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemRedColor"/>
                                                             <constraints>
@@ -2114,6 +2114,7 @@
                     <navigationItem key="navigationItem" id="zSK-l6-gHl"/>
                     <connections>
                         <outlet property="bottomHeight" destination="OZW-Yg-a5e" id="BLk-pn-eIA"/>
+                        <outlet property="btnWiteh" destination="dvA-Dp-475" id="yrV-51-Tig"/>
                         <outlet property="footerButton" destination="hGz-o8-iaa" id="9VV-PV-CXa"/>
                         <outlet property="leftButton" destination="MuZ-oW-H3H" id="9zK-LA-FhS"/>
                         <outlet property="rightButton" destination="r47-pl-dpa" id="qkq-Fy-Nzf"/>

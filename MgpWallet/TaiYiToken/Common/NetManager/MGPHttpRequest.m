@@ -9,7 +9,7 @@
 #import "MGPHttpRequest.h"
 #import "RSAEncryptor.h"
 
-#define publicKeyStr @""
+#define publicKeyStr @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1x7ZYbFgLbz77qVk6UjN1a2dHZRTnaIS7l5D8bg5tQb1eBSwWLBh7S1StvyGJkavRG43CdMdOsBCrC4XSs1Ombl9ZbryAj0+drzf1orrVSjJ+oNgXb9VDK+bCPkZ+5wyKPn6VeGjzGQoPgeUkQFMXSFu+opFr+9XW3DMjcRv//wIDAQAB"
 
 
 @implementation MGPHttpRequest
@@ -72,17 +72,101 @@ static MGPHttpRequest * defualt_shareMananger = nil;
 }
 
 
-
+//isNewPath:(BOOL)newPath
 - (void)post:(NSString *)path paramters:(NSDictionary *)paramters completionHandler:(void (^)(id responseObj, NSError *error))handler{
     
 //POST请求
     NSString *paths = [NSString stringWithFormat:@"%@%@",[[DomainConfigManager share]getCurrentEvnDict][kserveApi],path];
     
-    if ([path isEqualToString:@"/voteNode/uploadNodeMsg"] || [path isEqualToString:@"/voteNode/nodeDetail"]|| [path isEqualToString:@"/voteNode/rule"] || [path isEqualToString:@"/voteNode/scNodeList"] || [path isEqualToString:@"/voteNode/votes"]) {
-        paths = [NSString stringWithFormat:@"http://vote.mgpchain.io/api%@",path];
-//        paths = [NSString stringWithFormat:@"http://192.168.31.50:9000/api%@",path];
+    if ([path isEqualToString:@"/voteNode/uploadNodeMsg"] || [path isEqualToString:@"/voteNode/nodeDetail"]|| [path isEqualToString:@"/voteNode/rule"] || [path isEqualToString:@"/voteNode/scNodeList"] || [path isEqualToString:@"/voteNode/votes"] || [path isEqualToString:@"/moUsers/find"]) {
+//        paths = [NSString stringWithFormat:@"http://vote.mgpchain.io/api%@",path];
+        paths = [NSString stringWithFormat:@"http://169.254.96.23:8989/api%@",path];
     }
+
+    NSString *p = @"";
+    if (paramters != nil) {
+        p = [self convertToJsonData:paramters];
+    }
+    NSString *restult = [self paranEncryptString:p];
     
+   //请求地址
+    NSURL *url = [NSURL URLWithString:paths];
+    
+    //设置请求地址
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    //设置请求方式
+    request.HTTPMethod = @"POST";
+    
+    //设置请求参数
+    NSString *currentSelected = [[NSUserDefaults standardUserDefaults]objectForKey:@"CurrentLanguageSelected"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:paramters];
+    [dic setValue:currentSelected forKey:@"lang"];
+    
+    request.HTTPBody = [[self parameters:dic] dataUsingEncoding:NSUTF8StringEncoding];
+  //关于parameters是NSDictionary拼接后的NSString.关于拼接看后面拼接方法说明
+    
+
+    [request setValue:restult forHTTPHeaderField:@"content"];
+    [request setValue:@"mangowalletnew" forHTTPHeaderField:@"apkName"];
+    [request setValue:APP_BUILD forHTTPHeaderField:@"version"];
+    [request setValue:@"ios" forHTTPHeaderField:@"appType"];
+    [request setValue:[[[NSBundle mainBundle]bundleIdentifier] isEqualToString:@"com.lohas.mgpMangowallet"]?@"0":@"1" forHTTPHeaderField:@"iosStore"];
+    [request setValue:currentSelected forHTTPHeaderField:@"lang"];
+    [request setValue:[MGPHttpRequest shareManager].curretWallet.address forHTTPHeaderField:@"address"];
+    [request setValue:[MGPHttpRequest shareManager].curretWallet.publicKey forHTTPHeaderField:@"publicKey"];
+    [request setValue:[[UIDevice currentDevice] identifierForVendor].UUIDString forHTTPHeaderField:@"uuid"];
+
+    NSLog(@"加密%@----%@",dic,paths);
+
+    
+    
+    //设置请求session
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    //设置网络请求的返回接收器
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                !handler ?:handler(nil,error);
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication].windows lastObject] animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = @"HTTP Code = failure";
+                int64_t delayInSeconds = 1.0;      // 延迟的时间
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [MBProgressHUD hideHUDForView:[[UIApplication sharedApplication].windows lastObject] animated:YES];
+                });
+                
+                NSLog(@"数据接收失败:%@",error);
+            }else
+            {
+                NSDictionary *responseDic = data.jsonValueDecoded;
+                !handler ?:handler(responseDic,nil);
+
+                NSLog(@"%@:数据接收成功:%@----",paths,responseDic);
+                if ([responseDic[@"code"] intValue] != 0) {
+                    
+                    [[self jsd_findVisibleViewController].view showMsg:responseDic[@"msg"]];
+                    
+                }
+                
+            }
+        });
+    }];
+//开始请求
+    [dataTask resume];
+}
+
+- (void)post:(NSString *)path isNewPath:(BOOL)newPath paramters:(NSDictionary *)paramters completionHandler:(void (^)(id responseObj, NSError *error))handler{
+    
+//POST请求
+    NSString *paths = [NSString stringWithFormat:@"%@%@",[[DomainConfigManager share]getCurrentEvnDict][kserveApi],path];
+    if (newPath) {
+//        paths = [NSString stringWithFormat:@"http://vote.mgpchain.io/api%@",path];
+        paths = [NSString stringWithFormat:@"http://m.test.mgps.me/otcapi/api%@",path];
+    }
+
     NSString *p = @"";
     if (paramters != nil) {
         p = [self convertToJsonData:paramters];
@@ -246,7 +330,49 @@ static MGPHttpRequest * defualt_shareMananger = nil;
     }];
   
  }
+//传图片流
+- (void)post:(NSString *)path isNew:(BOOL) isNew andImages:(NSArray *)postImageArr completionHandler:(void (^)(id responseObj, NSError *error))handler{
+    
+    
+    NSString *paths = [NSString stringWithFormat:@"http://m.mgps.me/fileapi%@",path];
 
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSDictionary *parameter = @{@"bucket":@"otcstore.mgps.me",@"appName":@"MGP"};
+    [manager POST:paths parameters:parameter headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        // 上传 多张图片
+        for(NSInteger i = 0; i < postImageArr.count; i++) {
+
+            NSData * imageData = UIImageJPEGRepresentation([postImageArr objectAtIndex: i], 0.2);
+            // 上传的参数名
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateFormat = @"yyyyMMddHHmmss";
+            NSString *str = [formatter stringFromDate:[NSDate date]];
+            NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+            [formData appendPartWithFileData:imageData name:@"file" fileName:fileName mimeType:@"image/jpeg"];
+            
+            NSLog(@"%@------fileName",fileName);
+
+        }
+        
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"完成 %@", result);
+        if ([HTTPRequestManager validateResponseData:responseObject HttpURLResponse:task.response]) {
+            NSDictionary *responseDic = ((NSData *)responseObject).jsonValueDecoded;
+            !handler ?:handler(responseDic,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"错误 %@", error.localizedDescription);
+        !handler ?:handler(nil,error);
+
+    }];
+  
+ }
 
 /**
  获取当前控制器

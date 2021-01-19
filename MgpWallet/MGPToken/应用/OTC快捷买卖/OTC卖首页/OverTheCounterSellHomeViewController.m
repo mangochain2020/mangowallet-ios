@@ -12,6 +12,7 @@
 #import "LHCurrencyModel.h"
 #import "HQStepper.h"
 #import "LHSendTransactionViewController.h"
+#import "CCPActionSheetView.h"
 
 
 @interface OverTheCounterSellHomeViewController ()
@@ -204,33 +205,35 @@
     [self calculation:[self.sellNumberTF.text doubleValue]];
 }
 - (IBAction)typeSwitchClick:(id)sender {
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [self.view endEditing:YES];
 
-    UIAlertAction *alertT = [UIAlertAction actionWithTitle:NSLocalizedString(@"最小出售金额", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        typeSwitcNum = NO;
-        self.typeSwitchLabel.text = NSLocalizedString(@"最小出售金额", nil);
-        [self.min_sellNumberUnit setTitle:@"CNY" forState:UIControlStateNormal];
-        self.min_sellNumberTF.text = @"";
-        
+    NSArray *dataArray = [NSArray arrayWithObjects:NSLocalizedString(@"最小出售金额", nil), NSLocalizedString(@"最小出售数量", nil),NSLocalizedString(@"取消", nil),nil];
+      
+    CCPActionSheetView *actionSheetView = [[CCPActionSheetView alloc]initWithActionSheetArray:dataArray];
+      
+    [actionSheetView cellDidSelectBlock:^(NSString *indexString, NSInteger index) {
+        switch (index) {
+            case 0:
+                typeSwitcNum = NO;
+                self.typeSwitchLabel.text = NSLocalizedString(@"最小出售金额", nil);
+                [self.min_sellNumberUnit setTitle:@"CNY" forState:UIControlStateNormal];
+                self.min_sellNumberTF.text = @"";
+                self.min_sellNumberTF.placeholder = NSLocalizedString(@"请输入最小出售金额", nil);
+                break;
+            case 1:
+                typeSwitcNum = YES;
+                self.typeSwitchLabel.text = NSLocalizedString(@"最小出售数量", nil);
+                [self.min_sellNumberUnit setTitle:@"MGP" forState:UIControlStateNormal];
+                self.min_sellNumberTF.text = @"";
+                self.min_sellNumberTF.placeholder = NSLocalizedString(@"请输入最小出售数量", nil);
+
+                break;
+                
+            default:
+                break;
+        }
+          
     }];
-    UIAlertAction *alertR = [UIAlertAction actionWithTitle:NSLocalizedString(@"最小出售数量", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        typeSwitcNum = YES;
-        self.typeSwitchLabel.text = NSLocalizedString(@"最小出售数量", nil);
-        [self.min_sellNumberUnit setTitle:@"MGP" forState:UIControlStateNormal];
-        self.min_sellNumberTF.text = @"";
-
-    }];
-    UIAlertAction *alertF = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:nil];
-
-
-    [actionSheet addAction:alertT];
-    [actionSheet addAction:alertR];
-    [actionSheet addAction:alertF];
-
-    [self presentViewController:actionSheet animated:YES completion:nil];
-    
 }
 - (IBAction)sellClick:(id)sender {
     WEAKSELF

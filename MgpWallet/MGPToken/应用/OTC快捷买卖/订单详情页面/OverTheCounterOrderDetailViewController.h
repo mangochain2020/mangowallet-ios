@@ -46,6 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSDictionary *sellUserInfo; //收款人信息
 @property (nonatomic,strong) NSDictionary *sellPayInfo; //收款方式信息
 @property (nonatomic,strong) NSDictionary *buyUserInfo; //付款方式信息
+@property (nonatomic,copy) NSString *contact; //客服微信号
 
 
 @property (nonatomic,strong) OverTheCounterTitleView *titleView; //订单顶部视图
